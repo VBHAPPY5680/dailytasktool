@@ -1,1 +1,4861 @@
-# dailytasktool
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Daily Use Tool</title>
+<link rel="icon" type="image/png" sizes="32x32" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABmJLR0QA/wD/AP+gvaeTAAADb0lEQVRYhcWVT2gUVxzHP9+Xmd382c0/SkJDoYVgKRH/EKG0NmhBFEq9BCKUlkop1KNgEXr1KJR6yaVQeijSQy+9tKC0PYjGXCTUtmwUjTepORjCJhuzs9mZ52F3dmdnJ8vGxHVgmPfn997n9+f73ojIM31qecQQnDeB/Vhon4E+WRDVN9qO9y0INYyb+lxecE+Wn8kUfpi9ts8LmQobMycfn8HqR0FWqLJ4b+CNdpb7jmOnv7sxdr/mwMzJx2dAv8iilwqv7aEVR+b9b2+OPNT0qeWRrsBfeumR1+Fh/9+sM3rEGILzrwCO4OCz0vLnxvj29CuAIwtWOutIGo/DDXBkqpv+QcP6asDfc8UXgh+cSpMd7mJjNSB3y6upPmJ32BjIxBdOHu3m3WPdFYXuIvIQeOjDbvZ/kE6yG3SSFmYyIrfgcfv65q7SnpsrIQtBCXqzpsnOAE7SwkI+qKdrD2q+kQ8S4QL02Yn/bScElwgHnFbwsxcGmL++yfhEirUVn9NfZLh6OY+AT77u5/tvVhk/kOK9j3p4dLfE8Otd3LlW5K0JFzclVp/4/PNXcVu4bLQECZ66rkilRG+f2FwXbqryykJvxuA4Ip2uj7tu5e3JGAQV2xZwAaZV2qmeglAPxBVenYtahHvET08SXKjqwDY1bxBirJ/Urn1jTm4HlwXTtuBiwGjMDQ7tAJ5QAsUMk586ULUyhJFHbZL11XhCTKvIodmZhnYk2qhW2oVHSpCc9ngt64C64JoitrHxFvBqBtq7ZOogJaY62m/OxPYXk9MKXt6ylEuWzULlWy5Zyp5FQHHdEmxZtoqWcgn8ksWvfr1CgOMK37Mt4QJ07vgT2yrydqJoR+2J8PAmjMMPHE2DhcV5b0/gb1d/xUtzXpOdkxR5pt80CG63kfcNKLJfCw2E7WdrAZMnenBdUVgJyIWe7xD+zrE0mSHDm5Mui38072Fs5W+YFwxEJxfnPYxEdiiSiReIPDwti396LN32muCCNUdwV3C8caHI3Wqu104F9/Bm8h6mvuaRAV3thNoT4Ciwv5nXzOhPgv86DrfkA/xZc+mGyl3WnxFa6SDcSvbLiwtjTw3Albk3HphyMGXgXicil+zMhTujv4YCrz2X9udSG0PDXwl9KsuELIN7AhcFWT1QYH8P8GcvLow9DZnPAXe604tzKfYWAAAAAElFTkSuQmCC"/>
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAABmJLR0QA/wD/AP+gvaeTAAAYPUlEQVR4nO2de5wcVZXHv7e655WZSTJ5OEkEYnYVJEEIILLhORABUT+6goCI60d3hVXYhSSi6K6P+NhFdmEJIuLHB7LirlF2fe1HEZEYIJEVAoRASGBBCIFMHkxeM5OZ7p6uu39M90xV1/NWVXdXz9zzz9w6fc7vnKn+Tk3V7bpdgjpZT4/MzmzqXWzA0dI032wYxpFI5guYKaEdaBfQUZknrBvSw6/oAxDSxaeS79JX7J4sWmVP5J5KWon0BAeRHAAOINkvhHgGITcK09x0yGzedMf62f0e6VU3r76rYhee1bvIMIrnIYyzQZ4BdI43YW8lcCdrmMP3VNJKCOagfT8CPCSk/B/RlPnlrWu6X/CQq4pVHehLl+7qLojipSA/LOB49wY0zA5/Y8Ls5nscwTcGxPCP7ly7YNhDPjGrGtAXnte7SBTNzyK4BEnW+5fXMDv8Ewdmq/81KeR3hCluvvWhuXs8QmNb4kBfdM4riyXiC8B7AcN/h2qYHf6JCbPVDhqI641C4ZabHz58yCMtsiUG9F/2vDg929T8VeDjQAYI2KEaZod/4sNs3fcvI/jU1x+c+xOP9EiWCNDvP3fHZUh5E9A95tQwq2lOLpjHzJD8pNBSvPK2+w/r85BSslhAX9Szu0M25W8H8SHbCxpmNc1JCrMlrleY/M2q9XPv8ZAMbUbUxIuW9i6kKf+whjmmpoYZYK40+NWyM3pXgox1kI2U/P5zXlmKFD9DjM4jj5mGWU1Tw+z0S35yaEh+9NuPzTvkEeZrykCPni/zfZBNthc0zGqaGmZPvxT8rzCGz1+1dsF+j3BPUzrluPCcV69Cyrs0zDE1Ncy+fiH5C1Fs/d3yJdtneKR4Wugj9AVv3/FBQ8i7qPwj0DCraWqYg/PHBmKjYZjn3LR23mse6Q4LdYR+39Id7zAEdzriNcxqmhrm4HzryGSxLBq/vuLEHVM8JBwWCPSFS7cfmzHkf+nTjJiaGubgfOuorCU5qaPN+OFKZKiDr2/QX527sx3DWM3o7ZzjpmFW09QwB+dbR859/76Dp++8wUPOZr5AH5Ijtws42ubUMKtpapiD860jr30vxbXXnrbzgx6ygXXLH2f/0C6qYVbS1DAH51tHwfv+QDErF69aO/cljxLuR+jLzu+biuRfbU4Ns5qmhjk43zoKt++nZUbEj684seJ6zmKuQOdGhv8Z5Nwxh4ZZTVPDHJxvHant+7d1tu36pEcpZ3zpfuYN6FtAo2lqmIPzrSPFfV/yD2YwF96wbt7Lla85j9BSfBENczRNDXNwvnUUDWaA9iLGqsCaF57Xu0iY5ib0ShMNs5svHTCPmZTi3JvWd99n9VV88mf+AxpmDbObL2UwAxjIL3nGXbp0V3fBGHkFvaBVTVPDHJxvHSUEc7knKcQ5N67r/l3ZP3aELojipRpmRU0Nc3C+dZQwzKXxF6yvWU455Ic1zAqaGubgfOuoCjCPmjz9utN2HVfeMmD0G42E/hKY8Joa5uB866hqMI/GSeRfl7cNAJEtvsNdUMPs8GuYg/OtoyrDDIDkQyt7XmyFMtDSOMsZqGF2+DXMwfnWUS1gHrUZQ/m28wCMnh6ZBXm6PVDD7PBrmIPzraPawQyAFPIdAMbMpt7FwNTxQA2zw69hDs63jmoMM4CBOB/AMEr3O2uYPfwa5uB866gOMAtAwvxPn/rqUYY0zTdrmD38GubgfOuoTjCXzRCZEwxDcJSG2cWvYQ7Ot47qDDMAkrcYYCwILGJPCh8b1JCGWU1Tw+zvHwVaTPUtYk/wbyhsYTTMypoa5uCeDOZnQXb6BpWtBjC/6Zhm3nZmK3MPz5LJeCRX2O5Xi/z0+/0M7Dfj9QSTGuaO6Qbv/FgHs+ZlPdTsZhZh97YRNv5+mG1PF6rSU+j88kAyTVz89h2DAhxf5FFLmDs6Da64bhrHL2n1yPK3Jx/Oseof90bvCSY1zACXf62LRae0eKj529MP5Vh9/UGG+s1EewqVb92QHDQEtAUEhRcMasil+dZWwWdunBEZZoD5R9qPKhpmF18AOIcd6bnuNNCOOb2Fj988neZW930XtafAfOvGqFanUemv9WnGhR/tZP4bo+9MgEfWjj9cScPs4gsBzsbfx3vcyWFHNXHuR9pdX6sRzAgQ2aCgUIJBDXk039IqOOvd9rOdwX6TB38zRL/lnNhLF6BvV5FHSm+GhtnFFxKcn9/Wz7ZnCsyY43XxYr8AbJ9ucPK722jrGFc75YIp/Pb7gxRy0poVuSfPfOtGxUVp1i8olGBQQz7Nv3FhMy2t45lSwg3X7mXb8wVHrLWvRMDRMNvNhCfutz9GUFhHLvt+4/3DXPPtGYiSs6VNcMTCJl54Ip9IT6owQ/luO5egUIJBDQU0P63LvqSxb1dRwxwn3+qrwdTc9q0F9u8q2nxTZxk16AnPnox6wezmKBY9/lVpmFMHc9lXHLH7DFE/mMG6BEt/aBK+p5LWZIc5rNUKZigDrWEO31NJS8MczmoJs6D0HRyhBYMaigmzzTTMGmbrRgiYwXLKoWEO4dcwh7Z6wAxusxxhi1j9GmY1TQ1zyJ5QghkqZznCFrH6k4RZMV/DHDPfOkrqrrkk8xVhBpdvH60lzHF2iIY5Zr51lBDMKnHVgFlQAbSGucI0zKE1VeKqBTNEuCiE5GAu2j9kcmxrmF18KYPZLMqK7Tg9EQtmULwohGSPzM8+mWNocFxw48O56Joa5uB86yihI/OW9ePv2fCA5E9P5OsGM4D44NIdjt1Uk9OMkta8I7KcfHYbfbuKrL/3EKapYW4UmIUc/R6ME89vo2tOho2/G2bPthGXyNrADC5A1xJmfc4cslZKYU6mJ5KDmRAXhaBhVtbUMIfsiURhRgZcFIKGWVlTwxyyJxKHGXwuCkHDrKypYQ7ZE1WBGTw+KQQNs7KmhjlkT1QNZrAswbIFphDmKVMEHVNHz5D295kU8t757Z0Gg/2mww+QyULX7IzNlxuS9O9zX4KfbRI0NcHwIedOEUBbu6C93Ncek2LBPW5Kp8HQoIk07f6ydb0ug5Ed3/dmEfbvLiJd/uiEgGmzM2SzUMhJDva5rb8UGAY0twpyg+49NbcKOmeM9t6/1yQ/LBsaZoEL0GmE+ci3NLP8X2bQ3DIaMXDA5J8+0cdrvfZPYgRw+eenc9LZrfzijgF+ddeATbd1iuDz353FrLnOhaB339bPmrsHbb72qQaf+95MpnQarFq+l5e22JeHHXVCM1fe0EW2abRC/z6TGy7vY/+eoi3ulHe38YFrp/H8k3luXbbXAelHvjCdE5Y6v8Zh88M5vnPdPof/Y9fbv0Nj7Y8H+cVt/TaYs1nBiu/NYPbhWf79c/vZvN4+xz/3z7L83e0zaJkymjU8KPnmVXvpfcE+7dZIMEPlLEcKYRbAwhNbxmAG6JhmcPSJLY44gONOHfW/rQSIVff1C7KuMAOcdLYTqPlHNTF9dobmVsGxp46/XtY8+qSWMZgBOrsMjjy+2RF3zCmtCAFvWtzM1JmG43c95lT3L3hZtKSF1nZ7tGHAwiX2+OOXtjlOM2a+PsOcBVkyWTi2x9n7n5/QPAYzQGu74OiKL5ppNJjBOsuRUpiRjK0qtpphVMSVx2L8p/NftVclEBW3aQnsdcuvW8+ZXfvKePcEYLgkVda2vVYRL4SzrmGdq5KVPpfePWrachoQZhh7xkr0Ig5/1S4AQ9T2M48LQBVNK8xR8l1jQ/yO4XRFpAtAV6UGhRnA0DCH03SDWQUSV83EYCYQnNB1GhhmiHs/tHUjJVNzDksAZquWcn2vWknCrBjnGdvgMAvi3A9t3agxzF7miFWAOdAiwuz6+6cRZoW4tMIMUe+Htm6kFWafWrXSjAtzWE2VuIkMM0S5H9q6kWKY48R5xaaxJ5W4iQ4zKCySdfgnA8wRj6bVhdk/azLDDCEvCh3+tMLsAWA1YE7kjQtpNph9+lLqaQJcALr5wt0Pbd1osNmMWsLsGqsAjn+taDC7xsa8KE0rzCBC3A9t3ZhkMMfWjAmzLauK88w+Vf19KYMZgu6Htm40GMyRrMowe8YGBUSAOexphlK+dSOFMIPf/dDWjQkAc2wYVPI1zOF9CcJsW4LlmaxhVopN5YcmkwRmx0WhIzklMMepX0uYVeLq+ccYWTPlMIPfLEeKYQ4bF/sCStGfdH41NCcyzOD10fcEgDmuNRLMrrGJTRfSMDCDz1OwJiLMk+Y0YZLCDB5PwdIw18Y0zCqawTCDy1OwUgezwsfZgZp1WmniX8u/arV6Ctx/DQizoOIpWGmEObHThJgA2jQTA0ck1lct577TCjNYnoKlYQ5Zq84wV/06oIFhhqQeGlQqaPWkEea459y1WtAaTTM4rhr5aYIZknhoUKmg1VNvmK1aoWMDdJMDT8McrBkNZkhikWwNYFZ540PVSSA28htfB5jjWqPALIi7SDZlMFf3yJqcZhp7UolNK8wQZ5HsBIO5GprVOGLWapGtV2yaYYaoi2TTCnNaV5qEiguhqWEO9Kkvkp2kMKuYDWYfrWr1FPY8PnK+1ZcimEF1kayGWUE3PTDbrMHnmYN84RfJ1gnmQM2Aqbl6w5yenpjwMEOYhwaVClo99YbZqhUr30MrKL9WMKvUjgtzWM00wzy2BKshYY4YG1ezGuCEtURgjJufYpghaJGshjlSrWr0r2H28Vn68l4kO8FgjguOhjmcZj1hFnjNcqQM5okIY9V7Suq2VBettMIMbrMcGmaFWP+suD2pmArMSvukgWCGylmOtMIc8Q2qLjgi0jxz3J4C8yNMzXnGNRjMYJ3lmGAwVyM2LsyusXWeZ/aMa0CYoTzLMRlg1h+ahK/ToDCDZQlWOUzDHPBqUh9Q1BDmsJqNDrPAdlGYTpgnJDhJ9qQY5xvb4DDDGNAa5kDNJI+CMaxW+Y0IM4AxUWGOE+cVm8aeVGInOswQ56FBpYIa5uixGmYfXwSYIepDg0oFawWzyi8UJ84eKxKbmoub73bqE1c3mT+QdMEsiPLQoFLBNMLcKA/oifzHUMVPAFU00wozhL0f2mopgNlVMzFwhO8FYL1hTuS/1QSFGVQeGlQq2CgwR7PqwhzZqjjPrJyfYpgh7EODSgUbHeZA3YRuzq93T5MVZgjz0KBSwQkPc5T6VciPE+cVO1lgFjLMLEdKYU5uDWC0+nE1G6WnRoIZgmY5UgCzAKQLvKbpni9N+0+rrln0Pky51ZCm++tjtVySrDUqexodS8fvKit+F9++pNMnXd4ne83xsVtPZXPfp40DM/jNcqQEZoCn/5AjNzQucqjf5Pkncq75T9w/DMBTDw47dHe8MMKubSOutZ56MGfbFsD2LQX6dhQp5CRb/5hz1Nq8Lkdh2NLXAZMXNxUccZvWDGOa8PLmAgN9TpKeLPVcaS9syJMbtNMrTXh6jT1+ywPO/L2vjPDq1gJmEbauc/b+/B/zDB0c7yU/JHnhkfzYdiPCDCAu7+mVaYa5bC1tgs7po39/B/tMCjnpmT+l02Co3wmOAIwMTH9ddixPAPlhSf9e0xZXNiMDTS2C3CHnkRWgtU3QXu7rNZORvEdchyB/SDqOjOXYqbMNstlxjMwiHNhddP3PADDtdRkyWRjJS/pfs4uWz5mFAS1TBMMD7j01tQg6Z472PrjPJD9k3aeNBzOAuKKnt+IQkD6YwaN5lXzrKMLUXHV7ItI8s6dvAtw1F+jzOHu0XxRqmOvQExpmVU0PmAUVT8HSMNe6JzTMqpo+MIPlKVga5lr3hIZZVTMAZigtwdIw17onNMyqmiFgBsjWG+Y5R2Q58e2t7N1Z5JHfDGGaGuZGglkYcNw7W5k2N8Pm3w7Tt604phW9pwpfSJgBslGL2PwRYZ4202DFt2bS1j4a0X1Ell/e3q9e39WnYQ7WjH9kXnplB0sumwLAyRdP4fZL+xjY4z4FGlbT5lOAWRD3oUEQ6zTjjYubx2AGOObUFvX6rj4Nc7BmMqcZbzpt/D1r6RDMX9wco6cKnyLMEOehQRD7nDmTsUdUbmuYPXwpgRlGP3hy264HzBD1oUGQ6AWgSpyGOW5PycHsZfWCGaIuktUwh+yJCQ1z2PdTSTMGzBBlkWySMOvZjPA+DXMon9oi2SrPM3uZhjluT1WCOcR7WEuYQWWRrIY5ZE9omFU1E4IZwi6S1TCH7IlJB3NszQRhRoZZJKthDtkTGmZVzYRhhqBFsvrejJA9oWFW1awCzOA3y1EDmCvXxhkZDXOjwWxU3DxR+Z7WEmaB1yxHjY7M/XuLNn9Xd4bDj2ry0NQwB2vWFuZ5C5uY1m3/qDDoPo5qwgyWm5PqcZrx0uYC+WFJc2vp7RDwiZu7eOSeIdsaPz+Y9+0s8uTvh11XMWuYw+cLAxYubWXaHMMe5wFgxyyD497VZhPMH5K8utm5SHisTpVhhhLQ9Tpnzg9L1v38EGd/oH3M19ZhcOZF7ajY/IVN/OJW+116Gma1ns65uoOTL5nikRnONtw9xEjOfUFuLWCG0VkOGRTk5fOMVQDn3jsG2P5swePVcHbc2a2J9jTZYIbRo3Mc632mwLo7BusKMyANYKCesxn5Ycm3VuzjqQfdv5sijL3y3PgfhIY5Wk87YxxUtq7J8Z9X76eYc+7oGsKMEAyKK8/o3Q4cplLEMzYmOG9Y1MSxZ7Yy5w1ZMq5raZy5r71a5N7vDjCw39Qwx+ipfbpBz9+20/X6jMurTjNHYM+fRth6f44dzxTqfWQu+3rFlWf2Po1kUb1hFtaRns0I0EwW5rDXUEqatYcZ4DkDyUvpAUfDHKypYfbOFwcMAU+HKeIpqGEO79Mwq/nUr+3+ZEjkU0FFPAU1zOF9GmY1nzLMApDPGsDjfomeghrm8D4Ns5ovAsyjPuM5AXDVGb3bBBwRuiENc3ifhlnNFxlmQHLC6P3QUtwbuiENc3ifhlnNFwdmOHD4gtmbDABpmPeEKq5hDu/TMKv54sEMyAcuvlsUDYBBkbsH2OsrqGEO79Mwq/liwwwSsQZKt4/euXbBMJL/8BTUMIf3aZjVfAnADIBp3AvW+6GF+I6GOUK+1adhVvMlBTM8eu1js7aCBehvPDjnKeAhW7qGObxPw6zmSwhmAWDyw/K2bcWKKYyvjAVqmMP7NMxqviRhlhTMgrm67LMBfdsD3fchWadhVvBpmNV8ycIMiNWf2jRnd9nvWCRrGMaXwzQZ3JCGOVhTw+yfHwQzpjDF9dbXHEDf8kD3fRLxc7/CwQ1pmIM1Ncz++YEwIwT/vfzxWVusr7t+L4chzWuAQQ2zh0/DrOarAszAiDTNr1TGuAJ9y7p5Lwshvur2moY5bk8aZv/8UDCD4JsrHpvzVGWcK9AAXUb3jSD/4F9cw6ymqWH2zw8JM+wUhaYvuoR6A71yrRgRGXEZcCC4IQ1zsKaG2T8/NMyAWL58Y9d+l3BvoAFWrZ37kkR8XMMctycNs39+eJiF5M4VG2avdgkHAoAG+PpDc1ZLyU3uDWmYgzU1zP75Kkdmnsu3iqtdwscsEGiArnVzPi2F+Jm9IQ1zsKaG2T9fCeYBRPGC69bPdj7I0mKhgF6JMIcGzQ8Z8OhYSQ1zgKaG2T9fBWaZN5AXrHh07maXFJuFAhrg24/NO9Qs8+cJxKMa5iBNDbN/vtKRWRpw+bIN3fe5pDgsNNAAX1s3f1+zzJ0HbNAwe/k0zP75SjCbQsqrlm3o/oFLiqt57RtfW9azb3qmmPu1lCwJEtIwx+ypoq/JA7PMC4yPLN8w+0cuKZ6mdIQu26q1XfvzHf1ngfzBWEMupmGO2VNFX5MHZgYR4r2qMHv1omSfPG3nNcC/EeKZhxpmRd/khHmrYcpLlj3evcklJdAiHaGtdtO6ObeYGO8CdpR9GuaYPVX0NVlgFpI7i3nzrVFh9uopki1fsn2GkW36ppBc4iiiYVbzTT6Ye0Gs8PsEMKwlBnTZPnVa70UScSOlb2LSMCv6JhfMI0huy5P94mcem3HArVdVSxxogJU9L7YOjLReIxCfRTItTEENM5MJZhP4KdL8ststoHGsKkCX7ZM9O2ZlRoxlUnIFMFvD7OObHDAXQKwWpri+cqVJUlZVoMv29+f/X0vrgY5LhRBXAW8NakDDHEMznTBvkCZ3NZnFH139xNw97h0mYzUB2mrXnrFzgTB5D5L3GHAGlmclOhrSMKtppgfmAyAfkIg1WSl+s2zD7GfdO0veag601Vb27O7I5eVbpOA4iVwsJG9G0AVMRzIdmKphDumrJcyCASQDjP7cC+Il4DlDiC3SlFsOXzB708V3i6JLatXt/wHG8UoitPjwHQAAAABJRU5ErkJggg=="/>
+<link rel="icon" type="image/png" sizes="192x192" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMAAAADACAYAAABS3GwHAAAABmJLR0QA/wD/AP+gvaeTAAAZhUlEQVR4nO2de5QcVZ3HP7e6ZzKTyRvymoRHkgNBWZBDXFw2iUYIj7C74BIiyMvj43AOqx4k8vCxulnd1ZU1BB+4i8cXiJ4ox0VY14giIoSwBII8jAIrIZCQTAIhmZDJTGa66+4fM925XY+uuvXq6un7+2e6vvWr7/3V9OdWV92+VS3IQaw4u2eOLJdOxGK+JcV8JPMRYgrQBUwCxgloc24n1AXpo/vlB+VKH13HQ10IqE+n5qounZp3duj2ZEL/u+E/A0h6EewTkl6J3AnWHywhn5bl8tNT18/68yqE7WORWfjtQ6qx4oxts4QQSxHWGRL5buCo2mJqywr85xv48wa/R32u6BWCddIW97QV+n95y4Nz9vlYphqZdYDLlu2ZcGhoYLlAXAnynYDlXYiBP1Bvfvid2pCQ/EYK8R9HPjT951l+MqTeAS5euuMtJSFvEHCxkHTWL8LAH6iPPvhrdAlbLCFvHWjr+M637p/S65OaWKTWAZafue1kLHGdQFwKFILhMvAH6qMcfkfsxebLbxYHvvr9B+cM+GwWOxLvABees3WmZbetBi6p+Bv4I3g49daCX61vC4JPfe2hGXf5v1PRI7EOsGqVtDZv2PlhKbkJ5MRqAwZ+fQ+n3rrwq5m/koXSh77+4OztPlaRIpEOsHzprrmWGForEX9ZY27g1/dw6gZ+NfcNifjI1x6esdbHUjtid4ALz95+kSWtb6tHfTDwR/Jw6gZ+n1xxp1UaumrNo0f1+9iHjsgdYMkSWTyyfcfNSD7mMjXw63s4dQN/kMfjJbv4nm88MnWHT0qoiNQBli37vzFdpa47QV7kMjTw63s4dQN/WI8dAv5+zcMzN/qkBoZ2B3jPkpcmFdra7xHwTpeZgV/fw6kb+HU9DgppXbBm/fT7fTapG1odYAT+3wo4xWVk4Nf3cOoGfn2PYf0gETuBFZwyHCtO39ZZKLbfa+DHwB/VQ43k4AcYi5D3XrN41zk+ab4RqgOsWCEL9jhxpxAsdhVg4Nf3cOoGfn0PHIxJOi0p7165sOevfNI9I1QHkL071gjEha4CDPz6Hk7dwK/vgQv+yqtOBHd/4q93HOOzWWj/agyP84u7XBsa+PU9nLqBX98DB2PSM/ePdnHMwlsenBw4xbruJ8DypbvmDn/J5SjAwK/v4dQN/PoehIIf4K3W0KHvgww8wPt2gBUrZMESQ2vNN7wJeDh1A7++B6HhH9YFF3xiUc/VPqur4f8JsG/nR83cngQ8nLqBX98D9OA//Gr1ykW73uaT5u8xMqX5OWBCNdHAr+/h1A38+h44GAsNfzWefbN/+oJvbRJDXvmenwAj8/kN/HE8nLqBX98D4sIPcNKEsT0f99nEvc2Ks7afIhFPVtYZ+CN4OHUDv74HDsaiwV/RD0rbfuvqDd0vO9e7PgEk1mcq2xn4I3g4dQO/vgcOxuLBDzBWWIWvBG67/OwdJwgpNwOWgT+Ch1M38Ot74GAsPvzVsIR8x02OmaO1nwBS3oiBP5qHUzfw63vgYCxB+IffE/E539zLlu2ZcKg0sFNIxgYWFqaxShj4DfzaehrwD7+2pTxt9YaZj1fWVT8BDg0NLDfwR/Bw6gZ+fQ8cjKUEP4AlxKfU9dbhRHFlYGFhGquEgd/Ar62nC/9I/N0NC1/rrixYABcu2T6b4ccV+hcWprFKGPgN/Np6JvAjoChEuXqwtwAKbSzFPKszvIdTN/Dre+BgLBv4AZBSfqAyUc4azrWW+BYWprFKGPgN/Np6tvCPLB1/w8KdC2CkAwgpl3gWFqaxShj4DfzaeiPgr0RhGYC14uyeOcAxrsLCNFYJA7+BX1tvJPwghDwXwJLl0omuwsI0VgkDv4FfW28w/MP57/jkopcnFy0hTvDbxMDvoRv49T1q9BzAPxwFW4w51UIy32sTA7+HbuDX96jRcwM/AJbNyRZCHmfgD6Eb+PU9avR8wc/w9n9hgXVEqMYObxSpMQO/Egb+WN5JwC8ALE4oChgvgxIrkSH8hQLMOKrIpCmF0O317i2zfUtJv456uoG/Jnfm3CLjp1gu3S9//x7J7q0lbM399tMTgx9AiiOKEsYHJjoaTRP+ri7B+ZeP513LOukaH/rJjdVYf18/3/my+3EwBv4QegD8l356Iqed6/k7h3Xj4H6bx37ez/139DHQV1t0w+AHQE6yGP4R6vqJGcE/c3aRL3xrKue9tysS/ACLzulk1pxiuDrq6Qb+mtyZc4qR4AcYO8Hi3Zd2sfK7R3Dk7EKk+pKHH5BMsgS0103M8Mh//ZenMHVGwTshYhj4Q+ia5/xR44juAld9ZTIdXX7/0UzhBxjjOsw26pz//MvHJwL/I/f18+pL/tcBgbqB3zN350slNv4y9i8SccSsAmde3uW5LmP4EYC4eOkO6ZmY8QXvN346vea0p1yC//7RAV54djDQuxL7Ay6CA3UDf6CH8yK4Nl+4Rnvmvq2dM6/owlKObX29Nv98/mvYtpeHQ0sRfoCiZ2LGQ50zjy66zvnv/eGb/OyOA97eZqizIfAD7NxSYucWr3w3/AAvPDEIAs56/+GjftdEi6lHF9m1NWDELmX4oTIb1CMpdmMVPcQ4/7gJ7gte3yO/gb9h8Pvr3vBX4sXfD7q0romWb35W8ANYjYbfb/vKx6OBPwEPNRrwJZe03ZqwGg8/qHeBNfAbXr8w8CfgoUarfMOrRkB9lpoUu7GKbqY3RPNQ9VEMv29uxvALwMoj/DVh4Dfwh9CjwA81j0WJ0VhFN/BH81B1A7+2d1T4wWsUSLexip40/FHrqKcb+PU9avTRBT84R4F0G6voBv5oHrQG/L51NBh+8PmBjKzhTxQkL93Ar+9RoycLP5AL+AUeHcDAH+Br4I/tHdcjKfjB92lwIQpLEX6dXAO/EgZ+bY+6o0BZwX+g1/1V4ZuKZuAPoecY/j6P97eiNRJ+qDMKlNmRX8L2l0qsv+/wVFszpXn0wA+wa0uJTesOv7+b1vXTs6XUcPgBxKVn7nAhnSX8qj577vDkVDOlOXx7eYdffU9mzBt+f3tezAf8oEyHDkrMYnpDBfzQHk7dwK/vUaOnBz8Mgx/JQ40E4ReEuAiGbODX9nDqBn59jxo9Xfgje6iRMPzIMFMhDPzRPFTdwB/NQ40U4IegqRAG/mgeqm7gj+ahRkrwQ72pEAb+aB6qbuCP5qFGivCD31QIA380D1U38EfzUCNl+MFrFCjn8J+6qIMP3jiJzq7hjB0vl/jqDXt5Y3fZlTt9VoFrbppCaUhWc1TfYpvgo1+azAmntiOUFdKGZx89xH9+bi/SYTt1VoGP/fsUSoOSb9ywl71Ku2LE8+p/m8z8Ec/SkGTd7X3c94MDNT4COHlxB5fdOIEXnxni25/di12u3e+pswpc/ZUpHNld+7iY0pDkvtv7+PUdtZ4AJy3u4LJPT6Rj5P/Ts7XEbdftZV/NvguKRcGHb5rErOOK/PDzvTy/sfa+XQGcd9U43nXJWAptAmnDHzcc4o5/3Ift+J80K/wC5yhQzuEXwJLzx1bhB+g+psg7lnZ45i5Y0sHU7gIzjyly2tIOl+8xxxd5y4Ja+AGEBScvHMOx89tcvlXPY4c9nTUffXyRExTPYptg2ftrn4NTyV18QSdjx1uctHAMR89vc9V3yrs7XPBXPM95v/ezdRa9p7MKP8CMY4ssOKujBn4kzJ5f5Pi3t9M10eJdF3vXV4G/8j85cdEYjjqhzZ3bpPCDOgrUBPAjoVh0Z7S1C3cuw6BUor3dvV3BwyvIV/UsjqxXT3u8PNVt1LWFgPq89tXLU/X2av/wfhw+7anZD4Vpv/qque2OfWli+KH6I3kJNVaJDM75/aI+0krUOefX8fU759fx8IyE6qvJiHjO75vb5PADWAb+6L4G/nAeeYUfkrghRl3IGfyevknDFWK0RysShz9abl2PUQK/IO4NMepCA4c6Q/umCJduftb1JbYvowh+iHNDjLowCuHX8q6jp+WhE5l3ZB89b/BD1Bti1IVmgD+hSBP+JCLrTtjs8EOUG2LUhSaHPy/AxM1NyrvV4AefuUCjBv46F9CR3uwYoz069UWHP3hLA39thLoIdukG/ti+unN7gtsUgTVm/QmUd/gFIuQNMepCzia2eYbmxLYwfkGRF/gTO8KHHH72824G+EH32aAG/vi+CcFfs2UAXJpuLQM/6DwbdBTCH+gbY0qzn1+ypyHR4ffdlxaCH8I+G7TJ4Y/lWye/sfBj4Nf2cKyRYaZC5Ax+z8y8f8ObkEfc3Lr5LQi/IGgUqBngrxNpeaSZ24wduVnhh3pTIQz8iey3Tq5ufTqRWUduIvjBbxRoFMKfROQd/sSgi9pek8EPEX4n2MAfvb1cHeE1ZnWGaq8J4QfN3wkeTfBnDW6u9sXAX43QvxOcC/ibYHpDEiE8XgXnhvQ18Nd4hPqd4LzAn+g5bkbf8Op6Zw1/LO8mhx9C/E5w3uEP61ujJ3SkrkYa8KdQY9hoFfghiRtinPoohj+T+hT4E7tuMPD7esS7Icap5xR+1U8rPyg353N7dHNbDX6Ic0OMU887/DHyE732qNdK3uGP4JFn+CHqDTFOvcHw+0Wab3bcXFc0EH6d3NEEvyDsL8TU0xs82uMXqXn4nE8nAW7e4dfJbwb4QfeGGKc+iuH3jMTv5Eo2sv7E88tvFvhB54YYp553+HN6J5fweJVE+MEVXEd9LSmPPMIPYW+IceoG/khRA39Ajdr7ndJ8/lgeqp5D+EHj2aBV3cAfydsL/sT2O6Vxfh2PZoRfoDsK1GrTGzTzg3ObB/7EOn2O4QedUaCcwq/6xfaIEVnDD2hNbDPwe2vhRoHyDn8KHmF9Q3snDX9MD79z/laCHxlmFGgUwJ9mblrtpemd5r40E/wQNApk4K+ba+D30JsIfqg3CpRT+NP0iJsbJT+uR5r7ouPRjPAL/EaBmgx+ndy8wJ91fX7n/Il5NyH84DUKZOCP6R3cSpr1hfI18FejdhQo7/CnMM6vE6HgjwhXZqdOGXwP0SzwgzoK1Grwa94Zlib8vrk5uJOrbntNDj9URoFaEP5kz7UN/H4eeYYfHDfFexYWtjGl0VaFP7HTmKThD8jVfl9GCfwC10VwvuGP/WbnCH7f/0fG8MfN9ctvBvih5iLYwB81GgF/EnUk4dHM8EP1IniUw69Zh453Eh6A1sQ2Ld8UPZodfgCrFeCPm1ub7/Uq+TbzcsqShEde4QeNG2KaEn6fU4ok4NeqQ7PNrOHXjdECvyDkDTF5gV/rzfOpLxb8SQ91Ju3RoPqaFX4IcUOMgX/kVYPG0UNHg76HaGb4IcqzQZsU/uiRDfyxIkJ9dXNbBH7QfTboKIM/1Bl9k8PvW4ef3kLwg86zQVsOfvL/Da+BP5qHEuGeCtGK8Eepo16+xjl/Q/Yl9pdwzQe/kGGeCpEj+BOtI4VI7EicYXtAAl/CNSf8EPRUiBzCXxp0v1ulIemdq+ilIeny9vJSozxUvy31tVebgfUN1rblrM+rfT/P6jaDXpo7V/Uul2rX1dsXp1czww/1ngqRQ/gBHrzrIH377erya9vL/P63A565m349QM/WEq9tL/O0klOJV54bYvMjh5B2rS5teH7jINueryVDAE/+aoBdW0u8vr3M0w8MuNrc9qchNq8/7FkekvzuRwc963v4J3307bN5YeMgrzraAnjqVwPs3urWy0OShxVP1fuRH/dxsPfwDu3ZVubZB9z7/uqfhnju4UP077d57Kfe9f3ue33Vg4S04cWNg+xQ6mx2+AHEVUt2urt5TuGvhuY4f7AuIo/2+NYR85zfpWUw1Knn0fzwg9dUCAN/LG8Dv0Yd9bQM4AdnBzDwx/I28GvUUU/LCH6B44eyDfzRvQ38GnXU0zKEH5QfyjbwR/c28GvUUU/LGH4YuSfYwB/d28CvUUc9rQHwg+YvxKQNf/fcIt1zi4dFA380D1XPEfzT5hWZNq/ozm0Q/ABFD60h8F/+qYmcdm4nABt/2c+dX+w18EfxUPUcwX/+ZyfwtvM6AHjmFwPc+4X9Vc+wHqHa04BfEOeGGFWPCf/MOcUq/ACnndtJ9xx33zTwa7SXI/inzS1W4Qc4+bwOps4tNhx+iHpDjKoncM4/bqL764iuSZZnrq63gT+KR3LwA3ROcr+/Y5X3vFHwQ5QbYlQ9hYltOrkGfg89Z/AHRSPhB90bYlTdwB/NQ40WgT9Vjxjwg84NMapu4I/moYaBP75HTPhB92dSIZVx/tC5oXQDv75HtvD7RdbwC3R+JhUy+5LLLwz8HnozwO8Dq5aHqicEP4T9mVQw8Ef1UMPAH81D1ROEH8L8TCoY+KN6qGHgj+ah6gnDjwwzFcLAH81DjRaHP5H9TgF+CHo2qJnYFs1DDQN/NA9VTwl+qDcKlCX8Hjvo99Fk4I/j0Rj4RcG9jZS1O9MI+AV+o0AZH/kP9NqudfNOaa/jbeDX92jckf/YBW2u7Q7ulZ65Nd4pww/KbNBGnvbsfqXEwf02Yycc7o9nXTEOYcGWpwaRNfn+8L/5hs3OLSUDv0tPDv5p84p0TbHcuV7wCzjm1DZOv6KrxuvgPps9r5Tqt5cB/DDSARoJP4Bdhv/9n37OeN/hf5RVgLOvHAdX+jToE0+s62ftF/eHqs/Ar1EHtVOa48RT9wwg7cbDD+qpdoMveH99xwH27Cj7rA0fb1/WyYy5tVOpDfwjEefI75jSHDX2bi+z4fa+XMAPw9cAhxoNvwAG+iS3XfcGr78avxMEtWng16gjwdi7vczaj+9j6KA35VnDL+CQhaQ3kcaURqN6vLa9zOoPv85vfthHn8eFcZh4Yl0/PVv8zy8N/Bp1KLF7S4lnfuF+wlyYOLjPZsPtB/nOlW+wb7v3Aa4B8AO8Kf7hnTteAHFcrMaURmN7jOiWBVOPamP8FAvLCnc0OjByEeznbeDXqMNHmzavSNfkcDez2Db07Rm+4M3LOb9De6kIYg9wXJ7gB7Btwa6tJXZtTfANNPCHq6OOtvvPJU9dx6NGbxz8AAcsBM/lDX4QZpxf2yN9+JvpG95w76F43RLIZyM1pjRq4I/goeoG/mge6oIu/AhAPG9B4dn6iXV0A380D1U38EfzUBciwQ8CnrfaBwc3AeXQjSmNGvgjeKi6gT+ah7oQHX4k8nlrzaNHvSHgcQN/gGbgj+ah6jmCH6BNFjdXxrPuC1uYgT+ih6ob+KN5qAsx4UeIl6/ZNOUVC0DaYl2oIgz80TxU3cAfzUNdiAs/gC3vh5Hp0Leun74R+HPdIgz80TxU3cAfzUNdSAJ+QFjiAajeDyCkEOJ7vkUY+KN5qLqBP5qHupAQ/EC5JKXaAaAsrO8KcP8koYE/moeqG/ijeagLycEP8MANj0/rAaUDfPPBaT0I8fOaNAN/NA9VN/BH81AXkoUfS8ofVF+rK2zb/kK1OQN/NA9VN/BH81AXEoZfSPra+8XdleWaDnDrw91PSlhn4I/ooeoG/mge6kLy8AOs/cjmaQcqmuupEAVbfN7AH8FD1Q380TzUhXTgL0tL3KTqrg7w1fUzHgN+Wr+xsLqBX9/DwJ8S/EjkTz6xceoL6jrPB2MVhX0tcKCuaaBu4Nf3MPCnBT8ghZRfcq737AA3PzRrmxDiXw38Gu0Z+KN5qAvpwY+Q3L5y0wzX1H/PDgAwec+em5H8IbgIp27g1/cw8KcKv2Bvaci+0SvPtwOs2nzioCW5BOivV1itbuDX9zDwpwk/gG3Lz1z/zIzdXrm+HQBgzSMzNwvB9XUbU18Z+A38YTzUhZThBx59c9O023zS63cAgFsemvFNgbzHszH1lYHfwB/GQ11IGX4h2GuXS+9bhfB9xk5gBwAhy4NjrgSe8S7OwK/vYeDP4MgvpZAfuu733S/7bAKE6gDw9ceO2F8oy/Ml9NQWYeDX9zDwZwA/lpA3r9w4/W73GkdeUEIlVm/ofllK+bcC+qpFGfgN/GE81IUM4BeIe7qPneY56uOM0B0A4GvruzfZyOUg+g38Bv5QHupCJvDzYO+4A5e89y4R6iGzft5149pFu5aCvEfAWB1TA/9IGPhDeESC/8lDsnjGJzdN6XWv9Q6tT4BKrFk//X6kfS4j0yUcRXiGgX8kDPwhPCLB/ztd+CFiBwBY80j3w7ZtLQZeUYrwDAP/SBj4Q3hEOuf/mWw7tEwXfojRAQBu2TDtqaIsnA5sNPA7dQN/FkOdlpCrZ8058qKVjx7V77FJYES6BnDGtadv67QKxdtAXBFkbuDXqKOe1uLwC8FeKe0PrHxihueXtGEjkQ5QiZULey4WFrciOcLAPxIG/hAe2kf+R+1y6X1BX3KFiVinQM64+ZEZPy4NihMtwb3OdQZ+jTrqaa0N/z4EH589Z+riJOCv127MkOL6RT0XScSXgHkGfo066mmtC79EcEf5kH2D36zOqJFSBxiOqxbItkmduz8gpfwXYGqYhg38Plprwm8j+IWwxT9du2nqkz6psSLVDlCJGxe8MdHuGPwg8BEqnwghizHw04rw9wFrpSVuct7Dm3Rk0gEqsQpp9S/a9TdSiqtBngm01yvEwE8rwV8GHkDKOzv6xX+pjy5JMzLtAGqMfCqcKyQXCMEyYJK63sBPK8D/EpIHpBC/tZG/qTyuMMtoWAdQYxXSGjj9tbm2KJ9iCU6WUpwkBDMY7hSTkEwCOgz8mh6qnj38gwxPldmH5ACIPdKSLwjbeh7kc22yuPmaTVNe8dg00/h/GRbI43czVWAAAAAASUVORK5CYII="/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="Daily Use Tool"/>
+<meta name="mobile-web-app-capable" content="yes"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/exceljs/4.4.0/exceljs.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.5/JsBarcode.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+<style>
+:root{
+  --ink:#1A1D29;
+  --paper:#EEF1F3;
+  --surface:#FFFFFF;
+  --surface-2:#F4F6F8;
+  --navy:#1E2A5E;
+  --navy-ink:#141D45;
+  --amber:#E8A33D;
+  --amber-ink:#9C6B1F;
+  --success:#2F9E68;
+  --success-bg:#E6F4EC;
+  --danger:#D64545;
+  --danger-bg:#FBEAEA;
+  --line:#D7DCE2;
+  --muted:#667085;
+  --radius:3px;
+}
+body.dark{
+  --ink:#E7E9EE;
+  --paper:#12151C;
+  --surface:#1A1E27;
+  --surface-2:#20242E;
+  --navy:#4A5EBE;
+  --navy-ink:#C7D0F0;
+  --amber:#E8A33D;
+  --amber-ink:#F0C078;
+  --success:#55C88C;
+  --success-bg:#16311F;
+  --danger:#E56B6B;
+  --danger-bg:#3A1A1A;
+  --line:#2B303B;
+  --muted:#9BA3B0;
+}
+
+*{box-sizing:border-box}
+body{
+  font-family:'IBM Plex Mono','SFMono-Regular',Consolas,monospace;
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-size:14px;
+  line-height:1.6;
+  transition:background .15s,color .15s;
+}
+h2,h3{font-family:'Space Grotesk',sans-serif;font-weight:600;letter-spacing:-0.01em;color:var(--ink);margin:0 0 6px 0}
+h2{font-size:21px}
+h3{font-size:16px}
+
+/* ---- app shell: sidebar + main content ---- */
+.app-shell{display:flex;min-height:100vh}
+.sidebar{
+  width:250px;flex-shrink:0;background:var(--navy);color:#fff;
+  display:flex;flex-direction:column;height:100vh;position:sticky;top:0;overflow-y:auto;
+  border-right:3px solid var(--amber);
+}
+.sidebar-brand{
+  font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:17px;
+  padding:18px 16px 12px;display:flex;align-items:center;gap:8px;
+}
+.sidebar-brand .app-title-mark{color:var(--amber);font-size:15px}
+#sidebarSearch{
+  margin:0 16px 10px;width:calc(100% - 32px);background:rgba(255,255,255,.08);
+  border:1px solid rgba(255,255,255,.2);color:#fff;border-radius:var(--radius);padding:7px 9px;font-size:12.5px;
+  font-family:inherit;
+}
+#sidebarSearch::placeholder{color:rgba(255,255,255,.6)}
+.sidebar-nav{flex:1;padding:4px 0 12px}
+.sidebar-cat{
+  font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:rgba(255,255,255,.5);
+  padding:14px 16px 6px;font-family:'Space Grotesk',sans-serif;font-weight:600;
+}
+.sidebar-link{
+  display:flex;align-items:center;gap:8px;padding:8px 16px;color:rgba(255,255,255,.85);
+  text-decoration:none;font-size:13px;cursor:pointer;border-left:3px solid transparent;
+}
+.sidebar-link:hover{background:rgba(255,255,255,.07);color:#fff}
+.sidebar-link.active{background:rgba(255,255,255,.13);border-left-color:var(--amber);color:#fff;font-weight:600}
+#darkModeToggle{
+  margin:10px 16px 16px;background:rgba(255,255,255,.08);color:#fff;
+  border:1px solid rgba(255,255,255,.22);border-radius:var(--radius);
+  padding:9px 14px;cursor:pointer;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;
+}
+.main-content{flex:1;min-width:0;display:flex;justify-content:center}
+.page-body{max-width:1000px;width:100%;padding:24px}
+
+#sidebarToggle{
+  display:none;position:fixed;top:14px;left:14px;z-index:1000;
+  background:var(--navy);color:#fff;border:none;border-radius:var(--radius);
+  padding:8px 12px;font-size:16px;cursor:pointer;
+}
+
+@media (max-width: 900px){
+  .sidebar{position:fixed;left:0;top:0;z-index:999;transform:translateX(-100%);transition:transform .2s;width:260px}
+  .sidebar.open{transform:translateX(0)}
+  #sidebarToggle{display:block}
+  .page-body{padding:56px 14px 14px}
+}
+
+textarea{width:100%;height:160px;font-family:inherit;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);padding:8px}
+.section{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--navy);padding:14px 16px;margin-top:14px;border-radius:var(--radius)}
+label{display:inline-block;margin-top:8px;font-size:13px;color:var(--muted)}
+select,input[type=text],input[type=number],input[type=date],input[type=time],input[type=file]{
+  padding:7px 9px;margin:5px 5px 5px 0;font-family:inherit;font-size:13px;
+  background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);
+}
+select:focus,input:focus,textarea:focus{outline:2px solid var(--navy);outline-offset:1px}
+button{
+  font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px;
+  margin:5px 5px 5px 0;padding:9px 16px;cursor:pointer;
+  background:var(--navy);color:#fff;border:1px solid var(--navy);border-radius:var(--radius);
+  transition:background .12s,transform .05s;
+}
+button:hover{background:var(--navy-ink)}
+button:active{transform:translateY(1px)}
+button.secondary{background:var(--surface);color:var(--ink);border-color:var(--line)}
+button.secondary:hover{background:var(--surface-2)}
+button.filterBtn{background:var(--surface);color:var(--ink);border-color:var(--line)}
+button.filterBtn.active{background:var(--ink);color:var(--surface);border-color:var(--ink)}
+button:disabled{opacity:.45;cursor:not-allowed}
+small{color:var(--muted);display:block;margin:2px 0 6px 0;font-size:12px}
+.preview{white-space:pre-wrap;background:var(--surface);padding:10px;border:1px solid var(--line);margin-top:10px;max-height:420px;overflow:auto;border-radius:var(--radius)}
+.thumb{display:inline-block;border:1px solid var(--line);padding:6px;margin:4px;text-align:center;background:var(--surface-2);vertical-align:top;min-width:80px;border-radius:var(--radius)}
+.thumb img{max-width:180px;display:block;margin:0 auto}
+.thumb.fail{color:var(--danger);font-size:12px;background:var(--danger-bg)}
+#count,#count1,#reverseCount,#qcCount,#count4,#bqCount{font-weight:600;margin-top:8px;font-family:'Space Grotesk',sans-serif}
+.hint{font-size:12px;color:var(--muted)}
+.warn{font-size:12px;color:var(--danger);margin-top:4px}
+.progressWrap{background:var(--line);border-radius:var(--radius);overflow:hidden;height:8px;margin:8px 0;display:none;max-width:400px}
+.progressBar{height:100%;background:var(--amber);width:0%}
+table.qc{border-collapse:collapse;width:100%;margin-top:10px;font-size:13px}
+table.qc th,table.qc td{border:1px solid var(--line);padding:6px 8px;vertical-align:middle}
+table.qc th{background:var(--navy);color:#fff;font-family:'Space Grotesk',sans-serif;font-weight:600;text-align:left}
+tr.qc-pass{background:var(--success-bg)}
+tr.qc-fail{background:var(--danger-bg)}
+.perColType{margin:3px 0}
+.modeToggle{margin:8px 0}
+.modeToggle label{margin-right:16px;font-weight:normal}
+.simpleForm{background:var(--surface-2);border:1px dashed var(--line);padding:10px;border-radius:var(--radius);margin:8px 0}
+
+/* chooser screen */
+#chooser{max-width:1120px;margin:0 auto;text-align:left}
+#chooser h2{margin-bottom:4px}
+#chooser p{color:var(--muted);margin-top:0;font-size:13px}
+.tool-cards{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+.tool-card{
+  background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--navy);
+  border-radius:var(--radius);padding:18px;width:220px;cursor:pointer;text-align:left;
+  transition:transform .1s,border-color .12s;
+}
+.tool-card:hover{border-left-color:var(--amber);transform:translateY(-2px)}
+.tool-card h3{margin:0 0 6px 0;font-size:15px}
+.tool-card p{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
+.back-link{display:inline-block;margin-bottom:6px;color:var(--navy);cursor:pointer;font-size:13px;font-weight:600}
+body.dark .back-link{color:var(--navy-ink)}
+.tool-view{display:none}
+.category-heading{
+  text-align:left;margin:28px 0 10px;font-size:14px;font-family:'Space Grotesk',sans-serif;
+  font-weight:600;color:var(--ink);padding-left:12px;border-left:4px solid var(--amber);
+}
+#toolSearch{border:1px solid var(--line);font-size:13px;font-family:inherit}
+body.dark #toolSearch{background:var(--surface-2);color:var(--ink);border-color:var(--line)}
+
+.import-btn{display:inline-block;padding:9px 16px;background:var(--surface);color:var(--ink);border:1px solid var(--line);border-radius:var(--radius);cursor:pointer;margin:5px 5px 5px 0;font-family:'Space Grotesk',sans-serif;font-weight:600;font-size:13px}
+mark{background:var(--amber);color:var(--ink);padding:0 2px;border-radius:2px}
+
+.quickstart-drop{
+  border:2px dashed var(--line);border-radius:var(--radius);padding:28px 20px;text-align:center;
+  margin:18px 0;background:var(--surface);transition:border-color .15s,background .15s;
+}
+.quickstart-drop.dragover{border-color:var(--amber);background:var(--surface-2)}
+.quickstart-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--amber);color:var(--ink);font-family:'Space Grotesk',sans-serif;font-weight:700;
+  padding:14px 30px;border-radius:var(--radius);cursor:pointer;font-size:14px;letter-spacing:.02em;
+}
+.quickstart-btn:hover{background:var(--amber-ink);color:#fff}
+.quickstart-btn::before{content:"+";font-size:18px;line-height:1}
+
+.tool-icon{width:40px;height:40px;border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:19px;margin-bottom:8px;background:var(--navy);color:#fff}
+.pdf-sub{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--navy);padding:14px;border-radius:var(--radius);margin-top:10px}
+
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;margin-top:10px;max-width:560px}
+.cal-day-head{font-weight:600;text-align:center;font-size:12px;color:var(--muted);padding:4px 0;font-family:'Space Grotesk',sans-serif}
+.cal-cell{aspect-ratio:1;border:1px solid var(--line);border-radius:var(--radius);padding:4px;font-size:12px;position:relative;background:var(--surface)}
+.cal-cell.empty{border:none;background:transparent}
+.cal-cell .cal-daynum{font-weight:600}
+.cal-cell.has-hindu{background:#FFF1DC}
+.cal-cell.has-govt{background:var(--danger-bg)}
+.cal-cell.has-both{background:linear-gradient(135deg,#FFF1DC 50%,var(--danger-bg) 50%)}
+.cal-dot{width:6px;height:6px;border-radius:50%;display:inline-block;margin-top:2px}
+body.dark .cal-cell{background:var(--surface);border-color:var(--line);color:var(--ink)}
+body.dark .cal-cell.has-hindu{background:#3A2A15}
+body.dark .cal-cell.has-govt{background:var(--danger-bg)}
+body.dark .cal-cell.has-both{background:linear-gradient(135deg,#3A2A15 50%,var(--danger-bg) 50%)}
+
+/* mobile-friendly layout */
+@media (max-width: 640px){
+  .page-body{padding:12px}
+  .app-header{padding:16px 14px 14px}
+  .app-header-inner{padding-right:40px}
+  .app-title{font-size:19px}
+  h2{font-size:18px}
+  .tool-cards{flex-direction:column}
+  .tool-card{width:auto}
+  .section{padding:10px}
+  input[type=text], input[type=number], input[type=date], input[type=time], select, textarea{
+    width:100% !important; box-sizing:border-box; max-width:100%;
+  }
+  select[multiple]{height:140px}
+  label{display:block;margin-top:10px}
+  .modeToggle label{display:inline-block;margin-right:14px;margin-top:6px}
+  table.qc{display:block;overflow-x:auto;white-space:nowrap}
+  .preview{overflow-x:auto}
+  #darkModeToggle{top:6px;right:6px;padding:4px 10px;font-size:13px}
+}
+</style>
+</head>
+
+<body>
+
+<button id="sidebarToggle" onclick="toggleSidebar()">☰</button>
+
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-brand"><span class="app-title-mark">▮▯▮</span> Daily Use Tool</div>
+  <input type="text" id="sidebarSearch" placeholder="🔍 Search tools..." oninput="filterSidebarNav()"/>
+  <nav class="sidebar-nav" id="sidebarNav">
+    <a class="sidebar-link" data-tool="__home__" onclick="navGo('__home__')">🏠 Home</a>
+
+    <div class="sidebar-cat">SKU &amp; Barcode Tools</div>
+    <a class="sidebar-link" data-tool="tool1" data-name="sku text expander" onclick="navGo('tool1')">🔤 SKU Text Expander</a>
+    <a class="sidebar-link" data-tool="tool2" data-name="excel barcode qr" onclick="navGo('tool2')">📊 Excel + Barcode/QR</a>
+    <a class="sidebar-link" data-tool="tool3" data-name="qc barcode module" onclick="navGo('tool3')">✅ QC + Barcode Module</a>
+    <a class="sidebar-link" data-tool="tool4" data-name="image link image excel" onclick="navGo('tool4')">🖼️ Image Link → Image</a>
+    <a class="sidebar-link" data-tool="tool5" data-name="barcode qr generator synced" onclick="navGo('tool5')">🔳 Barcode + QR Generator</a>
+    <a class="sidebar-link" data-tool="tool6" data-name="scan to verify camera" onclick="navGo('tool6')">📷 Scan to Verify</a>
+
+    <div class="sidebar-cat">Daily Utilities</div>
+    <a class="sidebar-link" data-tool="tool7" data-name="to-do task tracker" onclick="navGo('tool7')">📝 Daily To-Do Tracker</a>
+    <a class="sidebar-link" data-tool="tool8" data-name="expense tracker" onclick="navGo('tool8')">💰 Expense Tracker</a>
+    <a class="sidebar-link" data-tool="tool9" data-name="unit currency converter" onclick="navGo('tool9')">🔁 Unit &amp; Currency Converter</a>
+    <a class="sidebar-link" data-tool="tool10" data-name="date age calculator" onclick="navGo('tool10')">📅 Date &amp; Age Calculator</a>
+    <a class="sidebar-link" data-tool="tool11" data-name="password generator" onclick="navGo('tool11')">🔒 Password Generator</a>
+    <a class="sidebar-link" data-tool="tool12" data-name="text utilities" onclick="navGo('tool12')">✏️ Text Utilities</a>
+    <a class="sidebar-link" data-tool="tool13" data-name="qr generator general" onclick="navGo('tool13')">🔳 QR Generator (General)</a>
+    <a class="sidebar-link" data-tool="tool14" data-name="habit tracker" onclick="navGo('tool14')">🔥 Habit Tracker</a>
+    <a class="sidebar-link" data-tool="tool15" data-name="reminder tool" onclick="navGo('tool15')">⏰ Reminder Tool</a>
+
+    <div class="sidebar-cat">Documents &amp; Planning</div>
+    <a class="sidebar-link" data-tool="tool16" data-name="pdf tools merge split word excel" onclick="navGo('tool16')">📄 PDF Tools</a>
+    <a class="sidebar-link" data-tool="tool17" data-name="calendar hindu festivals holidays" onclick="navGo('tool17')">📅 Calendar</a>
+    <a class="sidebar-link" data-tool="tool18" data-name="calculator" onclick="navGo('tool18')">🧮 Calculator</a>
+
+    <div class="sidebar-cat">File &amp; Image Converters</div>
+    <a class="sidebar-link" data-tool="tool19" data-name="zip unzip image resize compress convert" onclick="navGo('tool19')">🗜️ File &amp; Image Converters</a>
+  </nav>
+  <button id="darkModeToggle" onclick="toggleDarkMode()">🌙 Dark Mode</button>
+</aside>
+
+<main class="main-content">
+<div class="page-body">
+
+<!-- ===================== CHOOSER SCREEN ===================== -->
+<div id="chooser">
+  <h2>Daily Use Tool</h2>
+  <div class="hint" style="font-size:13px;margin-bottom:2px">All-in-one toolkit — barcode, QC, PDF, and everyday utilities, all in your browser.</div>
+  <p>Choose what you want to do from the sidebar, or drop a file below to jump straight in:</p>
+
+  <div class="quickstart-drop" id="quickstartDrop">
+    <label for="quickstartFile" class="quickstart-btn">+ Select File(s)</label>
+    <input type="file" id="quickstartFile" style="display:none" onchange="quickstartFileChosen(this.files)"/>
+    <div class="hint" style="margin-top:10px">or drag &amp; drop a file here — Excel/CSV opens Excel + Barcode/QR, PDF opens PDF Tools, images/ZIP open File &amp; Image Converters.</div>
+  </div>
+
+  <div class="section" style="text-align:left;margin-top:18px">
+    <b>Recent downloads (this session):</b>
+    <div id="historyPanel"><div class="hint">No downloads yet this session.</div></div>
+  </div>
+
+  <div class="section" style="text-align:left;margin-top:16px">
+    <b>Backup your data</b>
+    <div class="hint">To-Do, Expense, and Habit Tracker data lives only in this browser — export it before switching phone/browser/PC, or to keep a safe copy.</div>
+    <button onclick="exportAllData()">Export My Data (JSON)</button>
+    <label class="secondary import-btn">
+      Import Data
+      <input type="file" accept=".json" onchange="importAllData(event)" style="display:none"/>
+    </label>
+  </div>
+</div>
+
+<!-- ===================== TOOL 1: SKU TEXT EXPANDER ===================== -->
+<div id="tool1" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>SKU Expander — Advanced</h2>
+
+<div class="modeToggle">
+  <label><input type="radio" name="t1Mode" value="text" checked onchange="t1ModeChange()"/> Text (paste)</label>
+  <label><input type="radio" name="t1Mode" value="excel" onchange="t1ModeChange()"/> Excel / CSV (update file)</label>
+</div>
+
+<label>Format:</label>
+<select id="format">
+  <option value="default">SKU-QQ-SS</option>
+  <option value="slash">SKU/QQ-SS</option>
+  <option value="mix">SKU-QQ/SS</option>
+  <option value="doubleSlash">SKU/QQ/SS</option>
+  <option value="custom">Custom Format</option>
+</select>
+
+<input id="customFormat" placeholder="Enter custom format e.g. {SKU}/{QQ}-{SS}" style="width:300px"/>
+
+<label>Start serial from:</label>
+<input type="number" id="startSerial" value="1" style="width:70px"/>
+<small>Change this if you're continuing numbering from a previous batch (e.g. start from 4 instead of 1). Applies to both Text and Excel modes.</small>
+
+<!-- TEXT MODE -->
+<div id="t1TextMode">
+<textarea id="input">LA-HL-07-474	3</textarea><br>
+
+<button onclick="generate()">Generate</button>
+<button onclick="copy()">Copy</button>
+<button onclick="downloadCSV()">Download CSV</button>
+<button class="secondary" onclick="resetTool1()">Reset</button>
+
+<div id="count1"></div>
+<div id="dupWarning1" class="warn"></div>
+<div id="preview1" class="preview"></div>
+<button onclick="t1SendExpandedToBQ()">Send to Barcode+QR Generator</button>
+<button onclick="t1SendExpandedToQC()">Send to QC Module</button>
+</div>
+
+<!-- EXCEL MODE -->
+<div id="t1ExcelMode" style="display:none">
+<div class="section">
+  <label>1) Upload file (.xlsx or .csv):</label><br>
+  <input type="file" id="t1FileInput" accept=".xlsx,.csv"/>
+  <button class="secondary" onclick="resetTool1Excel()">Reset</button>
+  <div id="t1UploadStatus" class="hint"></div>
+</div>
+
+<div class="section" id="t1SheetSection" style="display:none">
+  <label>2) Sheet:</label>
+  <select id="t1SheetSelect"></select>
+  <button onclick="t1OnSheetChosen()">Load Sheet</button>
+
+  <div id="t1ImportPreview"></div>
+
+  <div id="t1ColumnsBlock" style="display:none">
+    <br>
+    <label>SKU column:</label>
+    <select id="t1SkuCol"></select>
+    <label>Qty column:</label>
+    <select id="t1QtyCol"></select>
+    <br>
+    <label>Row selection:</label>
+    <select id="rowMode1" onchange="onRowModeChange1()">
+      <option value="all">All data rows</option>
+      <option value="range">Row range (Excel row numbers)</option>
+      <option value="specific">Specific rows (comma separated)</option>
+    </select><br>
+    <span id="rangeInputs1" style="display:none">
+      From row <input type="number" id="rangeStart1" value="2" style="width:70px"/>
+      to row <input type="number" id="rangeEnd1" value="10" style="width:70px"/>
+    </span>
+    <span id="specificInputs1" style="display:none">
+      Rows: <input type="text" id="specificRows1" placeholder="e.g. 2,5,9,12" style="width:220px"/>
+    </span>
+    <br>
+    <label>Output column name:</label>
+    <input type="text" id="t1OutColName" value="Box No" style="width:120px"/>
+    <label>Put expanded value in:</label>
+    <select id="t1OutMode">
+      <option value="overwrite" selected>Same column as Qty (overwrite — one row per unit)</option>
+      <option value="new">A new column (Qty column stays as-is, one row per unit)</option>
+    </select>
+    <div class="hint">Each SKU+Qty row becomes multiple rows in the output — one row per unit, with the SKU (and any other columns) repeated and the expanded value (e.g. Box No) filled in per row.</div>
+    <br>
+    <button onclick="t1PreviewExcel()">Preview</button>
+    <button onclick="t1GenerateExcel()">Generate &amp; Download Excel</button>
+  </div>
+</div>
+
+<div id="t1Count"></div>
+<div id="t1Preview" class="preview"></div>
+</div>
+
+<hr style="margin:24px 0">
+
+<h2>Reverse — Collapse Expanded List back to SKU + Qty</h2>
+<div class="hint">Paste expanded lines (e.g. LA-HL-07-474-03-01, LA-HL-07-474-03-02 ...) generated with the same Format selected above, and get back the original "SKU + Qty" list.</div>
+
+<textarea id="reverseInput">LA-HL-07-474-03-01
+LA-HL-07-474-03-02
+LA-HL-07-474-03-03</textarea><br>
+
+<button onclick="reverseGenerate()">Reverse</button>
+<button onclick="reverseCopy()">Copy</button>
+<button onclick="reverseDownloadCSV()">Download CSV</button>
+
+<div id="reverseCount"></div>
+<div id="reversePreview" class="preview"></div>
+<button onclick="t1SendReverseToBQ()">Send SKUs to Barcode+QR Generator</button>
+<button onclick="t1SendReverseToQC()">Send SKUs to QC Module</button>
+</div>
+
+<!-- ===================== TOOL 2: EXCEL + BARCODE/QR ===================== -->
+<div id="tool2" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>SKU Expander — Excel + Barcode/QR</h2>
+<div class="hint">Upload an Excel (.xlsx) or CSV file, pick one or more SKU columns and rows, generate Code128/QR codes for each, and insert them into a new download — your original file is never modified.</div>
+
+<div class="section">
+  <label>1) Upload file (.xlsx or .csv):</label><br>
+  <input type="file" id="fileInput" accept=".xlsx,.csv"/>
+  <button class="secondary" onclick="resetTool2()">Reset</button>
+  <div id="uploadStatus" class="hint"></div>
+</div>
+
+<div class="section" id="sheetSection" style="display:none">
+  <label>2) Sheet:</label>
+  <select id="sheetSelect"></select>
+  <button onclick="onSheetChosen()">Load Sheet</button>
+
+  <div id="importPreview2"></div>
+
+  <div id="columnsBlock" style="display:none">
+    <br>
+    <label>Filter columns:</label>
+    <input type="text" id="colFilter" placeholder="Type to filter column list" style="width:220px" oninput="filterColumnList()"/>
+    <br>
+    <label>SKU column(s):</label><br>
+    <select id="skuColumnSelect" multiple size="6" style="min-width:260px"></select>
+    <small>Hold Ctrl (Windows) / Cmd (Mac) and click to pick multiple columns. A code will be generated for each selected column.</small>
+
+    <label>Row selection:</label>
+    <select id="rowMode" onchange="onRowModeChange()">
+      <option value="all">All data rows</option>
+      <option value="range">Row range (Excel row numbers)</option>
+      <option value="specific">Specific rows (comma separated)</option>
+    </select><br>
+    <span id="rangeInputs" style="display:none">
+      From row <input type="number" id="rangeStart" value="2" style="width:70px"/>
+      to row <input type="number" id="rangeEnd" value="10" style="width:70px"/>
+    </span>
+    <span id="specificInputs" style="display:none">
+      Rows: <input type="text" id="specificRows" placeholder="e.g. 2,5,9,12" style="width:220px"/>
+    </span>
+    <small>Row numbers refer to actual Excel row numbers (row 1 = header).</small>
+  </div>
+</div>
+
+<div class="section" id="codeSection" style="display:none">
+  <label>3) Default code type:</label>
+  <select id="codeType">
+    <option value="code128">Code 128 (Barcode)</option>
+    <option value="ean13">EAN-13</option>
+    <option value="upc">UPC-A</option>
+    <option value="qr">QR Code</option>
+  </select>
+
+  <label>Size / quality:</label>
+  <select id="sizeSelect">
+    <option value="0.7">Small</option>
+    <option value="1">Medium</option>
+    <option value="1.5" selected>Large</option>
+  </select>
+
+  <br>
+  <label><input type="checkbox" id="showText" checked/> Show SKU text under code</label>
+
+  <div id="perColTypeBlock" style="margin-top:8px"></div>
+  <small>Each selected SKU column can use a different code type above (e.g. Barcode for SKU, QR for Box No) — defaults to the "Default code type" selected.</small>
+
+  <br>
+  <label>4) Output columns:</label>
+  <div class="hint">A new column is added automatically after the last column for each selected SKU column, headed "&lt;original header&gt; (Barcode/QR)". The output is styled as a clean bordered table with bold centered headers.</div>
+
+  <div id="dupWarning2" class="warn"></div>
+  <div class="progressWrap" id="progressWrap2"><div class="progressBar" id="progressBar2"></div></div>
+
+  <br>
+  <button onclick="previewSelection()">Preview</button>
+  <button onclick="generateAndDownload()" id="genBtn">Generate &amp; Download Excel</button>
+  <button onclick="downloadZipTool2()">Download Barcodes as ZIP</button>
+  <label>Label size:</label>
+  <select id="labelSize2"></select>
+  <button onclick="printLabelsTool2()">Print Labels</button>
+</div>
+
+<div id="count"></div>
+<div id="preview" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 3: QC + BARCODE MODULE ===================== -->
+<div id="tool3" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>QC + Barcode Module</h2>
+
+<div class="modeToggle">
+  <label><input type="radio" name="qcMode" value="multiple" checked onchange="qcModeChange()"/> Multiple (paste list)</label>
+  <label><input type="radio" name="qcMode" value="simple" onchange="qcModeChange()"/> Simple (add one at a time)</label>
+</div>
+
+<div id="qcMultipleBlock">
+<div class="hint">Paste one item per line as: SKU [Tab] Pass/Fail [Tab] Remarks (Remarks optional; Status defaults to Pass if left blank).</div>
+<textarea id="qcInput">LA-WL-WM-067	Pass	
+LA-WL-WM-068	Fail	Crack on top
+LA-WL-WM-069	Pass	Minor scratch, acceptable</textarea>
+</div>
+
+<div id="qcSimpleBlock" class="simpleForm" style="display:none">
+  <label>SKU:</label> <input type="text" id="qcSimpleSku" placeholder="SKU"/>
+  <label>Status:</label>
+  <select id="qcSimpleStatus"><option value="Pass">Pass</option><option value="Fail">Fail</option></select>
+  <label>Remarks:</label> <input type="text" id="qcSimpleRemarks" placeholder="Optional remarks" style="width:220px"/>
+  <button onclick="qcAddSimple()">Add to list</button>
+  <div class="hint" id="qcSimpleListCount">0 item(s) in list so far.</div>
+</div>
+
+<label>Code type:</label>
+<select id="qcCodeType">
+  <option value="code128">Code 128 (Barcode)</option>
+  <option value="ean13">EAN-13</option>
+  <option value="upc">UPC-A</option>
+  <option value="qr">QR Code</option>
+</select>
+
+<label>Size / quality:</label>
+<select id="qcSizeSelect">
+  <option value="0.7">Small</option>
+  <option value="1">Medium</option>
+  <option value="1.5" selected>Large</option>
+</select>
+
+<br>
+<label><input type="checkbox" id="qcShowText" checked/> Show SKU text under code</label>
+<label><input type="checkbox" id="qcGenFail"/> Also generate barcode for Fail items</label>
+
+<br>
+<label><input type="checkbox" id="qcAddSerial" checked/> Add serial number</label>
+<input type="number" id="qcStartSerial" value="1" style="width:70px" placeholder="Start from"/>
+<label style="margin-left:12px"><input type="checkbox" id="qcSerialInBarcode"/> Include serial in barcode value (SKU-Serial)</label>
+<small>Serial numbers run in the order items are listed.</small>
+
+<br>
+<button onclick="qcProcess()">Process QC List</button>
+<button class="secondary" onclick="resetTool3()">Reset</button>
+
+<div id="qcCount"></div>
+<div id="qcDupWarning" class="warn"></div>
+<div class="progressWrap" id="progressWrap3"><div class="progressBar" id="progressBar3"></div></div>
+
+<div id="qcFilterBar" style="display:none">
+  <button class="filterBtn active" id="qcFilterAllBtn" onclick="qcFilter('all')">All</button>
+  <button class="filterBtn" id="qcFilterPassBtn" onclick="qcFilter('pass')">Pass Only</button>
+  <button class="filterBtn" id="qcFilterFailBtn" onclick="qcFilter('fail')">Fail Only</button>
+</div>
+
+<div id="qcPreview"></div>
+
+<br>
+<label>Label size for print:</label>
+<select id="labelSize3"></select>
+<button onclick="qcGenerateExcel()">Download QC Report (Excel)</button>
+<button onclick="qcDownloadZip()">Download Barcodes as ZIP</button>
+<button onclick="qcPrintLabels()">Print Labels (Pass items)</button>
+<button onclick="qcSendPassToBQ()">Send Pass items &rarr; Barcode+QR Generator</button>
+</div>
+
+<!-- ===================== TOOL 4: IMAGE LINK -> IMAGE (EXCEL) ===================== -->
+<div id="tool4" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Image Link &rarr; Image (Excel)</h2>
+<div class="hint">Upload an Excel/CSV file that has a column of image URLs. Tell the tool which column holds the links, and it fetches each image and inserts it into a new column right after — the original file is never modified.
+Note: some image hosts block cross-origin (CORS) fetching from the browser; the tool automatically retries through a public image proxy, and falls back to a clickable link if that also fails.</div>
+
+<div class="section">
+  <label>1) Upload file (.xlsx or .csv):</label><br>
+  <input type="file" id="fileInput4" accept=".xlsx,.csv"/>
+  <button class="secondary" onclick="resetTool4()">Reset</button>
+  <div id="uploadStatus4" class="hint"></div>
+</div>
+
+<div class="section" id="sheetSection4" style="display:none">
+  <label>2) Sheet:</label>
+  <select id="sheetSelect4"></select>
+  <button onclick="onSheetChosen4()">Load Sheet</button>
+
+  <div id="importPreview4"></div>
+
+  <div id="columnsBlock4" style="display:none">
+    <br>
+    <label>Filter columns:</label>
+    <input type="text" id="colFilter4" placeholder="Type to filter column list" style="width:220px" oninput="filterColumnList4()"/>
+    <br>
+    <label>Image link column(s):</label><br>
+    <select id="linkColumnSelect" multiple size="6" style="min-width:260px"></select>
+    <small>Hold Ctrl / Cmd and click to pick multiple link columns.</small>
+
+    <div id="linkOutputMapBlock" style="margin-top:8px"></div>
+    <small>Choose exactly which column each link column's image goes into — pick an existing column, or add a new one.</small>
+
+    <label>Row selection:</label>
+    <select id="rowMode4" onchange="onRowModeChange4()">
+      <option value="all">All data rows</option>
+      <option value="range">Row range (Excel row numbers)</option>
+      <option value="specific">Specific rows (comma separated)</option>
+    </select><br>
+    <span id="rangeInputs4" style="display:none">
+      From row <input type="number" id="rangeStart4" value="2" style="width:70px"/>
+      to row <input type="number" id="rangeEnd4" value="10" style="width:70px"/>
+    </span>
+    <span id="specificInputs4" style="display:none">
+      Rows: <input type="text" id="specificRows4" placeholder="e.g. 2,5,9,12" style="width:220px"/>
+    </span>
+    <small>Row numbers refer to actual Excel row numbers (row 1 = header).</small>
+  </div>
+</div>
+
+<div class="section" id="imgOptionsSection" style="display:none">
+  <label>3) Max image width (px):</label>
+  <input type="number" id="imgMaxWidth" value="150" style="width:80px"/>
+  <small>Images are scaled down to this width (keeping aspect ratio) before insertion; smaller originals are kept as-is.</small>
+
+  <label><input type="checkbox" id="fallbackLinkOnFail" checked/> If an image can't be fetched, insert a clickable link instead of leaving it blank</label>
+  <small>Excel has no live "=IMAGE(link)" formula like Google Sheets — images are always embedded as actual pictures. When a link is blocked (CORS) and can't be fetched at all, this puts a clickable "Open Image" link in that cell so nothing is lost.</small>
+
+  <div class="hint">Pick the destination column for each link column above — an existing column will have its cell overwritten with the image; "+ Add new column" appends a fresh one.</div>
+
+  <div id="imgWarning4" class="warn"></div>
+  <div class="progressWrap" id="progressWrap4"><div class="progressBar" id="progressBar4"></div></div>
+
+  <br>
+  <button onclick="previewImagesTool4()">Preview</button>
+  <button onclick="generateImagesTool4()" id="genBtn4">Generate &amp; Download Excel</button>
+  <button onclick="downloadZipTool4()">Download Images as ZIP</button>
+  <label>Label size:</label>
+  <select id="labelSize4"></select>
+  <button onclick="printImagesTool4()">Print Images</button>
+</div>
+
+<div id="count4"></div>
+<div id="preview4" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 5: BARCODE + QR GENERATOR (SYNCED) ===================== -->
+<div id="tool5" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Barcode + QR Generator — Synced Pairs</h2>
+
+<div class="modeToggle">
+  <label><input type="radio" name="bqMode" value="multiple" checked onchange="bqModeChange()"/> Multiple (paste list)</label>
+  <label><input type="radio" name="bqMode" value="simple" onchange="bqModeChange()"/> Simple (add one at a time)</label>
+</div>
+
+<div id="bqMultipleBlock">
+<div class="hint">Paste one value per line (SKU, Box No, or anything else). A matched Barcode AND QR Code are generated together for each value.</div>
+<textarea id="bqInput">LA-WL-WM-067/32-01
+LA-WL-WM-067/32-02
+LA-WL-WM-067/32-03</textarea>
+</div>
+
+<div id="bqSimpleBlock" class="simpleForm" style="display:none">
+  <label>Value:</label> <input type="text" id="bqSimpleValue" placeholder="e.g. LA-WL-WM-067/32-01" style="width:260px"/>
+  <button onclick="bqAddSimple()">Add to list</button>
+  <div class="hint" id="bqSimpleListCount">0 item(s) in list so far.</div>
+</div>
+
+<label>Size / quality:</label>
+<select id="bqSizeSelect">
+  <option value="0.7">Small</option>
+  <option value="1">Medium</option>
+  <option value="1.5" selected>Large</option>
+</select>
+
+<br>
+<label><input type="checkbox" id="bqShowText" checked/> Show value text under each code</label>
+
+<br>
+<button onclick="bqProcess()">Generate</button>
+<button class="secondary" onclick="resetTool5()">Reset</button>
+
+<div id="bqCount"></div>
+<div id="bqDupWarning" class="warn"></div>
+<div class="progressWrap" id="progressWrap5"><div class="progressBar" id="progressBar5"></div></div>
+
+<div id="bqPreview"></div>
+
+<br>
+<button onclick="bqDownloadExcel()">Download Excel (Value + Barcode + QR)</button>
+<button onclick="bqDownloadZip()">Download Barcodes &amp; QR as ZIP</button>
+<label>Label size:</label>
+<select id="labelSize5"></select>
+<button onclick="bqPrintLabels()">Print Labels (Barcode + QR together)</button>
+<button onclick="bqSendToQC()">Send to QC Module</button>
+</div>
+
+<!-- ===================== TOOL 6: SCAN TO VERIFY ===================== -->
+<div id="tool6" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Scan to Verify</h2>
+<div class="hint">Point your camera at a printed or on-screen barcode/QR code to check it decodes correctly. Requires a browser with camera barcode-scanning support (Chrome or Edge, desktop or Android) and a secure context (https, or this file served locally) — camera access may not work when just double-clicking the file in some browsers/OS combos.</div>
+
+<video id="scanVideo" style="width:100%;max-width:400px;background:#000;border-radius:6px" muted playsinline></video>
+<br>
+<button onclick="startScan()">Start Camera</button>
+<button class="secondary" onclick="stopScan()">Stop Camera</button>
+<button class="secondary" onclick="resetTool6()">Reset</button>
+
+<br>
+<label>Expected value (optional):</label>
+<input type="text" id="scanExpected" placeholder="Paste the value you expect to see" style="width:260px"/>
+
+<div id="scanResult" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 7: DAILY TO-DO TRACKER ===================== -->
+<div id="tool7" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Daily To-Do Tracker</h2>
+<div class="hint">Saved in this browser (localStorage) — stays here next time you open this file on the same device/browser.</div>
+
+<label>Task:</label>
+<input type="text" id="todoText" placeholder="What needs doing?" style="width:260px"/>
+<label>Priority:</label>
+<select id="todoPriority"><option>Low</option><option selected>Medium</option><option>High</option></select>
+<button onclick="todoAdd()">Add</button>
+
+<br>
+<button class="filterBtn active" id="todoFilterAllBtn" onclick="todoFilter('all')">All</button>
+<button class="filterBtn" id="todoFilterPendingBtn" onclick="todoFilter('pending')">Pending</button>
+<button class="filterBtn" id="todoFilterDoneBtn" onclick="todoFilter('done')">Done</button>
+<button class="secondary" onclick="todoClearDone()">Clear Completed</button>
+
+<div id="todoCount" class="hint"></div>
+<div id="todoList"></div>
+</div>
+
+<!-- ===================== TOOL 8: EXPENSE TRACKER ===================== -->
+<div id="tool8" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Expense Tracker</h2>
+<div class="hint">Saved in this browser (localStorage).</div>
+
+<label>Date:</label><input type="date" id="expDate"/>
+<label>Category:</label>
+<select id="expCategory"><option>Food</option><option>Transport</option><option>Shopping</option><option>Bills</option><option>Other</option></select>
+<label>Amount:</label><input type="number" id="expAmount" style="width:100px"/>
+<label>Note:</label><input type="text" id="expNote" placeholder="Optional" style="width:180px"/>
+<button onclick="expAdd()">Add</button>
+<button class="secondary" onclick="expClearAll()">Clear All</button>
+
+<div id="expTotal" class="hint"></div>
+<div id="expBreakdown"></div>
+<table class="qc" id="expTable"><tr><th>Date</th><th>Category</th><th>Amount</th><th>Note</th><th></th></tr></table>
+</div>
+
+<!-- ===================== TOOL 9: UNIT & CURRENCY CONVERTER ===================== -->
+<div id="tool9" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Unit &amp; Currency Converter</h2>
+
+<label>Type:</label>
+<select id="convType" onchange="convTypeChange()">
+  <option value="length">Length</option>
+  <option value="weight">Weight</option>
+  <option value="temp">Temperature</option>
+  <option value="currency">Currency</option>
+</select>
+
+<br>
+<input type="number" id="convValue" value="1" style="width:120px"/>
+<select id="convFrom"></select>
+&rarr;
+<select id="convTo"></select>
+<button onclick="convGo()">Convert</button>
+
+<div id="convResult" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 10: DATE & AGE CALCULATOR ===================== -->
+<div id="tool10" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Date &amp; Age Calculator</h2>
+
+<div class="modeToggle">
+  <label><input type="radio" name="dateMode" value="age" checked onchange="dateModeChange()"/> Age from birth date</label>
+  <label><input type="radio" name="dateMode" value="diff" onchange="dateModeChange()"/> Difference between 2 dates</label>
+  <label><input type="radio" name="dateMode" value="add" onchange="dateModeChange()"/> Add/subtract days</label>
+</div>
+
+<div id="dateAgeBlock">
+  <label>Birth date:</label><input type="date" id="dobInput"/>
+  <button onclick="calcAge()">Calculate</button>
+</div>
+<div id="dateDiffBlock" style="display:none">
+  <label>Date 1:</label><input type="date" id="date1Input"/>
+  <label>Date 2:</label><input type="date" id="date2Input"/>
+  <button onclick="calcDiff()">Calculate</button>
+</div>
+<div id="dateAddBlock" style="display:none">
+  <label>Start date:</label><input type="date" id="dateAddStart"/>
+  <label>Days:</label><input type="number" id="dateAddDays" value="30" style="width:90px"/>
+  <button onclick="calcAdd()">Calculate</button>
+</div>
+
+<div id="dateResult" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 11: PASSWORD GENERATOR ===================== -->
+<div id="tool11" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Password Generator &amp; Strength Checker</h2>
+
+<label>Length:</label><input type="number" id="pwLength" value="16" min="4" max="64" style="width:70px"/>
+<label><input type="checkbox" id="pwUpper" checked/> A-Z</label>
+<label><input type="checkbox" id="pwLower" checked/> a-z</label>
+<label><input type="checkbox" id="pwNumbers" checked/> 0-9</label>
+<label><input type="checkbox" id="pwSymbols" checked/> Symbols</label>
+<br>
+<button onclick="pwGenerate()">Generate</button>
+<button onclick="pwCopy()">Copy</button>
+
+<div id="pwOutput" class="preview" style="font-size:18px;letter-spacing:1px"></div>
+
+<hr style="margin:20px 0">
+<h2>Check a Password's Strength</h2>
+<input type="text" id="pwCheckInput" placeholder="Paste a password to check" style="width:260px"/>
+<button onclick="pwCheckStrength()">Check</button>
+<div id="pwStrengthResult" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 12: TEXT UTILITIES ===================== -->
+<div id="tool12" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Text Utilities</h2>
+
+<textarea id="txtInput">Paste or type text here</textarea>
+<div id="txtStats" class="hint"></div>
+
+<button onclick="txtUpper()">UPPERCASE</button>
+<button onclick="txtLower()">lowercase</button>
+<button onclick="txtTitle()">Title Case</button>
+<button onclick="txtDedupe()">Remove Duplicate Lines</button>
+<button onclick="txtTrim()">Trim Extra Spaces</button>
+<button onclick="txtCount()">Word/Char Count</button>
+
+<br>
+<label>Find:</label><input type="text" id="txtFind" style="width:160px"/>
+<label>Replace:</label><input type="text" id="txtReplace" style="width:160px"/>
+<button onclick="txtFindReplace()">Replace All</button>
+
+<button class="secondary" onclick="txtCopy()">Copy Result</button>
+</div>
+
+<!-- ===================== TOOL 13: QR GENERATOR (GENERAL) ===================== -->
+<div id="tool13" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>QR Generator — General Purpose</h2>
+
+<label>Type:</label>
+<select id="qrGenType" onchange="qrGenTypeChange()">
+  <option value="text">Link / Plain Text</option>
+  <option value="wifi">WiFi</option>
+  <option value="whatsapp">WhatsApp</option>
+  <option value="vcard">Contact Card (vCard)</option>
+</select>
+
+<div id="qrTextBlock">
+  <label>Text or URL:</label><input type="text" id="qrTextValue" placeholder="https://example.com" style="width:280px"/>
+</div>
+<div id="qrWifiBlock" style="display:none">
+  <label>SSID:</label><input type="text" id="qrWifiSsid" style="width:180px"/>
+  <label>Password:</label><input type="text" id="qrWifiPass" style="width:180px"/>
+  <label>Security:</label><select id="qrWifiSec"><option>WPA</option><option>WEP</option><option value="nopass">None</option></select>
+</div>
+<div id="qrWhatsappBlock" style="display:none">
+  <label>Phone (with country code):</label><input type="text" id="qrWaPhone" placeholder="919876543210" style="width:180px"/>
+  <label>Message:</label><input type="text" id="qrWaMsg" placeholder="Optional" style="width:200px"/>
+</div>
+<div id="qrVcardBlock" style="display:none">
+  <label>Name:</label><input type="text" id="qrVName" style="width:160px"/>
+  <label>Phone:</label><input type="text" id="qrVPhone" style="width:140px"/>
+  <label>Email:</label><input type="text" id="qrVEmail" style="width:180px"/>
+  <label>Company:</label><input type="text" id="qrVCompany" style="width:160px"/>
+</div>
+
+<br>
+<button onclick="qrGenGenerate()">Generate QR</button>
+<div id="qrGenPreview" class="preview"></div>
+</div>
+
+<!-- ===================== TOOL 14: HABIT TRACKER ===================== -->
+<div id="tool14" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Habit Tracker</h2>
+<div class="hint">Saved in this browser (localStorage). Shows the last 7 days — click a day to toggle it done.</div>
+
+<label>New habit:</label>
+<input type="text" id="habitName" placeholder="e.g. Drink water" style="width:200px"/>
+<button onclick="habitAdd()">Add Habit</button>
+
+<div id="habitList"></div>
+</div>
+
+<!-- ===================== TOOL 15: REMINDER TOOL ===================== -->
+<div id="tool15" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Reminder Tool</h2>
+<div class="hint">Works only while this browser tab stays open — it's an in-page alert, not a phone/OS notification that survives closing the tab.</div>
+
+<label>Remind me at:</label><input type="time" id="remTime"/>
+<label>Message:</label><input type="text" id="remText" placeholder="e.g. Call the customer" style="width:220px"/>
+<button onclick="remAdd()">Add Reminder</button>
+
+<div id="remList"></div>
+<div id="remAlert" class="warn"></div>
+</div>
+
+<!-- ===================== TOOL 16: PDF TOOLS ===================== -->
+<div id="tool16" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>PDF Tools</h2>
+<div class="hint">Everything runs in your browser — files are never uploaded anywhere. Note: full page editing, Word↔PDF conversion, unlocking password-protected files, and AI "chat with PDF" aren't included here — they genuinely need either a password you already know, a heavy conversion engine, or an AI backend, none of which a single offline file can do reliably.</div>
+
+<div id="pdfMenu">
+  <div class="tool-cards">
+    <div class="tool-card" onclick="pdfShowSub('pdfMergeView')">
+      <div class="tool-icon">🔗</div>
+      <h3>Merge PDF</h3>
+      <p>Combine multiple PDFs into one, in the order you choose.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfSplitView')">
+      <div class="tool-icon">✂️</div>
+      <h3>Split PDF</h3>
+      <p>Pull out a page range into its own PDF.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfDeleteView')">
+      <div class="tool-icon">🗑️</div>
+      <h3>Delete Pages</h3>
+      <p>Remove specific pages from a PDF.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfRearrangeView')">
+      <div class="tool-icon">🔀</div>
+      <h3>Rearrange Pages</h3>
+      <p>Reorder the pages of a PDF.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfToJpgView')">
+      <div class="tool-icon">🖼️</div>
+      <h3>PDF to JPG</h3>
+      <p>Export every page as a JPG image (ZIP download).</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('jpgToPdfView')">
+      <div class="tool-icon">📄</div>
+      <h3>JPG to PDF</h3>
+      <p>Combine one or more images into a single PDF.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfMetaView')">
+      <div class="tool-icon">ℹ️</div>
+      <h3>Edit Metadata</h3>
+      <p>View and change a PDF's title, author, and subject.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfCompressView')">
+      <div class="tool-icon">📉</div>
+      <h3>Compress PDF</h3>
+      <p>Shrink file size by re-rendering pages as compressed images — best for scanned/image-heavy PDFs; selectable text is lost.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfSignView')">
+      <div class="tool-icon">✍️</div>
+      <h3>Sign PDF</h3>
+      <p>Draw a signature and stamp it onto a chosen page of a PDF.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfToWordView')">
+      <div class="tool-icon">📝</div>
+      <h3>PDF to Word</h3>
+      <p>Extracts text only into a .docx — no formatting, images, or layout preserved. Best for text-heavy PDFs you just need to re-edit.</p>
+    </div>
+    <div class="tool-card" onclick="pdfShowSub('pdfToExcelView')">
+      <div class="tool-icon">📈</div>
+      <h3>PDF to Excel</h3>
+      <p>Guesses table rows/columns from text spacing — a rough approximation, not a real table extraction. Check the result carefully.</p>
+    </div>
+  </div>
+</div>
+
+<div id="pdfMergeView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Merge PDF</h3>
+  <input type="file" id="pdfMergeInput" accept="application/pdf" multiple/>
+  <div class="hint">Select 2 or more PDFs (Ctrl/Cmd-click). They'll be merged in the order selected.</div>
+  <div id="pdfMergeList"></div>
+  <button onclick="pdfMergeGo()">Merge &amp; Download</button>
+  <div id="pdfMergeStatus" class="hint"></div>
+</div>
+
+<div id="pdfSplitView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Split PDF</h3>
+  <input type="file" id="pdfSplitInput" accept="application/pdf"/>
+  <div id="pdfSplitInfo" class="hint"></div>
+  <label>Pages (e.g. 1-3,5):</label>
+  <input type="text" id="pdfSplitRange" placeholder="1-3,5" style="width:160px"/>
+  <button onclick="pdfSplitGo()">Extract &amp; Download</button>
+  <div id="pdfSplitStatus" class="hint"></div>
+</div>
+
+<div id="pdfDeleteView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Delete Pages</h3>
+  <input type="file" id="pdfDeleteInput" accept="application/pdf"/>
+  <div id="pdfDeleteInfo" class="hint"></div>
+  <label>Pages to delete (e.g. 2,4-5):</label>
+  <input type="text" id="pdfDeleteRange" placeholder="2,4-5" style="width:160px"/>
+  <button onclick="pdfDeleteGo()">Delete &amp; Download</button>
+  <div id="pdfDeleteStatus" class="hint"></div>
+</div>
+
+<div id="pdfRearrangeView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Rearrange Pages</h3>
+  <input type="file" id="pdfRearrangeInput" accept="application/pdf"/>
+  <div id="pdfRearrangeInfo" class="hint"></div>
+  <label>New page order (e.g. 3,1,2,4 — list every page once):</label>
+  <input type="text" id="pdfRearrangeOrder" placeholder="3,1,2,4" style="width:200px"/>
+  <button onclick="pdfRearrangeGo()">Reorder &amp; Download</button>
+  <div id="pdfRearrangeStatus" class="hint"></div>
+</div>
+
+<div id="pdfToJpgView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>PDF to JPG</h3>
+  <input type="file" id="pdfToJpgInput" accept="application/pdf"/>
+  <button onclick="pdfToJpgGo()">Convert &amp; Download ZIP</button>
+  <div class="progressWrap" id="progressWrapPdfJpg"><div class="progressBar" id="progressBarPdfJpg"></div></div>
+  <div id="pdfToJpgStatus" class="hint"></div>
+</div>
+
+<div id="jpgToPdfView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>JPG to PDF</h3>
+  <input type="file" id="jpgToPdfInput" accept="image/*" multiple/>
+  <div class="hint">Select one or more images (Ctrl/Cmd-click for multiple) — each becomes a page, in the order selected.</div>
+  <button onclick="jpgToPdfGo()">Convert &amp; Download PDF</button>
+  <div id="jpgToPdfStatus" class="hint"></div>
+</div>
+
+<div id="pdfMetaView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Edit Metadata</h3>
+  <input type="file" id="pdfMetaInput" accept="application/pdf"/>
+  <div id="pdfMetaFields" style="display:none">
+    <label>Title:</label><input type="text" id="pdfMetaTitle" style="width:280px"/>
+    <label>Author:</label><input type="text" id="pdfMetaAuthor" style="width:280px"/>
+    <label>Subject:</label><input type="text" id="pdfMetaSubject" style="width:280px"/>
+    <button onclick="pdfMetaGo()">Save &amp; Download</button>
+  </div>
+  <div id="pdfMetaStatus" class="hint"></div>
+</div>
+
+<div id="pdfCompressView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Compress PDF</h3>
+  <div class="hint">This re-renders every page as a compressed JPEG image and rebuilds the PDF from those — it shrinks image-heavy/scanned PDFs well, but any selectable text becomes a flat image (no longer selectable/searchable). Not recommended for text-heavy documents you need to keep editable/searchable.</div>
+  <input type="file" id="pdfCompressInput" accept="application/pdf"/>
+  <label>Quality:</label>
+  <select id="pdfCompressQuality">
+    <option value="0.5">Smaller file (lower quality)</option>
+    <option value="0.7" selected>Balanced</option>
+    <option value="0.85">Higher quality (larger file)</option>
+  </select>
+  <button onclick="pdfCompressGo()">Compress &amp; Download</button>
+  <div class="progressWrap" id="progressWrapPdfCompress"><div class="progressBar" id="progressBarPdfCompress"></div></div>
+  <div id="pdfCompressStatus" class="hint"></div>
+</div>
+
+<div id="pdfSignView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>Sign PDF</h3>
+  <input type="file" id="pdfSignInput" accept="application/pdf"/>
+  <div id="pdfSignInfo" class="hint"></div>
+
+  <div class="hint">Draw your signature below (mouse or touch):</div>
+  <canvas id="sigPad" width="320" height="120" style="border:1px solid #ccc;border-radius:4px;background:#fff;touch-action:none"></canvas>
+  <br>
+  <button class="secondary" onclick="sigClear()">Clear Signature</button>
+
+  <br>
+  <label>Page number:</label><input type="number" id="pdfSignPage" value="1" min="1" style="width:70px"/>
+  <label>Position from left (%):</label><input type="number" id="pdfSignX" value="60" min="0" max="100" style="width:70px"/>
+  <label>Position from top (%):</label><input type="number" id="pdfSignY" value="80" min="0" max="100" style="width:70px"/>
+  <label>Width (% of page):</label><input type="number" id="pdfSignW" value="25" min="5" max="80" style="width:70px"/>
+
+  <br>
+  <button onclick="pdfSignGo()">Stamp Signature &amp; Download</button>
+  <div id="pdfSignStatus" class="hint"></div>
+</div>
+
+<div id="pdfToWordView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>PDF to Word</h3>
+  <div class="hint">This pulls the plain text out of each page and puts it into a .docx as paragraphs. Fonts, images, tables, columns, and layout are all lost — it's meant for getting re-editable text out of a text-heavy PDF, not a faithful conversion.</div>
+  <input type="file" id="pdfToWordInput" accept="application/pdf"/>
+  <button onclick="pdfToWordGo()">Convert &amp; Download .docx</button>
+  <div class="progressWrap" id="progressWrapPdfWord"><div class="progressBar" id="progressBarPdfWord"></div></div>
+  <div id="pdfToWordStatus" class="hint"></div>
+</div>
+
+<div id="pdfToExcelView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="pdfShowSub('pdfMenu')">&larr; PDF Tools</span>
+  <h3>PDF to Excel</h3>
+  <div class="hint">This guesses table structure by treating runs of 2+ spaces as column breaks — it works reasonably for simple, evenly-spaced tables, but will not correctly reconstruct complex or merged-cell tables. Always check the output before relying on it.</div>
+  <input type="file" id="pdfToExcelInput" accept="application/pdf"/>
+  <button onclick="pdfToExcelGo()">Convert &amp; Download .xlsx</button>
+  <div class="progressWrap" id="progressWrapPdfExcel"><div class="progressBar" id="progressBarPdfExcel"></div></div>
+  <div id="pdfToExcelStatus" class="hint"></div>
+</div>
+</div>
+
+<!-- ===================== TOOL 17: CALENDAR 2026 ===================== -->
+<div id="tool17" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Calendar — Indian Government Holidays &amp; Hindu Festivals</h2>
+<div class="hint">Hindu festival dates follow the lunar calendar (tithi) and are sourced from published 2026 panchang references — verified holiday/festival data is currently only available for 2026; other years show the day grid plus any personal tasks you've added. <span style="color:#ea580c">■</span> Hindu festival &nbsp; <span style="color:#dc2626">■</span> Government holiday &nbsp; <span style="background:linear-gradient(90deg,#ea580c,#dc2626);display:inline-block;width:12px;height:12px;border-radius:3px"></span> Both &nbsp; <span style="color:#2563eb">●</span> Your task</div>
+
+<label>Year:</label>
+<select id="calYear" onchange="calRender()">
+  <option value="2024">2024</option><option value="2025">2025</option>
+  <option value="2026" selected>2026</option><option value="2027">2027</option>
+  <option value="2028">2028</option><option value="2029">2029</option><option value="2030">2030</option>
+</select>
+<label>Month:</label>
+<select id="calMonth" onchange="calRender()">
+  <option value="0">January</option><option value="1">February</option><option value="2">March</option>
+  <option value="3">April</option><option value="4">May</option><option value="5">June</option>
+  <option value="6">July</option><option value="7">August</option><option value="8" selected>September</option>
+  <option value="9">October</option><option value="10">November</option><option value="11">December</option>
+</select>
+
+<div id="calGrid"></div>
+<div id="calEventList"></div>
+
+<hr style="margin:20px 0">
+<h3>Your Tasks</h3>
+<label>Date:</label><input type="date" id="calTaskDate"/>
+<label>Task:</label><input type="text" id="calTaskText" placeholder="e.g. Submit inventory report" style="width:220px"/>
+<button onclick="calAddTask()">Add Task</button>
+
+<div style="margin-top:8px">
+  <label>Import tasks from CSV (columns: Date, Task):</label>
+  <input type="file" id="calImportInput" accept=".csv" onchange="calImportCSV(event)"/>
+  <div class="hint">Dates should be in a format like 2026-09-25 or 25/09/2026. The first row can be a header row — it's detected automatically.</div>
+</div>
+<div id="calImportStatus" class="hint"></div>
+</div>
+
+<!-- ===================== TOOL 18: CALCULATOR ===================== -->
+<div id="tool18" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>Calculator</h2>
+
+
+<div id="calcDisplay" style="background:#fff;border:1px solid #ddd;border-radius:6px;padding:16px;text-align:right;font-size:28px;margin-bottom:8px;min-height:40px;word-break:break-all">0</div>
+<div id="calcHistory" class="hint" style="min-height:16px"></div>
+
+<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;max-width:320px">
+  <button onclick="calcInput('C')" class="secondary">C</button>
+  <button onclick="calcInput('back')" class="secondary">⌫</button>
+  <button onclick="calcInput('%')" class="secondary">%</button>
+  <button onclick="calcInput('/')" class="secondary">÷</button>
+
+  <button onclick="calcInput('7')">7</button>
+  <button onclick="calcInput('8')">8</button>
+  <button onclick="calcInput('9')">9</button>
+  <button onclick="calcInput('*')" class="secondary">×</button>
+
+  <button onclick="calcInput('4')">4</button>
+  <button onclick="calcInput('5')">5</button>
+  <button onclick="calcInput('6')">6</button>
+  <button onclick="calcInput('-')" class="secondary">−</button>
+
+  <button onclick="calcInput('1')">1</button>
+  <button onclick="calcInput('2')">2</button>
+  <button onclick="calcInput('3')">3</button>
+  <button onclick="calcInput('+')" class="secondary">+</button>
+
+  <button onclick="calcInput('0')" style="grid-column:span 2">0</button>
+  <button onclick="calcInput('.')">.</button>
+  <button onclick="calcInput('=')" style="background:#4caf50;color:#fff">=</button>
+</div>
+</div>
+
+<!-- ===================== TOOL 19: FILE & IMAGE CONVERTERS ===================== -->
+<div id="tool19" class="tool-view">
+<span class="back-link" onclick="showChooser()">&larr; Back to tools</span>
+<h2>File &amp; Image Converters</h2>
+<div class="hint">Everything runs in your browser — files are never uploaded anywhere.</div>
+
+<div id="fileMenu">
+  <div class="tool-cards">
+    <div class="tool-card" onclick="fileShowSub('zipView')">
+      <div class="tool-icon">🗜️</div>
+      <h3>Zip Files</h3>
+      <p>Combine one or more files into a single .zip.</p>
+    </div>
+    <div class="tool-card" onclick="fileShowSub('unzipView')">
+      <div class="tool-icon">📂</div>
+      <h3>Unzip</h3>
+      <p>Extract the contents of a .zip file for individual download.</p>
+    </div>
+    <div class="tool-card" onclick="fileShowSub('imgResizeView')">
+      <div class="tool-icon">📐</div>
+      <h3>Image Resize</h3>
+      <p>Change an image's width/height, keeping or ignoring aspect ratio.</p>
+    </div>
+    <div class="tool-card" onclick="fileShowSub('imgCompressView')">
+      <div class="tool-icon">📉</div>
+      <h3>Image Compress</h3>
+      <p>Shrink an image's file size by adjusting quality.</p>
+    </div>
+    <div class="tool-card" onclick="fileShowSub('imgConvertView')">
+      <div class="tool-icon">🔄</div>
+      <h3>Image Convert</h3>
+      <p>Convert between JPG, PNG, and WEBP.</p>
+    </div>
+  </div>
+</div>
+
+<div id="zipView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="fileShowSub('fileMenu')">&larr; File &amp; Image Converters</span>
+  <h3>Zip Files</h3>
+  <input type="file" id="zipInput" multiple/>
+  <div id="zipList" class="hint"></div>
+  <button onclick="zipGo()">Create &amp; Download ZIP</button>
+  <div id="zipStatus" class="hint"></div>
+</div>
+
+<div id="unzipView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="fileShowSub('fileMenu')">&larr; File &amp; Image Converters</span>
+  <h3>Unzip</h3>
+  <input type="file" id="unzipInput" accept=".zip"/>
+  <div id="unzipStatus" class="hint"></div>
+  <div id="unzipList"></div>
+</div>
+
+<div id="imgResizeView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="fileShowSub('fileMenu')">&larr; File &amp; Image Converters</span>
+  <h3>Image Resize</h3>
+  <input type="file" id="imgResizeInput" accept="image/*"/>
+  <div id="imgResizeInfo" class="hint"></div>
+  <label>Width (px):</label><input type="number" id="imgResizeW" style="width:90px"/>
+  <label>Height (px):</label><input type="number" id="imgResizeH" style="width:90px"/>
+  <label><input type="checkbox" id="imgResizeLock" checked/> Lock aspect ratio</label>
+  <br>
+  <button onclick="imgResizeGo()">Resize &amp; Download</button>
+  <div id="imgResizeStatus" class="hint"></div>
+</div>
+
+<div id="imgCompressView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="fileShowSub('fileMenu')">&larr; File &amp; Image Converters</span>
+  <h3>Image Compress</h3>
+  <input type="file" id="imgCompressInput" accept="image/*"/>
+  <div id="imgCompressInfo" class="hint"></div>
+  <label>Quality:</label>
+  <input type="range" id="imgCompressQuality" min="0.1" max="1" step="0.05" value="0.7" oninput="document.getElementById('imgCompressQVal').innerText=this.value"/>
+  <span id="imgCompressQVal">0.7</span>
+  <br>
+  <button onclick="imgCompressGo()">Compress &amp; Download</button>
+  <div id="imgCompressStatus" class="hint"></div>
+</div>
+
+<div id="imgConvertView" class="pdf-sub" style="display:none">
+  <span class="back-link" onclick="fileShowSub('fileMenu')">&larr; File &amp; Image Converters</span>
+  <h3>Image Convert</h3>
+  <input type="file" id="imgConvertInput" accept="image/*"/>
+  <label>Convert to:</label>
+  <select id="imgConvertFormat">
+    <option value="image/jpeg">JPG</option>
+    <option value="image/png">PNG</option>
+    <option value="image/webp">WEBP</option>
+  </select>
+  <button onclick="imgConvertGo()">Convert &amp; Download</button>
+  <div id="imgConvertStatus" class="hint"></div>
+</div>
+</div>
+
+</div>
+</main>
+</div>
+
+<script>
+/* ===================== SHARED HELPERS ===================== */
+function showTool(id){
+  stopScan();
+  document.getElementById('chooser').style.display = 'none';
+  ['tool1','tool2','tool3','tool4','tool5','tool6','tool7','tool8','tool9','tool10','tool11','tool12','tool13','tool14','tool15','tool16','tool17','tool18','tool19'].forEach(t=> document.getElementById(t).style.display = 'none');
+  document.getElementById(id).style.display = 'block';
+  if(id==='tool7') todoRender();
+  if(id==='tool8') expRender();
+  if(id==='tool14') habitRender();
+  if(id==='tool15') remRender();
+  if(id==='tool16') pdfShowSub('pdfMenu');
+  if(id==='tool17') calRender();
+  if(id==='tool19') fileShowSub('fileMenu');
+  setActiveSidebarLink(id);
+  window.scrollTo(0,0);
+}
+function showChooser(){
+  stopScan();
+  ['tool1','tool2','tool3','tool4','tool5','tool6','tool7','tool8','tool9','tool10','tool11','tool12','tool13','tool14','tool15','tool16','tool17','tool18','tool19'].forEach(t=> document.getElementById(t).style.display = 'none');
+  document.getElementById('chooser').style.display = 'block';
+  setActiveSidebarLink('__home__');
+  window.scrollTo(0,0);
+}
+
+/* ---- Sidebar navigation ---- */
+function navGo(id){
+  if(id === '__home__') showChooser(); else showTool(id);
+  if(window.innerWidth <= 900) closeSidebar();
+}
+function setActiveSidebarLink(id){
+  document.querySelectorAll('.sidebar-link').forEach(a=>{
+    a.classList.toggle('active', a.dataset.tool === id);
+  });
+}
+function toggleSidebar(){
+  document.getElementById('sidebar').classList.toggle('open');
+}
+function closeSidebar(){
+  document.getElementById('sidebar').classList.remove('open');
+}
+setActiveSidebarLink('__home__');
+function filterSidebarNav(){
+  const q = document.getElementById('sidebarSearch').value.trim().toLowerCase();
+  document.querySelectorAll('.sidebar-link[data-name]').forEach(a=>{
+    const match = !q || a.dataset.name.toLowerCase().includes(q) || a.textContent.toLowerCase().includes(q);
+    a.style.display = match ? '' : 'none';
+  });
+  document.querySelectorAll('.sidebar-cat').forEach(cat=>{
+    let sib = cat.nextElementSibling;
+    let anyVisible = false;
+    while(sib && !sib.classList.contains('sidebar-cat')){
+      if(sib.style.display !== 'none') anyVisible = true;
+      sib = sib.nextElementSibling;
+    }
+    cat.style.display = anyVisible ? '' : 'none';
+  });
+}
+
+function saveSetting(key, val){
+  try{ localStorage.setItem('skuTools_'+key, val); }catch(e){}
+}
+function loadSetting(key, fallback){
+  try{
+    const v = localStorage.getItem('skuTools_'+key);
+    return v===null ? fallback : v;
+  }catch(e){ return fallback; }
+}
+
+/* ---- Dark mode ---- */
+function toggleDarkMode(){
+  document.body.classList.toggle('dark');
+  const isDark = document.body.classList.contains('dark');
+  saveSetting('darkMode', isDark ? '1' : '0');
+  document.getElementById('darkModeToggle').innerText = isDark ? '☀ Light Mode' : '🌙 Dark Mode';
+}
+(function initDarkMode(){
+  if(loadSetting('darkMode','0') === '1'){
+    document.body.classList.add('dark');
+    const btn = document.getElementById('darkModeToggle');
+    if(btn) btn.innerText = '☀ Light Mode';
+  }
+})();
+
+/* ---- Label size presets for printed labels ---- */
+const LABEL_PRESETS = {
+  auto: { name: 'Auto (fit content)', wIn: null, hIn: null },
+  avery5160: { name: 'Avery 5160 (2.63" x 1")', wIn: 2.63, hIn: 1 },
+  avery5163: { name: 'Avery 5163 (4" x 2")', wIn: 4, hIn: 2 },
+  sq2x1: { name: '2" x 1"', wIn: 2, hIn: 1 },
+  ship4x6: { name: '4" x 6" (Shipping)', wIn: 4, hIn: 6 }
+};
+(function initLabelSizeSelects(){
+  const optionsHtml = Object.entries(LABEL_PRESETS).map(([k,v])=>`<option value="${k}">${v.name}</option>`).join('');
+  ['labelSize2','labelSize3','labelSize4','labelSize5'].forEach(id=>{
+    const el = document.getElementById(id);
+    if(el) el.innerHTML = optionsHtml;
+  });
+})();
+
+/* ---- Session download history (name + time only) ---- */
+let historyItems = [];
+function addHistory(name){
+  historyItems.unshift({ name, time: new Date().toLocaleTimeString() });
+  if(historyItems.length > 5) historyItems.pop();
+  renderHistory();
+}
+function renderHistory(){
+  const panel = document.getElementById('historyPanel');
+  if(!panel) return;
+  if(!historyItems.length){ panel.innerHTML = '<div class="hint">No downloads yet this session.</div>'; return; }
+  panel.innerHTML = '<ul style="margin:6px 0 0 18px;padding:0">' +
+    historyItems.map(h=>`<li>${h.name} <span class="hint" style="display:inline">— ${h.time}</span></li>`).join('') +
+    '</ul>';
+}
+function triggerDownload(blob, filename){
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  addHistory(filename);
+  setTimeout(()=>URL.revokeObjectURL(url), 30000);
+}
+
+/* ---- Cross-module handoff: QC Pass items -> Barcode+QR Generator ---- */
+function qcSendPassToBQ(){
+  if(!qcRows.length){ alert('Process the QC list first'); return; }
+  const passValues = qcRows.filter(r=>r.status==='Pass').map(r=>qcEncodedValue(r));
+  if(!passValues.length){ alert('No Pass items to send'); return; }
+  sendListToBQ(passValues);
+}
+
+/* ---- Generic cross-module handoff helpers ---- */
+function sendListToBQ(values){
+  if(!values || !values.length){ alert('Nothing to send yet — generate a list first'); return; }
+  document.getElementById('bqInput').value = values.join('\n');
+  document.querySelector('input[name="bqMode"][value="multiple"]').checked = true;
+  bqModeChange();
+  showTool('tool5');
+}
+function sendListToQC(values, defaultStatus){
+  if(!values || !values.length){ alert('Nothing to send yet — generate a list first'); return; }
+  const status = defaultStatus || 'Pass';
+  const lines = values.map(v => `${v}\t${status}\t`);
+  document.getElementById('qcInput').value = lines.join('\n');
+  document.querySelector('input[name="qcMode"][value="multiple"]').checked = true;
+  qcModeChange();
+  showTool('tool3');
+}
+
+function t1SendExpandedToBQ(){ sendListToBQ(outputData); }
+function t1SendExpandedToQC(){ sendListToQC(outputData); }
+function t1SendReverseToBQ(){ sendListToBQ(reverseOutputData.map(l=>l.split('\t')[0])); }
+function t1SendReverseToQC(){ sendListToQC(reverseOutputData.map(l=>l.split('\t')[0])); }
+function bqSendToQC(){
+  if(!bqRows.length){ alert('Generate first'); return; }
+  sendListToQC(bqRows.map(r=>r.value));
+}
+
+/* ---- Scan to Verify (camera) ---- */
+let scanStream = null;
+let scanning = false;
+let scanDetector = null;
+
+function scanSupported(){ return 'BarcodeDetector' in window; }
+
+async function startScan(){
+  if(!scanSupported()){
+    document.getElementById('scanResult').innerText = '⚠ Your browser does not support camera barcode scanning. Try Chrome or Edge (desktop or Android).';
+    return;
+  }
+  try{
+    scanDetector = new BarcodeDetector({ formats: ['qr_code','code_128','ean_13','upc_a','code_39'] });
+  }catch(e){
+    scanDetector = new BarcodeDetector();
+  }
+  try{
+    scanStream = await navigator.mediaDevices.getUserMedia({ video: { facingMode: 'environment' } });
+  }catch(e){
+    document.getElementById('scanResult').innerText = 'Camera access failed: ' + (e.message || e);
+    return;
+  }
+  const video = document.getElementById('scanVideo');
+  video.srcObject = scanStream;
+  await video.play();
+  scanning = true;
+  scanLoop();
+}
+
+async function scanLoop(){
+  if(!scanning) return;
+  const video = document.getElementById('scanVideo');
+  try{
+    const codes = await scanDetector.detect(video);
+    if(codes.length){
+      showScanResult(codes[0].rawValue);
+    }
+  }catch(e){ /* ignore per-frame detection errors */ }
+  if(scanning) setTimeout(scanLoop, 350);
+}
+
+function showScanResult(value){
+  const expected = document.getElementById('scanExpected').value.trim();
+  let html = `Detected: <b>${value}</b>`;
+  if(expected){
+    const match = expected === value;
+    html += `<br><span style="color:${match?'#0a0':'#b30000'};font-weight:bold">${match ? '✔ Matches expected value' : '✘ Does not match expected value'}</span>`;
+  }
+  document.getElementById('scanResult').innerHTML = html;
+}
+
+function stopScan(){
+  scanning = false;
+  if(scanStream){
+    scanStream.getTracks().forEach(t=>t.stop());
+    scanStream = null;
+  }
+  const video = document.getElementById('scanVideo');
+  if(video) video.srcObject = null;
+}
+
+function resetTool6(){
+  stopScan();
+  document.getElementById('scanExpected').value = '';
+  document.getElementById('scanResult').innerHTML = '';
+}
+
+function colLetter(n){
+  let s='';
+  while(n>0){
+    const m=(n-1)%26;
+    s=String.fromCharCode(65+m)+s;
+    n=Math.floor((n-1)/26);
+  }
+  return s;
+}
+
+/* ---- Quick-start file drop on the home page: route a dropped/selected file to the right tool ---- */
+function quickstartFileChosen(files){
+  if(!files || !files.length) return;
+  routeQuickstartFile(files[0]);
+}
+
+function routeQuickstartFile(file){
+  const name = file.name.toLowerCase();
+  const dt = new DataTransfer();
+  dt.items.add(file);
+
+  if(name.endsWith('.xlsx') || name.endsWith('.xls') || name.endsWith('.csv')){
+    navGo('tool2');
+    const input = document.getElementById('fileInput');
+    input.files = dt.files;
+    input.dispatchEvent(new Event('change'));
+  } else if(name.endsWith('.pdf')){
+    navGo('tool16');
+  } else if(name.endsWith('.zip')){
+    navGo('tool19');
+    fileShowSub('unzipView');
+    const input = document.getElementById('unzipInput');
+    input.files = dt.files;
+    input.dispatchEvent(new Event('change'));
+  } else if(/\.(jpg|jpeg|png|webp|gif)$/.test(name)){
+    navGo('tool19');
+    fileShowSub('imgConvertView');
+    const input = document.getElementById('imgConvertInput');
+    input.files = dt.files;
+    input.dispatchEvent(new Event('change'));
+  } else {
+    alert(`Not sure which tool suits "${file.name}" — pick one from the sidebar instead.`);
+  }
+}
+
+function initQuickstartDrop(){
+  const zone = document.getElementById('quickstartDrop');
+  if(!zone) return;
+  ['dragover','dragenter'].forEach(evt=> zone.addEventListener(evt, e=>{ e.preventDefault(); zone.classList.add('dragover'); }));
+  ['dragleave','drop'].forEach(evt=> zone.addEventListener(evt, e=>{ e.preventDefault(); zone.classList.remove('dragover'); }));
+  zone.addEventListener('drop', e=>{
+    const files = e.dataTransfer.files;
+    if(files && files.length) routeQuickstartFile(files[0]);
+  });
+}
+initQuickstartDrop();
+
+function sanitizeFilename(s){
+  return String(s).replace(/[^a-z0-9\-_.]/gi, '_');
+}
+
+async function skuToImage(sku, opts){
+  if(opts.type === 'qr'){
+    const holder = document.createElement('div');
+    holder.style.display = 'none';
+    document.body.appendChild(holder);
+    const size = Math.round(100 * opts.scale);
+    const text = String(sku);
+    let qrCanvas = null;
+    const levels = [QRCode.CorrectLevel.M, QRCode.CorrectLevel.L];
+    let lastErr = null;
+    for(const level of levels){
+      try{
+        holder.innerHTML = '';
+        new QRCode(holder, { text, width: size, height: size, correctLevel: level });
+        qrCanvas = holder.querySelector('canvas');
+        if(qrCanvas) break;
+      }catch(e){ lastErr = e; qrCanvas = null; }
+    }
+    if(!qrCanvas){
+      document.body.removeChild(holder);
+      throw new Error(`Could not generate QR for "${text.slice(0,30)}${text.length>30?'…':''}" — value may be too long for a QR code. (${lastErr ? lastErr.message : 'unknown error'})`);
+    }
+
+    let finalCanvas = qrCanvas;
+    if(opts.showText){
+      finalCanvas = document.createElement('canvas');
+      finalCanvas.width = qrCanvas.width;
+      finalCanvas.height = qrCanvas.height + 20;
+      const ctx = finalCanvas.getContext('2d');
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0,0,finalCanvas.width,finalCanvas.height);
+      ctx.drawImage(qrCanvas,0,0);
+      ctx.fillStyle = '#000';
+      ctx.font = '12px Arial';
+      ctx.textAlign = 'center';
+      ctx.fillText(text, finalCanvas.width/2, qrCanvas.height+15);
+    }
+    const dataUrl = finalCanvas.toDataURL('image/png');
+    document.body.removeChild(holder);
+    return { dataUrl, width: finalCanvas.width, height: finalCanvas.height };
+  }
+
+  const FORMAT_MAP = { code128: 'CODE128', ean13: 'EAN13', upc: 'UPC', code39: 'CODE39' };
+  const requestedFormat = FORMAT_MAP[opts.type] || 'CODE128';
+  const canvas = document.createElement('canvas');
+  const barcodeOpts = {
+    width: 2 * opts.scale,
+    height: 60 * opts.scale,
+    margin: 10,
+    displayValue: opts.showText,
+    fontSize: 14
+  };
+
+  try{
+    JsBarcode(canvas, String(sku), { format: requestedFormat, ...barcodeOpts });
+  }catch(e){
+    // Value isn't valid for the chosen format (e.g. EAN-13/UPC need the right digit count) — fall back to Code128 so nothing breaks.
+    try{
+      JsBarcode(canvas, String(sku), { format: 'CODE128', ...barcodeOpts });
+    }catch(e2){
+      throw new Error(`Could not generate a barcode for "${String(sku).slice(0,30)}" — value may be empty or contain unsupported characters.`);
+    }
+  }
+  return { dataUrl: canvas.toDataURL('image/png'), width: canvas.width, height: canvas.height };
+}
+
+function buildProxyUrl(url){
+  try{
+    const u = new URL(url);
+    const rest = u.host + u.pathname + u.search;
+    const prefix = u.protocol === 'https:' ? 'ssl:' : '';
+    return `https://images.weserv.nl/?url=${encodeURIComponent(prefix + rest)}`;
+  }catch(e){ return null; }
+}
+
+async function fetchImageAsDataUrl(url, maxWidth){
+  const attempts = [url];
+  const proxyUrl = buildProxyUrl(url);
+  if(proxyUrl) attempts.push(proxyUrl);
+
+  let lastError = 'Unknown error';
+  for(const attemptUrl of attempts){
+    try{
+      const resp = await fetch(attemptUrl, { mode: 'cors' });
+      if(!resp.ok) throw new Error('HTTP ' + resp.status);
+      const blob = await resp.blob();
+      const objUrl = URL.createObjectURL(blob);
+      const img = await new Promise((res, rej)=>{
+        const im = new Image();
+        im.onload = ()=>res(im);
+        im.onerror = ()=>rej(new Error('Could not decode image'));
+        im.src = objUrl;
+      });
+      let w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+      if(maxWidth && w > maxWidth){
+        h = Math.round(h * (maxWidth / w));
+        w = maxWidth;
+      }
+      const canvas = document.createElement('canvas');
+      canvas.width = w; canvas.height = h;
+      canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+      URL.revokeObjectURL(objUrl);
+      return { ok: true, dataUrl: canvas.toDataURL('image/png'), width: w, height: h };
+    } catch(e){
+      lastError = (e && e.message) ? e.message : String(e);
+    }
+  }
+  return { ok: false, error: lastError };
+}
+
+async function downloadImagesZip(items, zipName){
+  const zip = new JSZip();
+  items.forEach(it=>{
+    const base64 = it.dataUrl.split(',')[1];
+    zip.file(it.filename, base64, { base64: true });
+  });
+  const content = await zip.generateAsync({ type: 'blob' });
+  triggerDownload(content, zipName);
+}
+
+function printLabelsWindow(items, presetKey){
+  const preset = LABEL_PRESETS[presetKey] || LABEL_PRESETS.auto;
+  const sizeStyle = preset.wIn ? `width:${preset.wIn}in;height:${preset.hIn}in;` : '';
+  const win = window.open('', '_blank');
+  const labelsHtml = items.map(it => `<div class="label" style="${sizeStyle}"><img src="${it.dataUrl}"/></div>`).join('');
+  win.document.write(`
+    <html><head><title>Print Labels</title>
+    <style>
+      body{margin:0;padding:10px;font-family:Arial}
+      .grid{display:flex;flex-wrap:wrap;gap:8px}
+      .label{border:1px dashed #999;padding:6px;text-align:center;page-break-inside:avoid;display:flex;align-items:center;justify-content:center;box-sizing:border-box}
+      .label img{display:block;margin:0 auto;max-width:100%;max-height:100%}
+      @media print{ .label{border:none} }
+    </style>
+    </head><body><div class="grid">${labelsHtml}</div></body></html>
+  `);
+  win.document.close();
+  setTimeout(()=>{ try{ win.focus(); win.print(); }catch(e){} }, 400);
+}
+
+function loadImgFromDataUrl(src){
+  return new Promise((res, rej)=>{
+    const im = new Image();
+    im.onload = ()=>res(im);
+    im.onerror = rej;
+    im.src = src;
+  });
+}
+
+async function combineTwoImages(img1, img2, gap){
+  gap = gap || 12;
+  const [im1, im2] = await Promise.all([loadImgFromDataUrl(img1.dataUrl), loadImgFromDataUrl(img2.dataUrl)]);
+  const totalW = img1.width + img2.width + gap;
+  const totalH = Math.max(img1.height, img2.height);
+  const canvas = document.createElement('canvas');
+  canvas.width = totalW; canvas.height = totalH;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#fff';
+  ctx.fillRect(0, 0, totalW, totalH);
+  ctx.drawImage(im1, 0, (totalH - img1.height) / 2, img1.width, img1.height);
+  ctx.drawImage(im2, img1.width + gap, (totalH - img2.height) / 2, img2.width, img2.height);
+  return { dataUrl: canvas.toDataURL('image/png'), width: totalW, height: totalH };
+}
+
+function yieldToUI(){
+  return new Promise(resolve => setTimeout(resolve, 0));
+}
+
+function setProgress(barId, wrapId, pct){
+  const wrap = document.getElementById(wrapId);
+  const bar = document.getElementById(barId);
+  if(pct<=0){ wrap.style.display='none'; bar.style.width='0%'; return; }
+  wrap.style.display='block';
+  bar.style.width = Math.min(100,pct) + '%';
+  if(pct>=100) setTimeout(()=>{ wrap.style.display='none'; bar.style.width='0%'; }, 600);
+}
+
+function simpleCSVParse(text){
+  const rows = [];
+  let row = [], field = '', inQuotes = false;
+  for(let i=0;i<text.length;i++){
+    const ch = text[i];
+    if(inQuotes){
+      if(ch === '"'){
+        if(text[i+1] === '"'){ field += '"'; i++; } else { inQuotes = false; }
+      } else field += ch;
+    } else {
+      if(ch === '"') inQuotes = true;
+      else if(ch === ','){ row.push(field); field=''; }
+      else if(ch === '\n'){ row.push(field); rows.push(row); row=[]; field=''; }
+      else if(ch === '\r'){ /* skip */ }
+      else field += ch;
+    }
+  }
+  if(field.length || row.length){ row.push(field); rows.push(row); }
+  return rows;
+}
+
+async function loadCSVAsWorkbook(file){
+  const text = await file.text();
+  const rows = simpleCSVParse(text);
+  const wb = new ExcelJS.Workbook();
+  const ws = wb.addWorksheet('Sheet1');
+  rows.forEach(r => ws.addRow(r));
+  return wb;
+}
+
+async function loadWorkbookFromFile(file){
+  if(file.name.toLowerCase().endsWith('.csv')){
+    return await loadCSVAsWorkbook(file);
+  }
+  const buffer = await file.arrayBuffer();
+  const wb = new ExcelJS.Workbook();
+  await wb.xlsx.load(buffer);
+  return wb;
+}
+
+function applyFullTableStyle(ws, lastCol, lastRow){
+  const thin = { style: 'thin', color: { argb: 'FF000000' } };
+  const border = { top: thin, left: thin, bottom: thin, right: thin };
+  for(let c=1;c<=lastCol;c++){
+    const cell = ws.getRow(1).getCell(c);
+    cell.font = { name: 'Times New Roman', bold: true, size: 14 };
+    cell.alignment = { horizontal: 'center', vertical: 'middle' };
+    cell.border = border;
+    ws.getColumn(c).width = 24;
+  }
+  for(let r=2;r<=lastRow;r++){
+    for(let c=1;c<=lastCol;c++){
+      const cell = ws.getRow(r).getCell(c);
+      cell.border = border;
+      cell.alignment = { horizontal: 'center', vertical: 'middle' };
+      cell.font = { name: 'Times New Roman', size: 12 };
+    }
+  }
+}
+
+function styleWorksheet(ws, dataCols, outColFor, rows){
+  const allCols = [...dataCols, ...Object.values(outColFor)];
+  const minCol = Math.min(...allCols);
+  const maxCol = Math.max(...allCols);
+  const thin = { style: 'thin', color: { argb: 'FF000000' } };
+  const border = { top: thin, left: thin, bottom: thin, right: thin };
+
+  const headerRow = ws.getRow(1);
+  for(let c=minCol;c<=maxCol;c++){
+    const cell = headerRow.getCell(c);
+    cell.font = { name: 'Times New Roman', bold: true, size: 16 };
+    cell.alignment = { horizontal: 'center', vertical: 'middle', wrapText: true };
+    cell.border = border;
+  }
+  if(!headerRow.height || headerRow.height < 30) headerRow.height = 30;
+
+  dataCols.forEach(c=>{ if(!ws.getColumn(c).width || ws.getColumn(c).width < 22) ws.getColumn(c).width = 22; });
+  Object.values(outColFor).forEach(c=>{ ws.getColumn(c).width = 34; });
+
+  rows.forEach(r=>{
+    const row = ws.getRow(r);
+    for(let c=minCol;c<=maxCol;c++){
+      const cell = row.getCell(c);
+      cell.alignment = { horizontal: 'center', vertical: 'middle' };
+      cell.border = border;
+      if(dataCols.includes(c)){
+        cell.font = { name: 'Times New Roman', size: 13 };
+      }
+    }
+  });
+}
+
+function renderRawSheetPreview(ws, containerId, maxRows){
+  const container = document.getElementById(containerId);
+  if(!container) return;
+  const colCount = ws.actualColumnCount || ws.columnCount;
+  const totalRows = ws.actualRowCount || ws.rowCount;
+  const rowCount = Math.min(totalRows, maxRows || 10);
+
+  let html = '<div class="hint" style="margin-top:8px"><b>Imported data preview</b>' +
+    (totalRows > rowCount ? ` (first ${rowCount} of ${totalRows} rows)` : '') + '</div>';
+  html += '<div class="preview" style="max-height:260px"><table class="qc"><tr>';
+  for(let c=1;c<=colCount;c++) html += `<th>${colLetter(c)}</th>`;
+  html += '</tr>';
+  for(let r=1;r<=rowCount;r++){
+    html += '<tr>';
+    for(let c=1;c<=colCount;c++){
+      const v = ws.getRow(r).getCell(c).value;
+      let text = '';
+      if(v != null){
+        text = (typeof v === 'object') ? (v.text || v.hyperlink || v.result || '') : String(v);
+      }
+      html += `<td>${text}</td>`;
+    }
+    html += '</tr>';
+  }
+  html += '</table></div>';
+  container.innerHTML = html;
+}
+
+function genericGetSelectedRows(ws, modeId, rangeStartId, rangeEndId, specificRowsId, isValidRowFn){
+  const mode = document.getElementById(modeId).value;
+  const lastRow = ws.actualRowCount || ws.rowCount;
+  let rows = [];
+
+  if(mode === 'all'){
+    for(let r=2;r<=lastRow;r++) rows.push(r);
+  } else if(mode === 'range'){
+    let start = parseInt(document.getElementById(rangeStartId).value);
+    let end = parseInt(document.getElementById(rangeEndId).value);
+    if(isNaN(start) || isNaN(end)){ alert('Enter a valid row range'); return []; }
+    start = Math.max(2, start);
+    end = Math.min(lastRow, end);
+    for(let r=start;r<=end;r++) rows.push(r);
+  } else {
+    const raw = document.getElementById(specificRowsId).value;
+    rows = raw.split(',').map(s=>parseInt(s.trim())).filter(n=>!isNaN(n) && n>=2 && n<=lastRow);
+  }
+
+  return isValidRowFn ? rows.filter(isValidRowFn) : rows;
+}
+
+/* ===================== TOOL 1: SKU TEXT EXPANDER ===================== */
+let outputData = [];
+
+function t1ModeChange(){
+  const mode = document.querySelector('input[name="t1Mode"]:checked').value;
+  document.getElementById('t1TextMode').style.display = mode === 'text' ? 'block' : 'none';
+  document.getElementById('t1ExcelMode').style.display = mode === 'excel' ? 'block' : 'none';
+}
+
+function applyFormat(sku, qtyStr, serial){
+  let format = document.getElementById('format').value;
+  let custom = document.getElementById('customFormat').value;
+
+  if(format === "default") return `${sku}-${qtyStr}-${serial}`;
+  if(format === "slash") return `${sku}/${qtyStr}-${serial}`;
+  if(format === "mix") return `${sku}-${qtyStr}/${serial}`;
+  if(format === "doubleSlash") return `${sku}/${qtyStr}/${serial}`;
+
+  if(format === "custom" && custom){
+    return custom
+      .replaceAll("{SKU}", sku)
+      .replaceAll("{QQ}", qtyStr)
+      .replaceAll("{SS}", serial);
+  }
+
+  return `${sku}-${qtyStr}-${serial}`;
+}
+
+function expandOne(sku, qty, start){
+  const list = [];
+  for(let i=start;i<start+qty;i++){
+    const qtyStr = String(qty).padStart(2,'0');
+    const serial = String(i).padStart(2,'0');
+    list.push(applyFormat(sku, qtyStr, serial));
+  }
+  return list;
+}
+
+function generate(){
+  const start = parseInt(document.getElementById('startSerial').value) || 1;
+  const input = document.getElementById('input').value.trim().split(/\n/);
+  outputData = [];
+  const skuCount = new Map();
+
+  input.forEach(line=>{
+    let parts = line.split(/\t|,|\s+/);
+    let sku = parts[0];
+    let qty = parseInt(parts[1]);
+
+    if(!sku || isNaN(qty)) return;
+    skuCount.set(sku, (skuCount.get(sku)||0) + 1);
+    outputData.push(...expandOne(sku, qty, start));
+  });
+
+  document.getElementById('preview1').innerText = outputData.join('\n');
+  document.getElementById('count1').innerText = "Total: " + outputData.length;
+
+  const dups = Array.from(skuCount.entries()).filter(([k,v])=>v>1).map(([k])=>k);
+  document.getElementById('dupWarning1').innerText = dups.length
+    ? `⚠ Duplicate SKU appears on multiple lines: ${dups.join(', ')}`
+    : '';
+}
+
+function copy(){
+  if(!outputData.length){ alert("Generate first"); return; }
+  navigator.clipboard.writeText(outputData.join('\n'));
+  alert("Copied!");
+}
+
+function downloadCSV(){
+  if(!outputData.length){ alert("Generate first"); return; }
+  let csv = outputData.map(x => `"${x}"`).join("\n");
+  let blob = new Blob([csv], {type:'text/csv'});
+  triggerDownload(blob, "sku_output.csv");
+}
+
+function resetTool1(){
+  document.getElementById('input').value = '';
+  document.getElementById('reverseInput').value = '';
+  outputData = [];
+  reverseOutputData = [];
+  document.getElementById('preview1').innerText = '';
+  document.getElementById('count1').innerText = '';
+  document.getElementById('dupWarning1').innerText = '';
+  document.getElementById('reversePreview').innerText = '';
+  document.getElementById('reverseCount').innerText = '';
+}
+
+/* ---- Tool 1 Excel mode: update SKU+Qty rows in-place with an Expanded column ---- */
+const t1State = { workbook: null, fileName: '' };
+
+document.getElementById('t1FileInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  document.getElementById('t1UploadStatus').innerText = 'Reading file...';
+  let wb;
+  try{
+    wb = await loadWorkbookFromFile(file);
+  }catch(err){
+    document.getElementById('t1UploadStatus').innerText = `⚠ Could not read this file — make sure it's a valid, unprotected .xlsx or .csv file. (${err.message||err})`;
+    return;
+  }
+  if(!wb.worksheets.length){
+    document.getElementById('t1UploadStatus').innerText = '⚠ This file has no sheets — is it a valid Excel file?';
+    return;
+  }
+  t1State.workbook = wb;
+  t1State.fileName = file.name;
+
+  const sheetSelect = document.getElementById('t1SheetSelect');
+  sheetSelect.innerHTML = '';
+  wb.worksheets.forEach(ws=>{
+    const opt = document.createElement('option');
+    opt.value = ws.name; opt.textContent = ws.name;
+    sheetSelect.appendChild(opt);
+  });
+
+  document.getElementById('t1UploadStatus').innerText = `Loaded "${file.name}" — ${wb.worksheets.length} sheet(s).`;
+  document.getElementById('t1SheetSection').style.display = 'block';
+  document.getElementById('t1ColumnsBlock').style.display = 'none';
+});
+
+function t1OnSheetChosen(){
+  const ws = t1State.workbook.getWorksheet(document.getElementById('t1SheetSelect').value);
+  if(!ws){ alert('Sheet not found'); return; }
+  const headerRow = ws.getRow(1);
+  const colCount = ws.actualColumnCount || ws.columnCount || headerRow.actualCellCount;
+
+  if(!colCount || !(ws.actualRowCount || ws.rowCount)){
+    document.getElementById('t1Count').innerText = `⚠ Sheet "${ws.name}" appears to be empty — no header row or columns found. Pick a different sheet, or check the file.`;
+    document.getElementById('t1ColumnsBlock').style.display = 'none';
+    return;
+  }
+
+  const skuSel = document.getElementById('t1SkuCol');
+  const qtySel = document.getElementById('t1QtyCol');
+  skuSel.innerHTML = ''; qtySel.innerHTML = '';
+
+  for(let c=1;c<=colCount;c++){
+    const headerVal = headerRow.getCell(c).value;
+    const label = `${colLetter(c)} - ${headerVal!=null && headerVal!=='' ? headerVal : '(no header)'}`;
+    const o1 = document.createElement('option'); o1.value=c; o1.textContent=label; skuSel.appendChild(o1);
+    const o2 = document.createElement('option'); o2.value=c; o2.textContent=label; qtySel.appendChild(o2);
+  }
+  if(colCount>1) qtySel.selectedIndex = 1;
+
+  document.getElementById('t1ColumnsBlock').style.display = 'block';
+  document.getElementById('t1Count').innerText = `Sheet "${ws.name}" — ${ws.actualRowCount} row(s) total (including header).`;
+  renderRawSheetPreview(ws, 't1ImportPreview', 10);
+}
+
+function onRowModeChange1(){
+  const mode = document.getElementById('rowMode1').value;
+  document.getElementById('rangeInputs1').style.display = mode==='range' ? 'inline' : 'none';
+  document.getElementById('specificInputs1').style.display = mode==='specific' ? 'inline' : 'none';
+}
+
+function t1GetRows(ws, skuCol, qtyCol){
+  return genericGetSelectedRows(ws, 'rowMode1', 'rangeStart1', 'rangeEnd1', 'specificRows1', (r)=>{
+    const sku = ws.getRow(r).getCell(skuCol).value;
+    const qty = parseInt(ws.getRow(r).getCell(qtyCol).value);
+    return sku!=null && String(sku).trim()!=='' && !isNaN(qty) && qty>0;
+  });
+}
+
+async function t1PreviewExcel(){
+  const ws = t1State.workbook.getWorksheet(document.getElementById('t1SheetSelect').value);
+  const skuCol = parseInt(document.getElementById('t1SkuCol').value);
+  const qtyCol = parseInt(document.getElementById('t1QtyCol').value);
+  const start = parseInt(document.getElementById('startSerial').value) || 1;
+  const outColName = document.getElementById('t1OutColName').value.trim() || 'Box No';
+  const outMode = document.getElementById('t1OutMode').value;
+  const rows = t1GetRows(ws, skuCol, qtyCol);
+  if(!rows.length){ document.getElementById('t1Preview').innerHTML=''; document.getElementById('t1Count').innerText='No valid SKU+Qty rows in the current selection.'; return; }
+
+  const origLastCol = ws.actualColumnCount || ws.columnCount;
+  const outCol = outMode === 'new' ? origLastCol + 1 : qtyCol;
+  const displayLastCol = Math.max(origLastCol, outCol);
+  const limit = Math.min(rows.length, 15);
+
+  let html = `<div class="hint"><b>Output preview</b> — this is what the final Excel will look like (one row per unit)</div>`;
+  html += '<div class="preview"><table class="qc"><tr>';
+  for(let c=1;c<=displayLastCol;c++){
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const label = c===outCol ? outColName : (headerVal!=null && headerVal!=='' ? headerVal : colLetter(c));
+    html += `<th>${label}</th>`;
+  }
+  html += '</tr>';
+
+  let outputRowCount = 0;
+  outer:
+  for(let i=0;i<rows.length;i++){
+    const r = rows[i];
+    const sku = ws.getRow(r).getCell(skuCol).value;
+    const qty = parseInt(ws.getRow(r).getCell(qtyCol).value);
+    const list = expandOne(sku, qty, start);
+    for(const value of list){
+      if(outputRowCount >= limit) break outer;
+      html += '<tr>';
+      for(let c=1;c<=displayLastCol;c++){
+        const cellVal = c===outCol ? value : ws.getRow(r).getCell(c).value;
+        html += `<td>${cellVal!=null ? cellVal : ''}</td>`;
+      }
+      html += '</tr>';
+      outputRowCount++;
+    }
+  }
+  html += '</table></div>';
+  document.getElementById('t1Preview').innerHTML = html;
+
+  const totalOutputRows = rows.reduce((sum,r)=>{
+    const qty = parseInt(ws.getRow(r).getCell(qtyCol).value);
+    return sum + qty;
+  }, 0);
+  document.getElementById('t1Count').innerText = `Source rows: ${rows.length} → Output rows: ${totalOutputRows}${totalOutputRows>limit ? ` (showing first ${limit})` : ''}`;
+}
+
+async function t1GenerateExcel(){
+  if(!t1State.workbook){ alert('Upload a file first'); return; }
+  const ws = t1State.workbook.getWorksheet(document.getElementById('t1SheetSelect').value);
+  const skuCol = parseInt(document.getElementById('t1SkuCol').value);
+  const qtyCol = parseInt(document.getElementById('t1QtyCol').value);
+  const start = parseInt(document.getElementById('startSerial').value) || 1;
+  const outColName = document.getElementById('t1OutColName').value.trim() || 'Box No';
+  const outMode = document.getElementById('t1OutMode').value; // 'overwrite' or 'new'
+  const selectedRows = new Set(t1GetRows(ws, skuCol, qtyCol));
+  if(!selectedRows.size){ alert('No valid SKU+Qty rows in the current selection.'); return; }
+
+  const origLastCol = ws.actualColumnCount || ws.columnCount;
+  const origLastRow = ws.actualRowCount || ws.rowCount;
+  const outCol = outMode === 'new' ? origLastCol + 1 : qtyCol;
+  const finalLastCol = Math.max(origLastCol, outCol);
+
+  const wb2 = new ExcelJS.Workbook();
+  const ws2 = wb2.addWorksheet(ws.name || 'Sheet1');
+
+  // Header row: copy all original headers, then set/rename the output column's header
+  for(let c=1;c<=origLastCol;c++){
+    ws2.getRow(1).getCell(c).value = ws.getRow(1).getCell(c).value;
+  }
+  ws2.getRow(1).getCell(outCol).value = outColName;
+
+  // Body: walk every original row in order; expand selected rows into multiple output rows,
+  // copy through any unselected row unchanged.
+  let destRow = 2;
+  for(let r=2;r<=origLastRow;r++){
+    if(selectedRows.has(r)){
+      const sku = ws.getRow(r).getCell(skuCol).value;
+      const qty = parseInt(ws.getRow(r).getCell(qtyCol).value);
+      const list = expandOne(sku, qty, start);
+      list.forEach(value=>{
+        for(let c=1;c<=origLastCol;c++){
+          ws2.getRow(destRow).getCell(c).value = ws.getRow(r).getCell(c).value;
+        }
+        ws2.getRow(destRow).getCell(outCol).value = value;
+        destRow++;
+      });
+    } else {
+      for(let c=1;c<=origLastCol;c++){
+        ws2.getRow(destRow).getCell(c).value = ws.getRow(r).getCell(c).value;
+      }
+      destRow++;
+    }
+  }
+  const finalLastRow = destRow - 1;
+
+  applyFullTableStyle(ws2, finalLastCol, finalLastRow);
+
+  const buffer = await wb2.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const baseName = t1State.fileName.replace(/\.[^/.]+$/, '');
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  const outName = `${baseName}_expanded_${ts}.xlsx`;
+  triggerDownload(blob, outName);
+
+  document.getElementById('t1Count').innerText = `Done! Built ${finalLastRow-1} output row(s) from ${selectedRows.size} source row(s) — expanded value in column ${colLetter(outCol)} ("${outColName}"). Downloaded as "${outName}".`;
+}
+
+function resetTool1Excel(){
+  t1State.workbook = null;
+  t1State.fileName = '';
+  document.getElementById('t1FileInput').value = '';
+  document.getElementById('t1UploadStatus').innerText = '';
+  document.getElementById('t1SheetSection').style.display = 'none';
+  document.getElementById('t1ColumnsBlock').style.display = 'none';
+  document.getElementById('t1Preview').innerText = '';
+  document.getElementById('t1Count').innerText = '';
+}
+
+/* ---- Reverse (vice-versa): collapse an expanded list back to SKU + Qty ---- */
+let reverseOutputData = [];
+
+const FORMAT_TEMPLATES = {
+  default: "{SKU}-{QQ}-{SS}",
+  slash: "{SKU}/{QQ}-{SS}",
+  mix: "{SKU}-{QQ}/{SS}",
+  doubleSlash: "{SKU}/{QQ}/{SS}"
+};
+
+function buildParser(template){
+  const order = [];
+  const escaped = template.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const regexStr = escaped.replace(/\\\{(SKU|QQ|SS)\\\}/g, (match, name)=>{
+    order.push(name);
+    return name === 'SKU' ? '(.+?)' : '(\\d+)';
+  });
+  return { regex: new RegExp('^' + regexStr + '$'), order };
+}
+
+function getActiveTemplate(){
+  const format = document.getElementById('format').value;
+  const custom = document.getElementById('customFormat').value.trim();
+  if(format === 'custom') return custom || null;
+  return FORMAT_TEMPLATES[format];
+}
+
+function reverseGenerate(){
+  const template = getActiveTemplate();
+  if(!template){ alert("Enter a custom format first"); return; }
+  if(!template.includes('{SKU}') || !template.includes('{QQ}')){
+    alert("Format must include {SKU} and {QQ} to reverse.");
+    return;
+  }
+
+  const { regex, order } = buildParser(template);
+  const lines = document.getElementById('reverseInput').value.trim().split(/\n/);
+
+  const qtyBySku = new Map();
+  const skuOrder = [];
+
+  lines.forEach(line=>{
+    line = line.trim();
+    if(!line) return;
+    const m = line.match(regex);
+    if(!m) return;
+
+    const data = {};
+    order.forEach((name, idx)=>{ data[name] = m[idx+1]; });
+
+    const sku = data.SKU;
+    const qty = data.QQ ? parseInt(data.QQ, 10) : null;
+    if(sku && qty && !qtyBySku.has(sku)){
+      qtyBySku.set(sku, qty);
+      skuOrder.push(sku);
+    }
+  });
+
+  reverseOutputData = skuOrder.map(sku => `${sku}\t${qtyBySku.get(sku)}`);
+  document.getElementById('reversePreview').innerText = reverseOutputData.join('\n');
+  document.getElementById('reverseCount').innerText = "Total unique SKUs: " + reverseOutputData.length;
+}
+
+function reverseCopy(){
+  if(!reverseOutputData.length){ alert("Reverse first"); return; }
+  navigator.clipboard.writeText(reverseOutputData.join('\n'));
+  alert("Copied!");
+}
+
+function reverseDownloadCSV(){
+  if(!reverseOutputData.length){ alert("Reverse first"); return; }
+  let csv = reverseOutputData.map(line=>{
+    const [sku, qty] = line.split('\t');
+    return `"${sku}","${qty}"`;
+  }).join("\n");
+  let blob = new Blob([csv], {type:'text/csv'});
+  triggerDownload(blob, "sku_reversed.csv");
+}
+
+/* ===================== TOOL 2: EXCEL + BARCODE/QR ===================== */
+const state = { workbook: null, fileName: '' };
+
+document.getElementById('fileInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  document.getElementById('uploadStatus').innerText = 'Reading file...';
+  let wb;
+  try{
+    wb = await loadWorkbookFromFile(file);
+  }catch(err){
+    document.getElementById('uploadStatus').innerText = `⚠ Could not read this file — make sure it's a valid, unprotected .xlsx or .csv file. (${err.message||err})`;
+    return;
+  }
+  if(!wb.worksheets.length){
+    document.getElementById('uploadStatus').innerText = '⚠ This file has no sheets — is it a valid Excel file?';
+    return;
+  }
+  state.workbook = wb;
+  state.fileName = file.name;
+
+  const sheetSelect = document.getElementById('sheetSelect');
+  sheetSelect.innerHTML = '';
+  wb.worksheets.forEach(ws=>{
+    const opt = document.createElement('option');
+    opt.value = ws.name;
+    opt.textContent = ws.name;
+    sheetSelect.appendChild(opt);
+  });
+
+  document.getElementById('uploadStatus').innerText = `Loaded "${file.name}" — ${wb.worksheets.length} sheet(s).`;
+  document.getElementById('sheetSection').style.display = 'block';
+  document.getElementById('columnsBlock').style.display = 'none';
+  document.getElementById('codeSection').style.display = 'none';
+});
+
+function onSheetChosen(){
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  if(!ws){ alert('Sheet not found'); return; }
+
+  const headerRow = ws.getRow(1);
+  const colCount = ws.actualColumnCount || ws.columnCount || headerRow.actualCellCount;
+
+  if(!colCount || !(ws.actualRowCount || ws.rowCount)){
+    document.getElementById('count').innerText = `⚠ Sheet "${ws.name}" appears to be empty — no header row or columns found. Pick a different sheet, or check the file.`;
+    document.getElementById('columnsBlock').style.display = 'none';
+    document.getElementById('codeSection').style.display = 'none';
+    return;
+  }
+
+  const skuSelect = document.getElementById('skuColumnSelect');
+  skuSelect.innerHTML = '';
+
+  for(let c=1;c<=colCount;c++){
+    const headerVal = headerRow.getCell(c).value;
+    const label = `${colLetter(c)} - ${headerVal!=null && headerVal!=='' ? headerVal : '(no header)'}`;
+    const opt1 = document.createElement('option');
+    opt1.value = c; opt1.textContent = label;
+    skuSelect.appendChild(opt1);
+  }
+  skuSelect.options[0] && (skuSelect.options[0].selected = true);
+  document.getElementById('colFilter').value = '';
+
+  document.getElementById('columnsBlock').style.display = 'block';
+  document.getElementById('codeSection').style.display = 'block';
+  document.getElementById('count').innerText = `Sheet "${ws.name}" — ${ws.actualRowCount} row(s) total (including header).`;
+  renderPerColumnTypes();
+  renderRawSheetPreview(ws, 'importPreview2', 10);
+}
+
+function filterColumnList(){
+  const q = document.getElementById('colFilter').value.trim().toLowerCase();
+  const options = document.getElementById('skuColumnSelect').options;
+  for(const opt of options){
+    opt.style.display = (!q || opt.textContent.toLowerCase().includes(q)) ? '' : 'none';
+  }
+}
+
+function onRowModeChange(){
+  const mode = document.getElementById('rowMode').value;
+  document.getElementById('rangeInputs').style.display = mode==='range' ? 'inline' : 'none';
+  document.getElementById('specificInputs').style.display = mode==='specific' ? 'inline' : 'none';
+}
+
+function getSelectedSkuColumns(){
+  return Array.from(document.getElementById('skuColumnSelect').selectedOptions).map(o=>parseInt(o.value));
+}
+
+document.getElementById('skuColumnSelect').addEventListener('change', renderPerColumnTypes);
+document.getElementById('codeType').addEventListener('change', ()=>{
+  saveSetting('codeType', document.getElementById('codeType').value);
+  document.querySelectorAll('.perColType').forEach(sel=>{
+    if(sel.dataset.touched !== '1') sel.value = document.getElementById('codeType').value;
+  });
+});
+document.getElementById('sizeSelect').addEventListener('change', ()=> saveSetting('sizeSelect', document.getElementById('sizeSelect').value));
+document.getElementById('showText').addEventListener('change', ()=> saveSetting('showText', document.getElementById('showText').checked ? '1':'0'));
+
+function renderPerColumnTypes(){
+  if(!state.workbook) return;
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  if(!ws) return;
+  const cols = getSelectedSkuColumns();
+  const container = document.getElementById('perColTypeBlock');
+  container.innerHTML = '';
+  const globalType = document.getElementById('codeType').value;
+
+  cols.forEach(c=>{
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const label = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+    const wrap = document.createElement('div');
+    wrap.className = 'perColType';
+    wrap.innerHTML = `<label style="display:inline-block;width:160px;margin-top:0">${label}:</label>
+      <select data-col="${c}" class="perColType" onchange="this.dataset.touched='1'">
+        <option value="code128" ${globalType==='code128'?'selected':''}>Code 128</option>
+        <option value="ean13" ${globalType==='ean13'?'selected':''}>EAN-13</option>
+        <option value="upc" ${globalType==='upc'?'selected':''}>UPC-A</option>
+        <option value="qr" ${globalType==='qr'?'selected':''}>QR Code</option>
+      </select>`;
+    container.appendChild(wrap);
+  });
+}
+
+function getTypeForColumn(c){
+  const sel = document.querySelector(`.perColType[data-col="${c}"]`);
+  return sel ? sel.value : document.getElementById('codeType').value;
+}
+
+function getSelectedRowNumbers(ws, skuCols){
+  return genericGetSelectedRows(ws, 'rowMode', 'rangeStart', 'rangeEnd', 'specificRows', (r)=>{
+    return skuCols.some(c=>{
+      const v = ws.getRow(r).getCell(c).value;
+      return v!=null && String(v).trim()!=='';
+    });
+  });
+}
+
+function collectOptions(){
+  return {
+    scale: parseFloat(document.getElementById('sizeSelect').value),
+    showText: document.getElementById('showText').checked
+  };
+}
+
+function findDuplicateWarningsTool2(ws, skuCols, rows){
+  const msgs = [];
+  skuCols.forEach(c=>{
+    const seen = new Set(); const dups = new Set();
+    rows.forEach(r=>{
+      const v = ws.getRow(r).getCell(c).value;
+      if(v==null) return;
+      const s = String(v).trim();
+      if(!s) return;
+      if(seen.has(s)) dups.add(s); else seen.add(s);
+    });
+    if(dups.size){
+      const headerVal = ws.getRow(1).getCell(c).value || colLetter(c);
+      msgs.push(`${headerVal}: ${Array.from(dups).join(', ')}`);
+    }
+  });
+  return msgs;
+}
+
+async function previewSelection(){
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  const skuCols = getSelectedSkuColumns();
+  if(!skuCols.length){ alert('Select at least one SKU column'); return; }
+  const rows = getSelectedRowNumbers(ws, skuCols);
+
+  if(!rows.length){
+    document.getElementById('preview').innerHTML = '';
+    document.getElementById('count').innerText = 'No rows with a SKU value in the current selection.';
+    return;
+  }
+
+  const dupMsgs = findDuplicateWarningsTool2(ws, skuCols, rows);
+  document.getElementById('dupWarning2').innerText = dupMsgs.length ? `⚠ Duplicate values found — ${dupMsgs.join(' | ')}` : '';
+
+  const base = collectOptions();
+  const origLastCol = ws.actualColumnCount || ws.columnCount;
+  const outColHeader = {};
+  skuCols.forEach(c=>{
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const headerText = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+    const t = getTypeForColumn(c);
+    outColHeader[c] = `${headerText} (${t==='qr'?'QR':'Barcode'})`;
+  });
+
+  const limit = Math.min(rows.length, 15);
+  document.getElementById('count').innerText = `Previewing ${limit} of ${rows.length} selected row(s)...`;
+
+  let html = `<div class="hint"><b>Output preview</b> — this is what the final Excel will look like</div>`;
+  html += '<div class="preview"><table class="qc"><tr>';
+  for(let c=1;c<=origLastCol;c++){
+    const headerVal = ws.getRow(1).getCell(c).value;
+    html += `<th>${headerVal!=null && headerVal!=='' ? headerVal : colLetter(c)}</th>`;
+  }
+  skuCols.forEach(c=> html += `<th>${outColHeader[c]}</th>`);
+  html += '</tr>';
+
+  for(let i=0;i<limit;i++){
+    const r = rows[i];
+    html += '<tr>';
+    for(let c=1;c<=origLastCol;c++){
+      const v = ws.getRow(r).getCell(c).value;
+      html += `<td>${v!=null ? v : ''}</td>`;
+    }
+    for(const c of skuCols){
+      const sku = ws.getRow(r).getCell(c).value;
+      if(sku==null || String(sku).trim()===''){
+        html += '<td></td>';
+        continue;
+      }
+      try{
+        const img = await skuToImage(sku, { ...base, type: getTypeForColumn(c) });
+        html += `<td><img src="${img.dataUrl}" style="max-width:160px;display:block;margin:0 auto"/></td>`;
+      }catch(err){
+        html += `<td class="warn">${err.message||err}</td>`;
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</table></div>';
+  document.getElementById('preview').innerHTML = html;
+
+  document.getElementById('count').innerText =
+    `Total selected rows: ${rows.length} × ${skuCols.length} column(s)${rows.length>limit ? ` (showing first ${limit} rows in preview)` : ''}`;
+}
+
+function collectSelectionItemsTool2(ws, skuCols, rows){
+  const items = [];
+  rows.forEach(r=>{
+    skuCols.forEach(c=>{
+      const sku = ws.getRow(r).getCell(c).value;
+      if(sku==null || String(sku).trim()==='') return;
+      items.push({ row: r, col: c, sku: String(sku).trim() });
+    });
+  });
+  return items;
+}
+
+async function generateAndDownload(){
+  if(!state.workbook){ alert('Upload a file first'); return; }
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  const skuCols = getSelectedSkuColumns();
+  if(!skuCols.length){ alert('Select at least one SKU column'); return; }
+  const rows = getSelectedRowNumbers(ws, skuCols);
+
+  if(!rows.length){ alert('No rows with a SKU value in the current selection.'); return; }
+
+  const base = collectOptions();
+  const genBtn = document.getElementById('genBtn');
+  genBtn.disabled = true;
+
+  let nextCol = (ws.actualColumnCount || ws.columnCount) + 1;
+  const outColFor = {};
+  skuCols.forEach(c=>{
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const headerText = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+    const t = getTypeForColumn(c);
+    ws.getRow(1).getCell(nextCol).value = `${headerText} (${t==='qr'?'QR':'Barcode'})`;
+    outColFor[c] = nextCol;
+    nextCol++;
+  });
+
+  let inserted = 0;
+  const failures = [];
+  const total = rows.length * skuCols.length;
+  let lastPct = -1;
+
+  for(let i=0;i<rows.length;i++){
+    const r = rows[i];
+    for(const c of skuCols){
+      const sku = ws.getRow(r).getCell(c).value;
+      if(sku==null || String(sku).trim()==='') continue;
+      inserted++;
+
+      const pct = Math.round(inserted/total*100);
+      if(pct !== lastPct){
+        setProgress('progressBar2','progressWrap2', pct);
+        document.getElementById('count').innerText = `Generating ${inserted} of ${total}...`;
+        lastPct = pct;
+      }
+      if(inserted % 25 === 0) await yieldToUI();
+
+      try{
+        const opts = { ...base, type: getTypeForColumn(c) };
+        const img = await skuToImage(sku, opts);
+        const base64 = img.dataUrl.split(',')[1];
+        const imageId = state.workbook.addImage({ base64, extension: 'png' });
+        const outCol = outColFor[c];
+        ws.addImage(imageId, {
+          tl: { col: outCol - 1, row: r - 1 },
+          ext: { width: img.width, height: img.height }
+        });
+        const ptHeight = img.height * 0.75;
+        if(!ws.getRow(r).height || ws.getRow(r).height < ptHeight){
+          ws.getRow(r).height = ptHeight;
+        }
+      }catch(err){
+        failures.push(`Row ${r} (${colLetter(c)}): ${err.message || err}`);
+      }
+    }
+  }
+
+  styleWorksheet(ws, skuCols, outColFor, rows);
+  setProgress('progressBar2','progressWrap2', 100);
+
+  document.getElementById('dupWarning2').innerText = failures.length
+    ? `⚠ ${failures.length} item(s) failed to generate and were skipped: ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`
+    : '';
+
+  const buffer = await state.workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const baseName = state.fileName.replace(/\.[^/.]+$/, '');
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  const outName = `${baseName}_with_codes_${ts}.xlsx`;
+
+  triggerDownload(blob, outName);
+
+  genBtn.disabled = false;
+  const outColsLabel = skuCols.map(c=>colLetter(outColFor[c])).join(', ');
+  const failNote = failures.length ? ` (${failures.length} item(s) skipped — see warning above)` : '';
+  document.getElementById('count').innerText =
+    `Done! Inserted ${inserted-failures.length} code(s) across ${skuCols.length} new column(s) (${outColsLabel})${failNote}. Downloaded as "${outName}". Your original file was not changed.`;
+}
+
+async function downloadZipTool2(){
+  if(!state.workbook){ alert('Upload a file first'); return; }
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  const skuCols = getSelectedSkuColumns();
+  if(!skuCols.length){ alert('Select at least one SKU column'); return; }
+  const rows = getSelectedRowNumbers(ws, skuCols);
+  if(!rows.length){ alert('No rows with a SKU value in the current selection.'); return; }
+
+  const base = collectOptions();
+  const items = collectSelectionItemsTool2(ws, skuCols, rows);
+  const zipItems = [];
+  const failures = [];
+  let lastPct = -1;
+  for(let i=0;i<items.length;i++){
+    const it = items[i];
+    const pct = Math.round((i+1)/items.length*100);
+    if(pct !== lastPct){ setProgress('progressBar2','progressWrap2', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+    try{
+      const opts = { ...base, type: getTypeForColumn(it.col) };
+      const img = await skuToImage(it.sku, opts);
+      const headerVal = ws.getRow(1).getCell(it.col).value || colLetter(it.col);
+      zipItems.push({ dataUrl: img.dataUrl, filename: `${sanitizeFilename(headerVal)}_${sanitizeFilename(it.sku)}.png` });
+    }catch(err){
+      failures.push(`Row ${it.row} (${colLetter(it.col)}): ${err.message || err}`);
+    }
+  }
+  setProgress('progressBar2','progressWrap2', 100);
+  document.getElementById('dupWarning2').innerText = failures.length
+    ? `⚠ ${failures.length} item(s) skipped (failed to generate): ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`
+    : '';
+  if(!zipItems.length){ alert('Nothing could be generated.'); return; }
+  const baseName = state.fileName.replace(/\.[^/.]+$/, '') || 'sku';
+  await downloadImagesZip(zipItems, `${baseName}_barcodes.zip`);
+}
+
+async function printLabelsTool2(){
+  if(!state.workbook){ alert('Upload a file first'); return; }
+  const ws = state.workbook.getWorksheet(document.getElementById('sheetSelect').value);
+  const skuCols = getSelectedSkuColumns();
+  if(!skuCols.length){ alert('Select at least one SKU column'); return; }
+  const rows = getSelectedRowNumbers(ws, skuCols);
+  if(!rows.length){ alert('No rows with a SKU value in the current selection.'); return; }
+
+  const base = collectOptions();
+  const items = collectSelectionItemsTool2(ws, skuCols, rows);
+  const printItems = [];
+  const failures = [];
+  let lastPct = -1;
+  for(let i=0;i<items.length;i++){
+    const it = items[i];
+    const pct = Math.round((i+1)/items.length*100);
+    if(pct !== lastPct){ setProgress('progressBar2','progressWrap2', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+    try{
+      const opts = { ...base, type: getTypeForColumn(it.col) };
+      const img = await skuToImage(it.sku, opts);
+      printItems.push({ dataUrl: img.dataUrl });
+    }catch(err){
+      failures.push(`Row ${it.row} (${colLetter(it.col)}): ${err.message || err}`);
+    }
+  }
+  setProgress('progressBar2','progressWrap2', 100);
+  document.getElementById('dupWarning2').innerText = failures.length
+    ? `⚠ ${failures.length} item(s) skipped (failed to generate): ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`
+    : '';
+  if(!printItems.length){ alert('Nothing could be generated.'); return; }
+  printLabelsWindow(printItems, document.getElementById('labelSize2').value);
+}
+
+function resetTool2(){
+  state.workbook = null;
+  state.fileName = '';
+  document.getElementById('fileInput').value = '';
+  document.getElementById('uploadStatus').innerText = '';
+  document.getElementById('sheetSection').style.display = 'none';
+  document.getElementById('columnsBlock').style.display = 'none';
+  document.getElementById('codeSection').style.display = 'none';
+  document.getElementById('preview').innerHTML = '';
+  document.getElementById('count').innerText = '';
+  document.getElementById('dupWarning2').innerText = '';
+  document.getElementById('perColTypeBlock').innerHTML = '';
+  setProgress('progressBar2','progressWrap2', 0);
+}
+
+(function initTool2Settings(){
+  const savedType = loadSetting('codeType', null);
+  const savedSize = loadSetting('sizeSelect', null);
+  const savedShowText = loadSetting('showText', null);
+  if(savedType) document.getElementById('codeType').value = savedType;
+  if(savedSize) document.getElementById('sizeSelect').value = savedSize;
+  if(savedShowText !== null) document.getElementById('showText').checked = savedShowText === '1';
+})();
+
+/* ===================== TOOL 3: QC + BARCODE MODULE ===================== */
+let qcRows = [];
+
+function qcModeChange(){
+  const mode = document.querySelector('input[name="qcMode"]:checked').value;
+  document.getElementById('qcMultipleBlock').style.display = mode === 'multiple' ? 'block' : 'none';
+  document.getElementById('qcSimpleBlock').style.display = mode === 'simple' ? 'block' : 'none';
+  if(mode === 'simple') qcUpdateSimpleCount();
+}
+
+function qcUpdateSimpleCount(){
+  const lines = document.getElementById('qcInput').value.trim().split(/\n/).filter(l=>l.trim());
+  document.getElementById('qcSimpleListCount').innerText = `${lines.length} item(s) in list so far.`;
+}
+
+function qcAddSimple(){
+  const sku = document.getElementById('qcSimpleSku').value.trim();
+  if(!sku){ alert('Enter a SKU'); return; }
+  const status = document.getElementById('qcSimpleStatus').value;
+  const remarks = document.getElementById('qcSimpleRemarks').value.trim();
+  const line = `${sku}\t${status}\t${remarks}`;
+  const ta = document.getElementById('qcInput');
+  ta.value = ta.value.trim() ? ta.value.trim() + '\n' + line : line;
+
+  document.getElementById('qcSimpleSku').value = '';
+  document.getElementById('qcSimpleRemarks').value = '';
+  document.getElementById('qcSimpleStatus').value = 'Pass';
+  qcUpdateSimpleCount();
+}
+
+function qcParse(){
+  const lines = document.getElementById('qcInput').value.trim().split(/\n/);
+  const rows = [];
+  const seen = new Set(); const dups = new Set();
+  const addSerial = document.getElementById('qcAddSerial').checked;
+  const startSerial = parseInt(document.getElementById('qcStartSerial').value) || 1;
+  let idx = 0;
+
+  lines.forEach(line=>{
+    if(!line.trim()) return;
+    const parts = line.split(/\t/).map(p=>p.trim());
+    const sku = parts[0];
+    if(!sku) return;
+    let status = (parts[1] || 'Pass').toLowerCase();
+    status = status.startsWith('f') ? 'Fail' : 'Pass';
+    const remarks = parts.slice(2).join(' ').trim();
+
+    if(seen.has(sku)) dups.add(sku); else seen.add(sku);
+    const serial = addSerial ? String(startSerial + idx).padStart(2,'0') : null;
+    rows.push({ sku, status, remarks, serial });
+    idx++;
+  });
+
+  return { rows, duplicates: Array.from(dups) };
+}
+
+function qcEncodedValue(item){
+  const useSerial = document.getElementById('qcSerialInBarcode').checked;
+  return (useSerial && item.serial) ? `${item.sku}-${item.serial}` : item.sku;
+}
+
+function qcCollectOptions(){
+  return {
+    type: document.getElementById('qcCodeType').value,
+    scale: parseFloat(document.getElementById('qcSizeSelect').value),
+    showText: document.getElementById('qcShowText').checked
+  };
+}
+
+async function qcProcess(){
+  const { rows, duplicates } = qcParse();
+  qcRows = rows;
+
+  document.getElementById('qcDupWarning').innerText = duplicates.length
+    ? `⚠ Duplicate SKU found: ${duplicates.join(', ')}`
+    : '';
+
+  const passCount = rows.filter(r=>r.status==='Pass').length;
+  const failCount = rows.length - passCount;
+  const passRate = rows.length ? Math.round(passCount/rows.length*100) : 0;
+
+  const opts = qcCollectOptions();
+  const includeFail = document.getElementById('qcGenFail').checked;
+  const previewDiv = document.getElementById('qcPreview');
+
+  const previewLimit = Math.min(rows.length, 50);
+  const table = document.createElement('table');
+  table.className = 'qc';
+  table.innerHTML = '<tr><th>SKU</th><th>Serial No</th><th>Status</th><th>Remarks</th><th>Code</th></tr>';
+
+  let failures = 0;
+  let lastPct = -1;
+  for(let i=0;i<previewLimit;i++){
+    const item = rows[i];
+    const pct = Math.round((i+1)/previewLimit*100);
+    if(pct !== lastPct){ setProgress('progressBar3','progressWrap3', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+
+    const tr = document.createElement('tr');
+    tr.className = item.status === 'Pass' ? 'qc-pass' : 'qc-fail';
+    tr.dataset.status = item.status.toLowerCase();
+
+    let codeCellHtml = '<em style="color:#999">—</em>';
+    if(item.status === 'Pass' || includeFail){
+      try{
+        const img = await skuToImage(qcEncodedValue(item), opts);
+        item._dataUrl = img.dataUrl;
+        codeCellHtml = `<img src="${img.dataUrl}" style="max-width:160px;display:block;margin:0 auto"/>`;
+      }catch(err){
+        failures++;
+        codeCellHtml = `<span class="warn" title="${(err.message||err).replace(/"/g,'')}">failed</span>`;
+      }
+    }
+
+    tr.innerHTML = `<td>${item.sku}</td><td>${item.serial||'-'}</td><td>${item.status}</td><td>${item.remarks||''}</td><td>${codeCellHtml}</td>`;
+    table.appendChild(tr);
+  }
+  setProgress('progressBar3','progressWrap3', 100);
+
+  previewDiv.innerHTML = '';
+  previewDiv.appendChild(table);
+  document.getElementById('qcFilterBar').style.display = rows.length ? 'block' : 'none';
+  qcFilter('all');
+
+  const previewNote = rows.length > previewLimit ? ` (preview showing first ${previewLimit} — Download/ZIP/Print below process the full list)` : '';
+  const failNote = failures ? ` — ${failures} code(s) failed to render in preview` : '';
+  document.getElementById('qcCount').innerText = `Total: ${rows.length}  |  Pass: ${passCount}  |  Fail: ${failCount}  |  Pass rate: ${passRate}%${previewNote}${failNote}`;
+}
+
+function qcFilter(which){
+  document.querySelectorAll('#qcFilterBar .filterBtn').forEach(b=>b.classList.remove('active'));
+  document.getElementById(`qcFilter${which.charAt(0).toUpperCase()+which.slice(1)}Btn`).classList.add('active');
+  document.querySelectorAll('#qcPreview table.qc tr[data-status]').forEach(tr=>{
+    tr.style.display = (which === 'all' || tr.dataset.status === which) ? '' : 'none';
+  });
+}
+
+async function qcGenerateExcel(){
+  if(!qcRows.length){ alert('Process the QC list first'); return; }
+  const opts = qcCollectOptions();
+  const includeFail = document.getElementById('qcGenFail').checked;
+
+  const wb = new ExcelJS.Workbook();
+  const ws = wb.addWorksheet('QC Report');
+  ws.getRow(1).values = ['SKU', 'Serial No', 'QC Status', 'Remarks', 'Barcode'];
+  ws.getColumn(1).width = 24;
+  ws.getColumn(2).width = 12;
+  ws.getColumn(3).width = 14;
+  ws.getColumn(4).width = 30;
+  ws.getColumn(5).width = 34;
+
+  let failures = [];
+  let lastPct = -1;
+  for(let i=0;i<qcRows.length;i++){
+    const item = qcRows[i];
+    const rowNum = i + 2;
+    const row = ws.getRow(rowNum);
+    row.getCell(1).value = item.sku;
+    row.getCell(2).value = item.serial || '';
+    row.getCell(3).value = item.status;
+    row.getCell(4).value = item.remarks || '';
+
+    if(item.status === 'Pass' || includeFail){
+      const pct = Math.round((i+1)/qcRows.length*100);
+      if(pct !== lastPct){ setProgress('progressBar3','progressWrap3', pct); lastPct = pct; }
+      if(i % 25 === 0) await yieldToUI();
+      try{
+        const img = await skuToImage(qcEncodedValue(item), opts);
+        const base64 = img.dataUrl.split(',')[1];
+        const imageId = wb.addImage({ base64, extension: 'png' });
+        ws.addImage(imageId, { tl: { col: 4, row: rowNum - 1 }, ext: { width: img.width, height: img.height } });
+        row.height = img.height * 0.75;
+      }catch(err){
+        failures.push(`Row ${rowNum} (${item.sku}): ${err.message || err}`);
+      }
+    }
+  }
+  setProgress('progressBar3','progressWrap3', 100);
+  if(failures.length){
+    document.getElementById('qcDupWarning').innerText = `⚠ ${failures.length} code(s) failed to generate and were left blank: ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`;
+  }
+
+  const thin = { style: 'thin', color: { argb: 'FF000000' } };
+  const border = { top: thin, left: thin, bottom: thin, right: thin };
+  const headerRow = ws.getRow(1);
+  for(let c=1;c<=5;c++){
+    const cell = headerRow.getCell(c);
+    cell.font = { name: 'Times New Roman', bold: true, size: 14 };
+    cell.alignment = { horizontal: 'center', vertical: 'middle' };
+    cell.border = border;
+  }
+  headerRow.height = 26;
+
+  qcRows.forEach((item, i)=>{
+    const rowNum = i + 2;
+    const row = ws.getRow(rowNum);
+    const fillColor = item.status === 'Pass' ? 'FFE9F9EE' : 'FFFDEAEA';
+    for(let c=1;c<=5;c++){
+      const cell = row.getCell(c);
+      cell.border = border;
+      cell.alignment = { horizontal: c===4?'left':'center', vertical: 'middle', wrapText: c===4 };
+      cell.fill = { type: 'pattern', pattern: 'solid', fgColor: { argb: fillColor } };
+      cell.font = { name: 'Times New Roman', size: 12 };
+    }
+  });
+
+  const buffer = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  triggerDownload(blob, `qc_report_${ts}.xlsx`);
+}
+
+async function qcDownloadZip(){
+  if(!qcRows.length){ alert('Process the QC list first'); return; }
+  const opts = qcCollectOptions();
+  const includeFail = document.getElementById('qcGenFail').checked;
+  const targets = qcRows.filter(r=>r.status==='Pass' || includeFail);
+  if(!targets.length){ alert('No items to export (enable "Also generate barcode for Fail items" if needed).'); return; }
+
+  const zipItems = [];
+  const failures = [];
+  let lastPct = -1;
+  for(let i=0;i<targets.length;i++){
+    const pct = Math.round((i+1)/targets.length*100);
+    if(pct !== lastPct){ setProgress('progressBar3','progressWrap3', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+    try{
+      const img = await skuToImage(qcEncodedValue(targets[i]), opts);
+      zipItems.push({ dataUrl: img.dataUrl, filename: `${sanitizeFilename(targets[i].status)}_${sanitizeFilename(targets[i].serial||'')}_${sanitizeFilename(targets[i].sku)}.png` });
+    }catch(err){
+      failures.push(`${targets[i].sku}: ${err.message || err}`);
+    }
+  }
+  setProgress('progressBar3','progressWrap3', 100);
+  document.getElementById('qcDupWarning').innerText = failures.length
+    ? `⚠ ${failures.length} item(s) skipped (failed to generate): ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`
+    : '';
+  if(!zipItems.length){ alert('Nothing could be generated.'); return; }
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  await downloadImagesZip(zipItems, `qc_barcodes_${ts}.zip`);
+}
+
+async function qcPrintLabels(){
+  if(!qcRows.length){ alert('Process the QC list first'); return; }
+  const opts = qcCollectOptions();
+  const includeFail = document.getElementById('qcGenFail').checked;
+  const targets = qcRows.filter(r=>r.status==='Pass' || includeFail);
+  if(!targets.length){ alert('No Pass items to print (enable "Also generate barcode for Fail items" if needed).'); return; }
+
+  const printItems = [];
+  const failures = [];
+  let lastPct = -1;
+  for(let i=0;i<targets.length;i++){
+    const pct = Math.round((i+1)/targets.length*100);
+    if(pct !== lastPct){ setProgress('progressBar3','progressWrap3', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+    try{
+      const img = await skuToImage(qcEncodedValue(targets[i]), opts);
+      printItems.push({ dataUrl: img.dataUrl });
+    }catch(err){
+      failures.push(`${targets[i].sku}: ${err.message || err}`);
+    }
+  }
+  setProgress('progressBar3','progressWrap3', 100);
+  document.getElementById('qcDupWarning').innerText = failures.length
+    ? `⚠ ${failures.length} item(s) skipped (failed to generate): ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`
+    : '';
+  if(!printItems.length){ alert('Nothing could be generated.'); return; }
+  printLabelsWindow(printItems, document.getElementById('labelSize3').value);
+}
+
+function resetTool3(){
+  document.getElementById('qcInput').value = '';
+  qcRows = [];
+  document.getElementById('qcPreview').innerHTML = '';
+  document.getElementById('qcCount').innerText = '';
+  document.getElementById('qcDupWarning').innerText = '';
+  document.getElementById('qcFilterBar').style.display = 'none';
+  qcUpdateSimpleCount();
+  setProgress('progressBar3','progressWrap3', 0);
+}
+
+/* ===================== TOOL 4: IMAGE LINK -> IMAGE (EXCEL) ===================== */
+const state4 = { workbook: null, fileName: '' };
+
+document.getElementById('fileInput4').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  document.getElementById('uploadStatus4').innerText = 'Reading file...';
+  let wb;
+  try{
+    wb = await loadWorkbookFromFile(file);
+  }catch(err){
+    document.getElementById('uploadStatus4').innerText = `⚠ Could not read this file — make sure it's a valid, unprotected .xlsx or .csv file. (${err.message||err})`;
+    return;
+  }
+  if(!wb.worksheets.length){
+    document.getElementById('uploadStatus4').innerText = '⚠ This file has no sheets — is it a valid Excel file?';
+    return;
+  }
+  state4.workbook = wb;
+  state4.fileName = file.name;
+
+  const sheetSelect = document.getElementById('sheetSelect4');
+  sheetSelect.innerHTML = '';
+  wb.worksheets.forEach(ws=>{
+    const opt = document.createElement('option');
+    opt.value = ws.name;
+    opt.textContent = ws.name;
+    sheetSelect.appendChild(opt);
+  });
+
+  document.getElementById('uploadStatus4').innerText = `Loaded "${file.name}" — ${wb.worksheets.length} sheet(s).`;
+  document.getElementById('sheetSection4').style.display = 'block';
+  document.getElementById('columnsBlock4').style.display = 'none';
+  document.getElementById('imgOptionsSection').style.display = 'none';
+});
+
+function onSheetChosen4(){
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  if(!ws){ alert('Sheet not found'); return; }
+
+  const headerRow = ws.getRow(1);
+  const colCount = ws.actualColumnCount || ws.columnCount || headerRow.actualCellCount;
+
+  if(!colCount || !(ws.actualRowCount || ws.rowCount)){
+    document.getElementById('count4').innerText = `⚠ Sheet "${ws.name}" appears to be empty — no header row or columns found. Pick a different sheet, or check the file.`;
+    document.getElementById('columnsBlock4').style.display = 'none';
+    document.getElementById('imgOptionsSection').style.display = 'none';
+    return;
+  }
+
+  const linkSelect = document.getElementById('linkColumnSelect');
+  linkSelect.innerHTML = '';
+
+  for(let c=1;c<=colCount;c++){
+    const headerVal = headerRow.getCell(c).value;
+    const label = `${colLetter(c)} - ${headerVal!=null && headerVal!=='' ? headerVal : '(no header)'}`;
+    const opt1 = document.createElement('option');
+    opt1.value = c; opt1.textContent = label;
+    linkSelect.appendChild(opt1);
+  }
+  linkSelect.options[0] && (linkSelect.options[0].selected = true);
+  document.getElementById('colFilter4').value = '';
+
+  document.getElementById('columnsBlock4').style.display = 'block';
+  document.getElementById('imgOptionsSection').style.display = 'block';
+  document.getElementById('count4').innerText = `Sheet "${ws.name}" — ${ws.actualRowCount} row(s) total (including header).`;
+  renderLinkOutputMap();
+  renderRawSheetPreview(ws, 'importPreview4', 10);
+}
+
+document.getElementById('linkColumnSelect').addEventListener('change', renderLinkOutputMap);
+
+function renderLinkOutputMap(){
+  if(!state4.workbook) return;
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  if(!ws) return;
+  const cols = getSelectedLinkColumns();
+  const colCount = ws.actualColumnCount || ws.columnCount;
+  const container = document.getElementById('linkOutputMapBlock');
+  container.innerHTML = '';
+
+  cols.forEach(c=>{
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const label = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+    let optionsHtml = '';
+    for(let oc=1;oc<=colCount;oc++){
+      const oHeaderVal = ws.getRow(1).getCell(oc).value;
+      const oLabel = `${colLetter(oc)} - ${oHeaderVal!=null && oHeaderVal!=='' ? oHeaderVal : '(no header)'}`;
+      optionsHtml += `<option value="${oc}">${oLabel}</option>`;
+    }
+    optionsHtml += `<option value="new" selected>+ Add new column (${colLetter(colCount+1)})</option>`;
+    const wrap = document.createElement('div');
+    wrap.className = 'perColType';
+    wrap.innerHTML = `<label style="display:inline-block;width:160px;margin-top:0">${label} image goes to:</label>
+      <select data-linkcol="${c}" class="linkOutMap">${optionsHtml}</select>`;
+    container.appendChild(wrap);
+  });
+}
+
+function getOutputColumnForLink(c, newColCounterRef){
+  const sel = document.querySelector(`.linkOutMap[data-linkcol="${c}"]`);
+  const val = sel ? sel.value : 'new';
+  if(val === 'new'){
+    const assigned = newColCounterRef.next;
+    newColCounterRef.next++;
+    return assigned;
+  }
+  return parseInt(val);
+}
+
+function filterColumnList4(){
+  const q = document.getElementById('colFilter4').value.trim().toLowerCase();
+  const options = document.getElementById('linkColumnSelect').options;
+  for(const opt of options){
+    opt.style.display = (!q || opt.textContent.toLowerCase().includes(q)) ? '' : 'none';
+  }
+}
+
+function onRowModeChange4(){
+  const mode = document.getElementById('rowMode4').value;
+  document.getElementById('rangeInputs4').style.display = mode==='range' ? 'inline' : 'none';
+  document.getElementById('specificInputs4').style.display = mode==='specific' ? 'inline' : 'none';
+}
+
+function getSelectedLinkColumns(){
+  return Array.from(document.getElementById('linkColumnSelect').selectedOptions).map(o=>parseInt(o.value));
+}
+
+function getCellLinkText(ws, r, c){
+  const v = ws.getRow(r).getCell(c).value;
+  if(v == null) return '';
+  if(typeof v === 'object'){
+    if(v.text) return String(v.text).trim();
+    if(v.hyperlink) return String(v.hyperlink).trim();
+  }
+  return String(v).trim();
+}
+
+function getSelectedRowNumbers4(ws, cols){
+  return genericGetSelectedRows(ws, 'rowMode4', 'rangeStart4', 'rangeEnd4', 'specificRows4', (r)=>{
+    return cols.some(c=> getCellLinkText(ws, r, c) !== '');
+  });
+}
+
+function collectSelectionItemsTool4(ws, cols, rows){
+  const items = [];
+  rows.forEach(r=>{
+    cols.forEach(c=>{
+      const link = getCellLinkText(ws, r, c);
+      if(!link) return;
+      items.push({ row: r, col: c, link });
+    });
+  });
+  return items;
+}
+
+async function previewImagesTool4(){
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  const cols = getSelectedLinkColumns();
+  if(!cols.length){ alert('Select at least one link column'); return; }
+  const rows = getSelectedRowNumbers4(ws, cols);
+  if(!rows.length){ document.getElementById('preview4').innerHTML=''; document.getElementById('count4').innerText='No rows with a link in the current selection.'; return; }
+
+  const maxWidth = parseInt(document.getElementById('imgMaxWidth').value) || 150;
+  const origLastCol = ws.actualColumnCount || ws.columnCount;
+  const rowsLimited = rows.slice(0, 15);
+
+  const outColLabel = {};
+  cols.forEach(c=>{
+    const sel = document.querySelector(`.linkOutMap[data-linkcol="${c}"]`);
+    const val = sel ? sel.value : 'new';
+    const headerVal = ws.getRow(1).getCell(c).value;
+    const headerText = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+    outColLabel[c] = val === 'new' ? `${headerText} (Image)` : `${headerText} (Image → col ${colLetter(parseInt(val))})`;
+  });
+
+  let html = `<div class="hint"><b>Output preview</b> — this is roughly what the final Excel will look like</div>`;
+  html += '<div class="preview"><table class="qc"><tr>';
+  for(let c=1;c<=origLastCol;c++){
+    const headerVal = ws.getRow(1).getCell(c).value;
+    html += `<th>${headerVal!=null && headerVal!=='' ? headerVal : colLetter(c)}</th>`;
+  }
+  cols.forEach(c=> html += `<th>${outColLabel[c]}</th>`);
+  html += '</tr>';
+
+  let failed = 0;
+  let lastPct = -1;
+  let processed = 0;
+  const totalToFetch = rowsLimited.length * cols.length;
+  document.getElementById('count4').innerText = 'Fetching preview images...';
+
+  for(const r of rowsLimited){
+    html += '<tr>';
+    for(let c=1;c<=origLastCol;c++){
+      const text = getCellLinkText(ws, r, c);
+      html += `<td>${text}</td>`;
+    }
+    for(const c of cols){
+      processed++;
+      const pct = Math.round(processed/totalToFetch*100);
+      if(pct !== lastPct){ setProgress('progressBar4','progressWrap4', pct); lastPct = pct; }
+      if(processed % 10 === 0) await yieldToUI();
+      const link = getCellLinkText(ws, r, c);
+      if(!link){ html += '<td></td>'; continue; }
+      const result = await fetchImageAsDataUrl(link, maxWidth);
+      if(result.ok){
+        html += `<td><img src="${result.dataUrl}" style="max-width:140px;display:block;margin:0 auto"/></td>`;
+      } else {
+        failed++;
+        html += `<td class="warn" title="${(result.error||'').replace(/"/g,'')}">failed</td>`;
+      }
+    }
+    html += '</tr>';
+  }
+  html += '</table></div>';
+  setProgress('progressBar4','progressWrap4', 100);
+  document.getElementById('preview4').innerHTML = html;
+
+  document.getElementById('count4').innerText =
+    `Showing first ${rowsLimited.length} of ${rows.length} row(s) × ${cols.length} column(s)${failed ? ` — ${failed} failed to load` : ''}`;
+}
+
+async function generateImagesTool4(){
+  if(!state4.workbook){ alert('Upload a file first'); return; }
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  const cols = getSelectedLinkColumns();
+  if(!cols.length){ alert('Select at least one link column'); return; }
+  const rows = getSelectedRowNumbers4(ws, cols);
+  if(!rows.length){ alert('No rows with a link in the current selection.'); return; }
+
+  const maxWidth = parseInt(document.getElementById('imgMaxWidth').value) || 150;
+  const genBtn = document.getElementById('genBtn4');
+  genBtn.disabled = true;
+
+  const newColCounter = { next: (ws.actualColumnCount || ws.columnCount) + 1 };
+  const outColFor = {};
+  cols.forEach(c=>{
+    const outCol = getOutputColumnForLink(c, newColCounter);
+    outColFor[c] = outCol;
+    const sel = document.querySelector(`.linkOutMap[data-linkcol="${c}"]`);
+    if(sel && sel.value === 'new'){
+      const headerVal = ws.getRow(1).getCell(c).value;
+      const headerText = (headerVal!=null && headerVal!=='') ? headerVal : colLetter(c);
+      ws.getRow(1).getCell(outCol).value = `${headerText} (Image)`;
+    }
+  });
+
+  const items = collectSelectionItemsTool4(ws, cols, rows);
+  const failedRows = [];
+  const useLinkFallback = document.getElementById('fallbackLinkOnFail').checked;
+  let done = 0;
+  let lastPct = -1;
+
+  for(const it of items){
+    done++;
+    const pct = Math.round(done/items.length*100);
+    if(pct !== lastPct){
+      setProgress('progressBar4','progressWrap4', pct);
+      document.getElementById('count4').innerText = `Fetching ${done} of ${items.length}...`;
+      lastPct = pct;
+    }
+    if(done % 10 === 0) await yieldToUI();
+
+    const result = await fetchImageAsDataUrl(it.link, maxWidth);
+    const outCol = outColFor[it.col];
+    if(!result.ok){
+      failedRows.push(`Row ${it.row} (${colLetter(it.col)}): ${result.error}`);
+      if(useLinkFallback){
+        const cell = ws.getRow(it.row).getCell(outCol);
+        cell.value = { text: 'Open Image', hyperlink: it.link };
+        cell.font = { name: 'Times New Roman', size: 12, color: { argb: 'FF0563C1' }, underline: true };
+      }
+      continue;
+    }
+    try{
+      const base64 = result.dataUrl.split(',')[1];
+      const imageId = state4.workbook.addImage({ base64, extension: 'png' });
+      ws.addImage(imageId, {
+        tl: { col: outCol - 1, row: it.row - 1 },
+        ext: { width: result.width, height: result.height }
+      });
+      const ptHeight = result.height * 0.75;
+      if(!ws.getRow(it.row).height || ws.getRow(it.row).height < ptHeight){
+        ws.getRow(it.row).height = ptHeight;
+      }
+    }catch(err){
+      failedRows.push(`Row ${it.row} (${colLetter(it.col)}): ${err.message || err}`);
+    }
+  }
+
+  styleWorksheet(ws, cols, outColFor, rows);
+  setProgress('progressBar4','progressWrap4', 100);
+
+  document.getElementById('imgWarning4').innerText = failedRows.length
+    ? `⚠ ${failedRows.length} image(s) failed to load (left blank): ${failedRows.slice(0,10).join(' | ')}${failedRows.length>10 ? ' …' : ''}`
+    : '';
+
+  const buffer = await state4.workbook.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const baseName = state4.fileName.replace(/\.[^/.]+$/, '');
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  const outName = `${baseName}_with_images_${ts}.xlsx`;
+
+  triggerDownload(blob, outName);
+
+  genBtn.disabled = false;
+  const outColsLabel = cols.map(c=>colLetter(outColFor[c])).join(', ');
+  const embedded = items.length - failedRows.length;
+  const fallbackNote = (failedRows.length && useLinkFallback) ? ` (${failedRows.length} failed link(s) added as clickable "Open Image" links instead)` : '';
+  document.getElementById('count4').innerText =
+    `Done! Embedded ${embedded} of ${items.length} image(s) into new column(s) (${outColsLabel})${fallbackNote}. Downloaded as "${outName}".`;
+}
+
+async function downloadZipTool4(){
+  if(!state4.workbook){ alert('Upload a file first'); return; }
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  const cols = getSelectedLinkColumns();
+  if(!cols.length){ alert('Select at least one link column'); return; }
+  const rows = getSelectedRowNumbers4(ws, cols);
+  if(!rows.length){ alert('No rows with a link in the current selection.'); return; }
+
+  const maxWidth = parseInt(document.getElementById('imgMaxWidth').value) || 150;
+  const items = collectSelectionItemsTool4(ws, cols, rows);
+  const zipItems = [];
+  let failed = 0;
+  let lastPct = -1;
+
+  for(let i=0;i<items.length;i++){
+    const pct = Math.round((i+1)/items.length*100);
+    if(pct !== lastPct){ setProgress('progressBar4','progressWrap4', pct); lastPct = pct; }
+    if(i % 10 === 0) await yieldToUI();
+    const it = items[i];
+    const result = await fetchImageAsDataUrl(it.link, maxWidth);
+    if(!result.ok){ failed++; continue; }
+    zipItems.push({ dataUrl: result.dataUrl, filename: `row${it.row}_${colLetter(it.col)}.png` });
+  }
+  setProgress('progressBar4','progressWrap4', 100);
+  document.getElementById('imgWarning4').innerText = failed ? `⚠ ${failed} image(s) failed to load and were skipped.` : '';
+
+  if(!zipItems.length){ alert('No images could be fetched.'); return; }
+  const baseName = state4.fileName.replace(/\.[^/.]+$/, '') || 'images';
+  await downloadImagesZip(zipItems, `${baseName}_images.zip`);
+}
+
+async function printImagesTool4(){
+  if(!state4.workbook){ alert('Upload a file first'); return; }
+  const ws = state4.workbook.getWorksheet(document.getElementById('sheetSelect4').value);
+  const cols = getSelectedLinkColumns();
+  if(!cols.length){ alert('Select at least one link column'); return; }
+  const rows = getSelectedRowNumbers4(ws, cols);
+  if(!rows.length){ alert('No rows with a link in the current selection.'); return; }
+
+  const maxWidth = parseInt(document.getElementById('imgMaxWidth').value) || 150;
+  const items = collectSelectionItemsTool4(ws, cols, rows);
+  const printItems = [];
+  let failed = 0;
+  let lastPct = -1;
+
+  for(let i=0;i<items.length;i++){
+    const pct = Math.round((i+1)/items.length*100);
+    if(pct !== lastPct){ setProgress('progressBar4','progressWrap4', pct); lastPct = pct; }
+    if(i % 10 === 0) await yieldToUI();
+    const result = await fetchImageAsDataUrl(items[i].link, maxWidth);
+    if(!result.ok){ failed++; continue; }
+    printItems.push({ dataUrl: result.dataUrl });
+  }
+  setProgress('progressBar4','progressWrap4', 100);
+  document.getElementById('imgWarning4').innerText = failed ? `⚠ ${failed} image(s) failed to load and were skipped.` : '';
+
+  if(!printItems.length){ alert('No images could be fetched.'); return; }
+  printLabelsWindow(printItems, document.getElementById('labelSize4').value);
+}
+
+function resetTool4(){
+  state4.workbook = null;
+  state4.fileName = '';
+  document.getElementById('fileInput4').value = '';
+  document.getElementById('uploadStatus4').innerText = '';
+  document.getElementById('sheetSection4').style.display = 'none';
+  document.getElementById('columnsBlock4').style.display = 'none';
+  document.getElementById('imgOptionsSection').style.display = 'none';
+  document.getElementById('preview4').innerHTML = '';
+  document.getElementById('count4').innerText = '';
+  document.getElementById('imgWarning4').innerText = '';
+  setProgress('progressBar4','progressWrap4', 0);
+}
+
+/* ===================== TOOL 5: BARCODE + QR GENERATOR (SYNCED) ===================== */
+let bqRows = [];
+
+function bqModeChange(){
+  const mode = document.querySelector('input[name="bqMode"]:checked').value;
+  document.getElementById('bqMultipleBlock').style.display = mode === 'multiple' ? 'block' : 'none';
+  document.getElementById('bqSimpleBlock').style.display = mode === 'simple' ? 'block' : 'none';
+  if(mode === 'simple') bqUpdateSimpleCount();
+}
+
+function bqUpdateSimpleCount(){
+  const lines = document.getElementById('bqInput').value.trim().split(/\n/).filter(l=>l.trim());
+  document.getElementById('bqSimpleListCount').innerText = `${lines.length} item(s) in list so far.`;
+}
+
+function bqAddSimple(){
+  const value = document.getElementById('bqSimpleValue').value.trim();
+  if(!value){ alert('Enter a value'); return; }
+  const ta = document.getElementById('bqInput');
+  ta.value = ta.value.trim() ? ta.value.trim() + '\n' + value : value;
+  document.getElementById('bqSimpleValue').value = '';
+  bqUpdateSimpleCount();
+}
+
+function bqCollectOptions(){
+  return {
+    scale: parseFloat(document.getElementById('bqSizeSelect').value),
+    showText: document.getElementById('bqShowText').checked
+  };
+}
+
+async function bqProcess(){
+  const lines = document.getElementById('bqInput').value.trim().split(/\n/).map(l=>l.trim()).filter(Boolean);
+  if(!lines.length){ alert('Add at least one value'); return; }
+
+  const seen = new Set(); const dups = new Set();
+  lines.forEach(v=>{ if(seen.has(v)) dups.add(v); else seen.add(v); });
+  document.getElementById('bqDupWarning').innerText = dups.size ? `⚠ Duplicate value found: ${Array.from(dups).join(', ')}` : '';
+
+  const opts = bqCollectOptions();
+  bqRows = [];
+  const previewLimit = Math.min(lines.length, 50);
+  const table = document.createElement('table');
+  table.className = 'qc';
+  table.innerHTML = '<tr><th>Value</th><th>Barcode (Code128)</th><th>QR Code</th></tr>';
+
+  let failures = 0;
+  let lastPct = -1;
+  for(let i=0;i<lines.length;i++){
+    const pct = Math.round((i+1)/lines.length*100);
+    if(pct !== lastPct){ setProgress('progressBar5','progressWrap5', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+
+    const value = lines[i];
+    try{
+      const barcode = await skuToImage(value, { ...opts, type: 'code128' });
+      const qr = await skuToImage(value, { ...opts, type: 'qr' });
+      bqRows.push({ value, barcode, qr });
+
+      if(i < previewLimit){
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${value}</td>
+          <td><img src="${barcode.dataUrl}" style="max-width:200px;display:block;margin:0 auto"/></td>
+          <td><img src="${qr.dataUrl}" style="max-width:140px;display:block;margin:0 auto"/></td>`;
+        table.appendChild(tr);
+      }
+    }catch(err){
+      failures++;
+      if(i < previewLimit){
+        const tr = document.createElement('tr');
+        tr.innerHTML = `<td>${value}</td><td colspan="2" class="warn">${(err.message||err)}</td>`;
+        table.appendChild(tr);
+      }
+    }
+  }
+  setProgress('progressBar5','progressWrap5', 100);
+
+  document.getElementById('bqPreview').innerHTML = '';
+  document.getElementById('bqPreview').appendChild(table);
+  const previewNote = lines.length > previewLimit ? ` (preview showing first ${previewLimit} — Download/ZIP/Print below use the full list)` : '';
+  const failNote = failures ? ` — ${failures} value(s) failed to generate and were skipped` : '';
+  document.getElementById('bqCount').innerText = `Total values: ${bqRows.length}${previewNote}${failNote}`;
+}
+
+async function bqDownloadExcel(){
+  if(!bqRows.length){ alert('Generate first'); return; }
+  const wb = new ExcelJS.Workbook();
+  const ws = wb.addWorksheet('Barcode + QR');
+  ws.getRow(1).values = ['Value', 'Barcode', 'QR Code'];
+  ws.getColumn(1).width = 26;
+  ws.getColumn(2).width = 34;
+  ws.getColumn(3).width = 22;
+
+  let lastPct = -1;
+  const failures = [];
+  for(let i=0;i<bqRows.length;i++){
+    const pct = Math.round((i+1)/bqRows.length*100);
+    if(pct !== lastPct){ setProgress('progressBar5','progressWrap5', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+
+    const item = bqRows[i];
+    const rowNum = i + 2;
+    const row = ws.getRow(rowNum);
+    row.getCell(1).value = item.value;
+
+    try{
+      const bBase64 = item.barcode.dataUrl.split(',')[1];
+      const bId = wb.addImage({ base64: bBase64, extension: 'png' });
+      ws.addImage(bId, { tl: { col: 1, row: rowNum - 1 }, ext: { width: item.barcode.width, height: item.barcode.height } });
+
+      const qBase64 = item.qr.dataUrl.split(',')[1];
+      const qId = wb.addImage({ base64: qBase64, extension: 'png' });
+      ws.addImage(qId, { tl: { col: 2, row: rowNum - 1 }, ext: { width: item.qr.width, height: item.qr.height } });
+
+      row.height = Math.max(item.barcode.height, item.qr.height) * 0.75;
+    }catch(err){
+      failures.push(`${item.value}: ${err.message || err}`);
+    }
+  }
+  setProgress('progressBar5','progressWrap5', 100);
+  if(failures.length){
+    document.getElementById('bqDupWarning').innerText = `⚠ ${failures.length} row(s) had an image insertion problem: ${failures.slice(0,8).join(' | ')}${failures.length>8 ? ' …' : ''}`;
+  }
+
+  const thin = { style: 'thin', color: { argb: 'FF000000' } };
+  const border = { top: thin, left: thin, bottom: thin, right: thin };
+  const headerRow = ws.getRow(1);
+  for(let c=1;c<=3;c++){
+    const cell = headerRow.getCell(c);
+    cell.font = { name: 'Times New Roman', bold: true, size: 16 };
+    cell.alignment = { horizontal: 'center', vertical: 'middle' };
+    cell.border = border;
+  }
+  headerRow.height = 30;
+  bqRows.forEach((item, i)=>{
+    const row = ws.getRow(i + 2);
+    for(let c=1;c<=3;c++){
+      row.getCell(c).border = border;
+      row.getCell(c).alignment = { horizontal: 'center', vertical: 'middle' };
+      if(c===1) row.getCell(c).font = { name: 'Times New Roman', size: 13 };
+    }
+  });
+
+  const buffer = await wb.xlsx.writeBuffer();
+  const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  triggerDownload(blob, `barcode_qr_${ts}.xlsx`);
+}
+
+async function bqDownloadZip(){
+  if(!bqRows.length){ alert('Generate first'); return; }
+  const zipItems = [];
+  bqRows.forEach(item=>{
+    zipItems.push({ dataUrl: item.barcode.dataUrl, filename: `${sanitizeFilename(item.value)}_barcode.png` });
+    zipItems.push({ dataUrl: item.qr.dataUrl, filename: `${sanitizeFilename(item.value)}_qr.png` });
+  });
+  const ts = new Date().toISOString().replace(/[:T]/g,'-').split('.')[0];
+  await downloadImagesZip(zipItems, `barcode_qr_${ts}.zip`);
+}
+
+async function bqPrintLabels(){
+  if(!bqRows.length){ alert('Generate first'); return; }
+  const printItems = [];
+  let lastPct = -1;
+  for(let i=0;i<bqRows.length;i++){
+    const pct = Math.round((i+1)/bqRows.length*100);
+    if(pct !== lastPct){ setProgress('progressBar5','progressWrap5', pct); lastPct = pct; }
+    if(i % 25 === 0) await yieldToUI();
+    const combined = await combineTwoImages(bqRows[i].barcode, bqRows[i].qr);
+    printItems.push({ dataUrl: combined.dataUrl });
+  }
+  setProgress('progressBar5','progressWrap5', 100);
+  printLabelsWindow(printItems, document.getElementById('labelSize5').value);
+}
+
+function resetTool5(){
+  document.getElementById('bqInput').value = '';
+  bqRows = [];
+  document.getElementById('bqPreview').innerHTML = '';
+  document.getElementById('bqCount').innerText = '';
+  document.getElementById('bqDupWarning').innerText = '';
+  bqUpdateSimpleCount();
+  setProgress('progressBar5','progressWrap5', 0);
+}
+/* ===================== LOCAL STORAGE JSON HELPERS ===================== */
+function lsGet(key, fallback){
+  try{ const v = localStorage.getItem(key); return v ? JSON.parse(v) : fallback; }catch(e){ return fallback; }
+}
+function lsSet(key, val){
+  try{ localStorage.setItem(key, JSON.stringify(val)); }catch(e){}
+}
+
+/* ---- Backup / Restore all localStorage-based data ---- */
+function exportAllData(){
+  const data = {
+    todos: lsGet('skuTools_todos', []),
+    expenses: lsGet('skuTools_expenses', []),
+    habits: lsGet('skuTools_habits', []),
+    reminders: lsGet('skuTools_reminders', []),
+    settings: {
+      codeType: loadSetting('codeType', null),
+      sizeSelect: loadSetting('sizeSelect', null),
+      showText: loadSetting('showText', null),
+      darkMode: loadSetting('darkMode', null)
+    },
+    exportedAt: new Date().toISOString()
+  };
+  const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+  triggerDownload(blob, `sku_tools_backup_${new Date().toISOString().slice(0,10)}.json`);
+}
+
+function importAllData(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const data = JSON.parse(e.target.result);
+      if(Array.isArray(data.todos)) lsSet('skuTools_todos', data.todos);
+      if(Array.isArray(data.expenses)) lsSet('skuTools_expenses', data.expenses);
+      if(Array.isArray(data.habits)) lsSet('skuTools_habits', data.habits);
+      if(Array.isArray(data.reminders)){ lsSet('skuTools_reminders', data.reminders); reminders = data.reminders; }
+      if(data.settings){
+        Object.entries(data.settings).forEach(([k,v])=>{ if(v!==null && v!==undefined) saveSetting(k, v); });
+      }
+      alert('Data imported! Open the relevant tool to see it — To-Do, Expense, and Habit Tracker lists are restored.');
+      todoRender(); expRender(); habitRender(); remRender();
+    }catch(err){
+      alert('Could not read that file — make sure it is a backup JSON exported from this tool.');
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+/* ===================== TOOL 7: DAILY TO-DO TRACKER ===================== */
+let todoFilterState = 'all';
+function todoGetAll(){ return lsGet('skuTools_todos', []); }
+function todoSaveAll(list){ lsSet('skuTools_todos', list); }
+
+function todoAdd(){
+  const text = document.getElementById('todoText').value.trim();
+  if(!text) return;
+  const priority = document.getElementById('todoPriority').value;
+  const list = todoGetAll();
+  list.push({ id: Date.now(), text, priority, done: false });
+  todoSaveAll(list);
+  document.getElementById('todoText').value = '';
+  todoRender();
+}
+function todoToggle(id){
+  const list = todoGetAll();
+  const item = list.find(t=>t.id===id);
+  if(item) item.done = !item.done;
+  todoSaveAll(list);
+  todoRender();
+}
+function todoDelete(id){
+  todoSaveAll(todoGetAll().filter(t=>t.id!==id));
+  todoRender();
+}
+function todoClearDone(){
+  todoSaveAll(todoGetAll().filter(t=>!t.done));
+  todoRender();
+}
+function todoFilter(which){
+  todoFilterState = which;
+  ['All','Pending','Done'].forEach(w=>document.getElementById(`todoFilter${w}Btn`).classList.remove('active'));
+  document.getElementById(`todoFilter${which.charAt(0).toUpperCase()+which.slice(1)}Btn`).classList.add('active');
+  todoRender();
+}
+function todoRender(){
+  const list = todoGetAll();
+  const filtered = list.filter(t=> todoFilterState==='all' || (todoFilterState==='pending' && !t.done) || (todoFilterState==='done' && t.done));
+  const pCol = { High:'#b30000', Medium:'#b8860b', Low:'#2a7' };
+  document.getElementById('todoCount').innerText = `${list.filter(t=>!t.done).length} pending, ${list.filter(t=>t.done).length} done`;
+  const html = filtered.map(t=>`
+    <div class="thumb" style="display:block;text-align:left;width:auto">
+      <label style="margin:0"><input type="checkbox" ${t.done?'checked':''} onchange="todoToggle(${t.id})"/>
+      <span style="text-decoration:${t.done?'line-through':'none'};color:${t.done?'#999':'inherit'}">${t.text}</span></label>
+      <span style="color:${pCol[t.priority]};font-size:12px;margin-left:8px">${t.priority}</span>
+      <button class="secondary" style="padding:2px 8px;margin-left:8px" onclick="todoDelete(${t.id})">✕</button>
+    </div>`).join('');
+  document.getElementById('todoList').innerHTML = html || '<div class="hint">No tasks here.</div>';
+}
+
+/* ===================== TOOL 8: EXPENSE TRACKER ===================== */
+function expGetAll(){ return lsGet('skuTools_expenses', []); }
+function expSaveAll(list){ lsSet('skuTools_expenses', list); }
+
+function expAdd(){
+  const date = document.getElementById('expDate').value || new Date().toISOString().slice(0,10);
+  const category = document.getElementById('expCategory').value;
+  const amount = parseFloat(document.getElementById('expAmount').value);
+  const note = document.getElementById('expNote').value.trim();
+  if(isNaN(amount) || amount<=0){ alert('Enter a valid amount'); return; }
+  const list = expGetAll();
+  list.push({ id: Date.now(), date, category, amount, note });
+  expSaveAll(list);
+  document.getElementById('expAmount').value = '';
+  document.getElementById('expNote').value = '';
+  expRender();
+}
+function expDelete(id){
+  expSaveAll(expGetAll().filter(e=>e.id!==id));
+  expRender();
+}
+function expClearAll(){
+  if(!confirm('Clear all expense entries?')) return;
+  expSaveAll([]);
+  expRender();
+}
+function expRender(){
+  const list = expGetAll();
+  const total = list.reduce((s,e)=>s+e.amount,0);
+  document.getElementById('expTotal').innerText = `Total: ${total.toFixed(2)} across ${list.length} entr${list.length===1?'y':'ies'}`;
+
+  const byCat = {};
+  list.forEach(e=>{ byCat[e.category] = (byCat[e.category]||0) + e.amount; });
+  const maxCat = Math.max(1, ...Object.values(byCat));
+  document.getElementById('expBreakdown').innerHTML = Object.entries(byCat).map(([cat,amt])=>`
+    <div style="margin:4px 0">
+      <span style="display:inline-block;width:90px">${cat}</span>
+      <span style="display:inline-block;height:14px;background:#4caf50;width:${Math.max(4,amt/maxCat*200)}px;vertical-align:middle;border-radius:3px"></span>
+      <span style="margin-left:6px">${amt.toFixed(2)}</span>
+    </div>`).join('');
+
+  const rows = list.slice().reverse().map(e=>`<tr><td>${e.date}</td><td>${e.category}</td><td>${e.amount.toFixed(2)}</td><td>${e.note||''}</td><td><button class="secondary" style="padding:2px 8px" onclick="expDelete(${e.id})">✕</button></td></tr>`).join('');
+  document.getElementById('expTable').innerHTML = '<tr><th>Date</th><th>Category</th><th>Amount</th><th>Note</th><th></th></tr>' + rows;
+}
+(function initExpDate(){ const el=document.getElementById('expDate'); if(el) el.value = new Date().toISOString().slice(0,10); })();
+
+/* ===================== TOOL 9: UNIT & CURRENCY CONVERTER ===================== */
+const CONV_UNITS = {
+  length: { m:1, km:1000, cm:0.01, mm:0.001, mile:1609.34, yard:0.9144, feet:0.3048, inch:0.0254 },
+  weight: { kg:1, g:0.001, lb:0.453592, oz:0.0283495, ton:1000 },
+  temp: null,
+  currency: null
+};
+const CURRENCY_FALLBACK = { USD:1, INR:83, EUR:0.92, GBP:0.79, AED:3.67, AUD:1.52, CAD:1.36 };
+let currencyRates = null;
+
+function convTypeChange(){
+  const type = document.getElementById('convType').value;
+  const fromSel = document.getElementById('convFrom');
+  const toSel = document.getElementById('convTo');
+  fromSel.innerHTML = ''; toSel.innerHTML = '';
+  let keys;
+  if(type==='length') keys = Object.keys(CONV_UNITS.length);
+  else if(type==='weight') keys = Object.keys(CONV_UNITS.weight);
+  else if(type==='temp') keys = ['C','F','K'];
+  else keys = Object.keys(CURRENCY_FALLBACK);
+  keys.forEach((k,i)=>{
+    const o1=document.createElement('option'); o1.value=k; o1.textContent=k; fromSel.appendChild(o1);
+    const o2=document.createElement('option'); o2.value=k; o2.textContent=k; toSel.appendChild(o2);
+  });
+  if(keys.length>1) toSel.selectedIndex = 1;
+  if(type==='currency' && !currencyRates){
+    fetch('https://open.er-api.com/v6/latest/USD').then(r=>r.json()).then(data=>{
+      if(data && data.rates) currencyRates = data.rates;
+    }).catch(()=>{ currencyRates = null; });
+  }
+}
+convTypeChange();
+
+function convGo(){
+  const type = document.getElementById('convType').value;
+  const val = parseFloat(document.getElementById('convValue').value);
+  const from = document.getElementById('convFrom').value;
+  const to = document.getElementById('convTo').value;
+  if(isNaN(val)){ alert('Enter a value'); return; }
+  let result, note='';
+
+  if(type==='length' || type==='weight'){
+    const table = CONV_UNITS[type];
+    result = val * table[from] / table[to];
+  } else if(type==='temp'){
+    let celsius;
+    if(from==='C') celsius=val; else if(from==='F') celsius=(val-32)*5/9; else celsius=val-273.15;
+    if(to==='C') result=celsius; else if(to==='F') result=celsius*9/5+32; else result=celsius+273.15;
+  } else {
+    const rates = currencyRates || CURRENCY_FALLBACK;
+    if(!currencyRates) note = ' (offline fallback rates — approximate)';
+    const usdValue = val / (rates[from] || 1);
+    result = usdValue * (rates[to] || 1);
+  }
+  document.getElementById('convResult').innerText = `${val} ${from} = ${result.toFixed(4)} ${to}${note}`;
+}
+
+/* ===================== TOOL 10: DATE & AGE CALCULATOR ===================== */
+function dateModeChange(){
+  const mode = document.querySelector('input[name="dateMode"]:checked').value;
+  document.getElementById('dateAgeBlock').style.display = mode==='age' ? 'block':'none';
+  document.getElementById('dateDiffBlock').style.display = mode==='diff' ? 'block':'none';
+  document.getElementById('dateAddBlock').style.display = mode==='add' ? 'block':'none';
+}
+function calcAge(){
+  const dob = new Date(document.getElementById('dobInput').value);
+  if(isNaN(dob)){ alert('Pick a valid date'); return; }
+  const now = new Date();
+  let years = now.getFullYear()-dob.getFullYear();
+  let months = now.getMonth()-dob.getMonth();
+  let days = now.getDate()-dob.getDate();
+  if(days<0){ months--; days += new Date(now.getFullYear(), now.getMonth(), 0).getDate(); }
+  if(months<0){ years--; months += 12; }
+  const totalDays = Math.floor((now-dob)/86400000);
+  document.getElementById('dateResult').innerText = `${years} years, ${months} months, ${days} days old (${totalDays} total days)`;
+}
+function calcDiff(){
+  const d1 = new Date(document.getElementById('date1Input').value);
+  const d2 = new Date(document.getElementById('date2Input').value);
+  if(isNaN(d1) || isNaN(d2)){ alert('Pick both dates'); return; }
+  const diffDays = Math.round(Math.abs(d2-d1)/86400000);
+  document.getElementById('dateResult').innerText = `${diffDays} days (${(diffDays/7).toFixed(1)} weeks, ${(diffDays/30.44).toFixed(1)} months)`;
+}
+function calcAdd(){
+  const start = new Date(document.getElementById('dateAddStart').value);
+  const days = parseInt(document.getElementById('dateAddDays').value);
+  if(isNaN(start) || isNaN(days)){ alert('Enter a valid date and number of days'); return; }
+  const result = new Date(start.getTime() + days*86400000);
+  document.getElementById('dateResult').innerText = `${result.toDateString()}`;
+}
+
+/* ===================== TOOL 11: PASSWORD GENERATOR ===================== */
+function pwGenerate(){
+  const len = parseInt(document.getElementById('pwLength').value) || 16;
+  let chars = '';
+  if(document.getElementById('pwUpper').checked) chars += 'ABCDEFGHJKLMNPQRSTUVWXYZ';
+  if(document.getElementById('pwLower').checked) chars += 'abcdefghijkmnpqrstuvwxyz';
+  if(document.getElementById('pwNumbers').checked) chars += '23456789';
+  if(document.getElementById('pwSymbols').checked) chars += '!@#$%^&*()-_=+[]{}';
+  if(!chars){ alert('Select at least one character type'); return; }
+  const arr = new Uint32Array(len);
+  crypto.getRandomValues(arr);
+  let pw = '';
+  for(let i=0;i<len;i++) pw += chars[arr[i] % chars.length];
+  document.getElementById('pwOutput').innerText = pw;
+}
+function pwCopy(){
+  const pw = document.getElementById('pwOutput').innerText;
+  if(!pw){ alert('Generate a password first'); return; }
+  navigator.clipboard.writeText(pw);
+  alert('Copied!');
+}
+function pwCheckStrength(){
+  const pw = document.getElementById('pwCheckInput').value;
+  if(!pw){ alert('Enter a password'); return; }
+  let score = 0;
+  if(pw.length>=8) score++;
+  if(pw.length>=12) score++;
+  if(/[A-Z]/.test(pw)) score++;
+  if(/[a-z]/.test(pw)) score++;
+  if(/[0-9]/.test(pw)) score++;
+  if(/[^A-Za-z0-9]/.test(pw)) score++;
+  const labels = ['Very Weak','Weak','Fair','Good','Strong','Very Strong','Excellent'];
+  const colors = ['#b30000','#c0392b','#e67e22','#e6b800','#7cb342','#2e7d32','#1b5e20'];
+  document.getElementById('pwStrengthResult').innerHTML =
+    `<b style="color:${colors[score]}">${labels[score]}</b> (${pw.length} characters)`;
+}
+
+/* ===================== TOOL 12: TEXT UTILITIES ===================== */
+function txtUpper(){ const el=document.getElementById('txtInput'); el.value = el.value.toUpperCase(); txtCount(); }
+function txtLower(){ const el=document.getElementById('txtInput'); el.value = el.value.toLowerCase(); txtCount(); }
+function txtTitle(){
+  const el=document.getElementById('txtInput');
+  el.value = el.value.replace(/\w\S*/g, w=>w.charAt(0).toUpperCase()+w.slice(1).toLowerCase());
+  txtCount();
+}
+function txtDedupe(){
+  const el=document.getElementById('txtInput');
+  const seen = new Set();
+  el.value = el.value.split('\n').filter(line=>{
+    const key = line.trim();
+    if(seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  }).join('\n');
+  txtCount();
+}
+function txtTrim(){
+  const el=document.getElementById('txtInput');
+  el.value = el.value.split('\n').map(l=>l.trim().replace(/\s+/g,' ')).join('\n');
+  txtCount();
+}
+function txtCount(){
+  const val = document.getElementById('txtInput').value;
+  const words = val.trim() ? val.trim().split(/\s+/).length : 0;
+  document.getElementById('txtStats').innerText = `${val.length} characters, ${words} words, ${val.split('\n').length} lines`;
+}
+function txtFindReplace(){
+  const find = document.getElementById('txtFind').value;
+  const replace = document.getElementById('txtReplace').value;
+  if(!find){ alert('Enter text to find'); return; }
+  const el=document.getElementById('txtInput');
+  el.value = el.value.split(find).join(replace);
+  txtCount();
+}
+function txtCopy(){
+  navigator.clipboard.writeText(document.getElementById('txtInput').value);
+  alert('Copied!');
+}
+document.getElementById('txtInput').addEventListener('input', txtCount);
+
+/* ===================== TOOL 13: QR GENERATOR (GENERAL) ===================== */
+function qrGenTypeChange(){
+  const type = document.getElementById('qrGenType').value;
+  document.getElementById('qrTextBlock').style.display = type==='text' ? 'block':'none';
+  document.getElementById('qrWifiBlock').style.display = type==='wifi' ? 'block':'none';
+  document.getElementById('qrWhatsappBlock').style.display = type==='whatsapp' ? 'block':'none';
+  document.getElementById('qrVcardBlock').style.display = type==='vcard' ? 'block':'none';
+}
+async function qrGenGenerate(){
+  const type = document.getElementById('qrGenType').value;
+  let value = '';
+  if(type==='text'){
+    value = document.getElementById('qrTextValue').value.trim();
+  } else if(type==='wifi'){
+    const ssid = document.getElementById('qrWifiSsid').value.trim();
+    const pass = document.getElementById('qrWifiPass').value.trim();
+    const sec = document.getElementById('qrWifiSec').value;
+    value = `WIFI:T:${sec};S:${ssid};P:${pass};;`;
+  } else if(type==='whatsapp'){
+    const phone = document.getElementById('qrWaPhone').value.trim().replace(/[^0-9]/g,'');
+    const msg = document.getElementById('qrWaMsg').value.trim();
+    value = `https://wa.me/${phone}${msg ? '?text='+encodeURIComponent(msg) : ''}`;
+  } else if(type==='vcard'){
+    const name = document.getElementById('qrVName').value.trim();
+    const phone = document.getElementById('qrVPhone').value.trim();
+    const email = document.getElementById('qrVEmail').value.trim();
+    const company = document.getElementById('qrVCompany').value.trim();
+    value = `BEGIN:VCARD\nVERSION:3.0\nN:${name}\nFN:${name}\nORG:${company}\nTEL:${phone}\nEMAIL:${email}\nEND:VCARD`;
+  }
+  if(!value){ alert('Fill in the required field(s)'); return; }
+  const img = await skuToImage(value, { type: 'qr', scale: 1.5, showText: false });
+  document.getElementById('qrGenPreview').innerHTML = `<img src="${img.dataUrl}" style="display:block;margin:0 auto"/>`;
+}
+
+/* ===================== TOOL 14: HABIT TRACKER ===================== */
+function habitGetAll(){ return lsGet('skuTools_habits', []); }
+function habitSaveAll(list){ lsSet('skuTools_habits', list); }
+function habitAdd(){
+  const name = document.getElementById('habitName').value.trim();
+  if(!name) return;
+  const list = habitGetAll();
+  list.push({ id: Date.now(), name, done: {} });
+  habitSaveAll(list);
+  document.getElementById('habitName').value = '';
+  habitRender();
+}
+function habitDelete(id){
+  habitSaveAll(habitGetAll().filter(h=>h.id!==id));
+  habitRender();
+}
+function habitToggleDay(id, dateKey){
+  const list = habitGetAll();
+  const h = list.find(x=>x.id===id);
+  if(h){ h.done[dateKey] = !h.done[dateKey]; }
+  habitSaveAll(list);
+  habitRender();
+}
+function habitLast7Dates(){
+  const dates = [];
+  for(let i=6;i>=0;i--){
+    const d = new Date();
+    d.setDate(d.getDate()-i);
+    dates.push(d.toISOString().slice(0,10));
+  }
+  return dates;
+}
+function habitRender(){
+  const list = habitGetAll();
+  const dates = habitLast7Dates();
+  document.getElementById('habitList').innerHTML = list.map(h=>{
+    const streak = dates.filter(d=>h.done[d]).length;
+    const cells = dates.map(d=>{
+      const label = new Date(d).toLocaleDateString(undefined,{weekday:'short'}).slice(0,2);
+      const on = h.done[d];
+      return `<button style="width:36px;padding:6px 0;margin:2px;background:${on?'#4caf50':'#eee'};color:${on?'#fff':'#333'}" onclick="habitToggleDay(${h.id},'${d}')">${label}</button>`;
+    }).join('');
+    return `<div class="thumb" style="display:block;text-align:left;width:auto">
+      <b>${h.name}</b> <span class="hint" style="display:inline">— ${streak}/7 this week</span>
+      <button class="secondary" style="padding:2px 8px;float:right" onclick="habitDelete(${h.id})">✕</button>
+      <div>${cells}</div>
+    </div>`;
+  }).join('') || '<div class="hint">No habits yet — add one above.</div>';
+}
+
+/* ===================== TOOL 15: REMINDER TOOL ===================== */
+let reminders = lsGet('skuTools_reminders', []);
+let reminderTimer = null;
+function remSaveAll(){ lsSet('skuTools_reminders', reminders); }
+function remAdd(){
+  const time = document.getElementById('remTime').value;
+  const text = document.getElementById('remText').value.trim();
+  if(!time || !text){ alert('Enter a time and message'); return; }
+  reminders.push({ id: Date.now(), time, text, fired: false });
+  remSaveAll();
+  document.getElementById('remText').value = '';
+  remRender();
+  if(!reminderTimer) reminderTimer = setInterval(remCheck, 15000);
+}
+function remDelete(id){
+  reminders = reminders.filter(r=>r.id!==id);
+  remSaveAll();
+  remRender();
+}
+function remRender(){
+  document.getElementById('remList').innerHTML = reminders.map(r=>
+    `<div class="thumb" style="display:block;text-align:left;width:auto">
+      ${r.time} — ${r.text} ${r.fired?'<span class="hint" style="display:inline">(done)</span>':''}
+      <button class="secondary" style="padding:2px 8px;float:right" onclick="remDelete(${r.id})">✕</button>
+    </div>`).join('') || '<div class="hint">No reminders set.</div>';
+}
+function remBeep(){
+  try{
+    const ctx = new (window.AudioContext||window.webkitAudioContext)();
+    const osc = ctx.createOscillator();
+    osc.frequency.value = 880;
+    osc.connect(ctx.destination);
+    osc.start();
+    setTimeout(()=>osc.stop(), 300);
+  }catch(e){}
+}
+function remCheck(){
+  const now = new Date();
+  const hhmm = now.toTimeString().slice(0,5);
+  let changed = false;
+  reminders.forEach(r=>{
+    if(!r.fired && r.time === hhmm){
+      r.fired = true;
+      changed = true;
+      remBeep();
+      document.getElementById('remAlert').innerText = `⏰ Reminder: ${r.text}`;
+      if('Notification' in window && Notification.permission === 'granted'){
+        new Notification('Reminder', { body: r.text });
+      }
+    }
+  });
+  if(changed) remSaveAll();
+  remRender();
+}
+if('Notification' in window && Notification.permission === 'default'){
+  try{ Notification.requestPermission(); }catch(e){}
+}
+if(reminders.length && reminders.some(r=>!r.fired)){
+  reminderTimer = setInterval(remCheck, 15000);
+}
+
+/* ===================== TOOL 16: PDF TOOLS ===================== */
+if(window.pdfjsLib){
+  pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
+}
+
+function escapeXml(s){
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&apos;');
+}
+
+async function buildMinimalDocx(paragraphs){
+  const zip = new JSZip();
+  zip.file('[Content_Types].xml',
+    `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/></Types>`);
+  zip.folder('_rels').file('.rels',
+    `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`);
+  const bodyXml = paragraphs.map(p=>`<w:p><w:r><w:t xml:space="preserve">${escapeXml(p)}</w:t></w:r></w:p>`).join('');
+  zip.folder('word').file('document.xml',
+    `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>${bodyXml}<w:sectPr/></w:body></w:document>`);
+  return zip.generateAsync({ type: 'blob', mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document' });
+}
+
+async function pdfToWordGo(){
+  const file = document.getElementById('pdfToWordInput').files[0];
+  if(!file){ alert('Upload a PDF first'); return; }
+  document.getElementById('pdfToWordStatus').innerText = 'Extracting text...';
+  try{
+    const bytes = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+    const paragraphs = [];
+    for(let i=1;i<=pdf.numPages;i++){
+      setProgress('progressBarPdfWord','progressWrapPdfWord', Math.round(i/pdf.numPages*100));
+      if(i % 5 === 0) await yieldToUI();
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const lines = {};
+      content.items.forEach(item=>{
+        const y = Math.round(item.transform[5]);
+        (lines[y] = lines[y] || []).push(item);
+      });
+      const sortedYs = Object.keys(lines).map(Number).sort((a,b)=>b-a);
+      sortedYs.forEach(y=>{
+        const lineText = lines[y].sort((a,b)=>a.transform[4]-b.transform[4]).map(it=>it.str).join(' ').trim();
+        if(lineText) paragraphs.push(lineText);
+      });
+      paragraphs.push(`— Page ${i} —`);
+    }
+    const blob = await buildMinimalDocx(paragraphs);
+    triggerDownload(blob, `${file.name.replace(/\.pdf$/i,'')}.docx`);
+    setProgress('progressBarPdfWord','progressWrapPdfWord', 100);
+    document.getElementById('pdfToWordStatus').innerText = `Done! Extracted text from ${pdf.numPages} page(s). Formatting/images were not preserved.`;
+  }catch(err){
+    document.getElementById('pdfToWordStatus').innerText = `⚠ Could not convert — make sure it's a valid, unprotected PDF. (${err.message||err})`;
+  }
+}
+
+async function pdfToExcelGo(){
+  const file = document.getElementById('pdfToExcelInput').files[0];
+  if(!file){ alert('Upload a PDF first'); return; }
+  document.getElementById('pdfToExcelStatus').innerText = 'Extracting text...';
+  try{
+    const bytes = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+    const wb = new ExcelJS.Workbook();
+    const ws = wb.addWorksheet('Extracted');
+    let rowNum = 1;
+
+    for(let i=1;i<=pdf.numPages;i++){
+      setProgress('progressBarPdfExcel','progressWrapPdfExcel', Math.round(i/pdf.numPages*100));
+      if(i % 5 === 0) await yieldToUI();
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const lines = {};
+      content.items.forEach(item=>{
+        const y = Math.round(item.transform[5]);
+        (lines[y] = lines[y] || []).push(item);
+      });
+      const sortedYs = Object.keys(lines).map(Number).sort((a,b)=>b-a);
+      sortedYs.forEach(y=>{
+        const lineText = lines[y].sort((a,b)=>a.transform[4]-b.transform[4]).map(it=>it.str).join(' ').trim();
+        if(!lineText) return;
+        const cells = lineText.split(/\s{2,}/).filter(c=>c.trim());
+        const row = ws.getRow(rowNum);
+        cells.forEach((cellText,idx)=>{ row.getCell(idx+1).value = cellText; });
+        rowNum++;
+      });
+      rowNum++; // blank row between pages
+    }
+
+    const buffer = await wb.xlsx.writeBuffer();
+    const blob = new Blob([buffer], { type: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' });
+    triggerDownload(blob, `${file.name.replace(/\.pdf$/i,'')}.xlsx`);
+    setProgress('progressBarPdfExcel','progressWrapPdfExcel', 100);
+    document.getElementById('pdfToExcelStatus').innerText = `Done! Extracted text from ${pdf.numPages} page(s) as a rough table — please review the result.`;
+  }catch(err){
+    document.getElementById('pdfToExcelStatus').innerText = `⚠ Could not convert — make sure it's a valid, unprotected PDF. (${err.message||err})`;
+  }
+}
+
+function pdfShowSub(id){
+  document.getElementById('pdfMenu').style.display = id==='pdfMenu' ? 'block' : 'none';
+  document.querySelectorAll('.pdf-sub').forEach(el=>el.style.display='none');
+  if(id!=='pdfMenu'){
+    const el = document.getElementById(id);
+    if(el) el.style.display = 'block';
+  }
+}
+
+function parsePageRange(str, maxPages){
+  const result = [];
+  str.split(',').forEach(part=>{
+    part = part.trim();
+    if(!part) return;
+    if(part.includes('-')){
+      const bits = part.split('-').map(n=>parseInt(n.trim()));
+      const a = bits[0], b = bits[1];
+      if(!isNaN(a) && !isNaN(b)){
+        for(let i=a;i<=b;i++) if(i>=1 && i<=maxPages) result.push(i);
+      }
+    } else {
+      const n = parseInt(part);
+      if(!isNaN(n) && n>=1 && n<=maxPages) result.push(n);
+    }
+  });
+  return result;
+}
+
+/* Merge PDF */
+document.getElementById('pdfMergeInput').addEventListener('change', (e)=>{
+  const files = Array.from(e.target.files);
+  document.getElementById('pdfMergeList').innerHTML = files.map((f,i)=>`${i+1}. ${f.name}`).join('<br>');
+});
+async function pdfMergeGo(){
+  const files = Array.from(document.getElementById('pdfMergeInput').files);
+  if(files.length<2){ alert('Select at least 2 PDF files'); return; }
+  document.getElementById('pdfMergeStatus').innerText = 'Merging...';
+  try{
+    const merged = await PDFLib.PDFDocument.create();
+    for(const file of files){
+      const bytes = await file.arrayBuffer();
+      const src = await PDFLib.PDFDocument.load(bytes);
+      const pages = await merged.copyPages(src, src.getPageIndices());
+      pages.forEach(p=>merged.addPage(p));
+    }
+    const outBytes = await merged.save();
+    triggerDownload(new Blob([outBytes], { type: 'application/pdf' }), 'merged.pdf');
+    document.getElementById('pdfMergeStatus').innerText = `Done! Merged ${files.length} files.`;
+  }catch(err){
+    document.getElementById('pdfMergeStatus').innerText = `⚠ Could not merge — make sure all files are valid, unprotected PDFs. (${err.message||err})`;
+  }
+}
+
+/* Split PDF */
+let pdfSplitDoc = null;
+document.getElementById('pdfSplitInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const bytes = await file.arrayBuffer();
+    pdfSplitDoc = await PDFLib.PDFDocument.load(bytes);
+    document.getElementById('pdfSplitInfo').innerText = `${pdfSplitDoc.getPageCount()} page(s) in this PDF.`;
+  }catch(err){
+    pdfSplitDoc = null;
+    document.getElementById('pdfSplitInfo').innerText = `⚠ Could not read this PDF (${err.message||err})`;
+  }
+});
+async function pdfSplitGo(){
+  if(!pdfSplitDoc){ alert('Upload a valid PDF first'); return; }
+  const range = parsePageRange(document.getElementById('pdfSplitRange').value, pdfSplitDoc.getPageCount());
+  if(!range.length){ alert('Enter a valid page range, e.g. 1-3,5'); return; }
+  try{
+    const out = await PDFLib.PDFDocument.create();
+    const pages = await out.copyPages(pdfSplitDoc, range.map(n=>n-1));
+    pages.forEach(p=>out.addPage(p));
+    const bytes = await out.save();
+    triggerDownload(new Blob([bytes],{type:'application/pdf'}), 'split.pdf');
+    document.getElementById('pdfSplitStatus').innerText = `Done! Extracted ${range.length} page(s).`;
+  }catch(err){
+    document.getElementById('pdfSplitStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* Delete Pages */
+let pdfDeleteDoc = null;
+document.getElementById('pdfDeleteInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const bytes = await file.arrayBuffer();
+    pdfDeleteDoc = await PDFLib.PDFDocument.load(bytes);
+    document.getElementById('pdfDeleteInfo').innerText = `${pdfDeleteDoc.getPageCount()} page(s) in this PDF.`;
+  }catch(err){
+    pdfDeleteDoc = null;
+    document.getElementById('pdfDeleteInfo').innerText = `⚠ Could not read this PDF (${err.message||err})`;
+  }
+});
+async function pdfDeleteGo(){
+  if(!pdfDeleteDoc){ alert('Upload a valid PDF first'); return; }
+  const total = pdfDeleteDoc.getPageCount();
+  const toDelete = new Set(parsePageRange(document.getElementById('pdfDeleteRange').value, total));
+  if(!toDelete.size){ alert('Enter valid page numbers to delete, e.g. 2,4-5'); return; }
+  try{
+    const keepIndices = [];
+    for(let i=1;i<=total;i++) if(!toDelete.has(i)) keepIndices.push(i-1);
+    if(!keepIndices.length){ alert('That would delete every page — nothing would be left.'); return; }
+    const out = await PDFLib.PDFDocument.create();
+    const pages = await out.copyPages(pdfDeleteDoc, keepIndices);
+    pages.forEach(p=>out.addPage(p));
+    const bytes = await out.save();
+    triggerDownload(new Blob([bytes],{type:'application/pdf'}), 'deleted_pages.pdf');
+    document.getElementById('pdfDeleteStatus').innerText = `Done! Removed ${toDelete.size} page(s), ${keepIndices.length} remain.`;
+  }catch(err){
+    document.getElementById('pdfDeleteStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* Rearrange Pages */
+let pdfRearrangeDoc = null;
+document.getElementById('pdfRearrangeInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const bytes = await file.arrayBuffer();
+    pdfRearrangeDoc = await PDFLib.PDFDocument.load(bytes);
+    const n = pdfRearrangeDoc.getPageCount();
+    const reversedExample = Array.from({length:n},(_,i)=>n-i).join(',');
+    document.getElementById('pdfRearrangeInfo').innerText = `${n} page(s) — e.g. type "${reversedExample}" to reverse the order.`;
+  }catch(err){
+    pdfRearrangeDoc = null;
+    document.getElementById('pdfRearrangeInfo').innerText = `⚠ Could not read this PDF (${err.message||err})`;
+  }
+});
+async function pdfRearrangeGo(){
+  if(!pdfRearrangeDoc){ alert('Upload a valid PDF first'); return; }
+  const total = pdfRearrangeDoc.getPageCount();
+  const order = document.getElementById('pdfRearrangeOrder').value.split(',').map(s=>parseInt(s.trim())).filter(n=>!isNaN(n));
+  const validSet = new Set(order);
+  const complete = order.length === total && validSet.size === total && Array.from({length:total},(_,i)=>i+1).every(n=>validSet.has(n));
+  if(!complete){ alert(`Enter every page from 1 to ${total} exactly once, in your desired order.`); return; }
+  try{
+    const out = await PDFLib.PDFDocument.create();
+    const pages = await out.copyPages(pdfRearrangeDoc, order.map(n=>n-1));
+    pages.forEach(p=>out.addPage(p));
+    const bytes = await out.save();
+    triggerDownload(new Blob([bytes],{type:'application/pdf'}), 'rearranged.pdf');
+    document.getElementById('pdfRearrangeStatus').innerText = 'Done! Pages reordered.';
+  }catch(err){
+    document.getElementById('pdfRearrangeStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* PDF to JPG */
+async function pdfToJpgGo(){
+  const file = document.getElementById('pdfToJpgInput').files[0];
+  if(!file){ alert('Upload a PDF first'); return; }
+  document.getElementById('pdfToJpgStatus').innerText = 'Reading PDF...';
+  try{
+    const bytes = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+    const zipItems = [];
+    for(let i=1;i<=pdf.numPages;i++){
+      setProgress('progressBarPdfJpg','progressWrapPdfJpg', Math.round(i/pdf.numPages*100));
+      if(i % 5 === 0) await yieldToUI();
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 2 });
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width;
+      canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      zipItems.push({ dataUrl: canvas.toDataURL('image/jpeg', 0.9), filename: `page_${String(i).padStart(2,'0')}.jpg` });
+      document.getElementById('pdfToJpgStatus').innerText = `Rendered ${i} of ${pdf.numPages} page(s)...`;
+    }
+    setProgress('progressBarPdfJpg','progressWrapPdfJpg', 100);
+    await downloadImagesZip(zipItems, `${file.name.replace(/\.pdf$/i,'')}_pages.zip`);
+    document.getElementById('pdfToJpgStatus').innerText = `Done! ${pdf.numPages} page(s) exported as JPG in a ZIP.`;
+  }catch(err){
+    document.getElementById('pdfToJpgStatus').innerText = `⚠ Could not convert — make sure it's a valid, unprotected PDF. (${err.message||err})`;
+  }
+}
+
+/* JPG to PDF */
+async function jpgToPdfGo(){
+  const files = Array.from(document.getElementById('jpgToPdfInput').files);
+  if(!files.length){ alert('Select at least one image'); return; }
+  document.getElementById('jpgToPdfStatus').innerText = 'Building PDF...';
+  try{
+    const { jsPDF } = window.jspdf;
+    let doc = null;
+    for(let i=0;i<files.length;i++){
+      const dataUrl = await new Promise((res,rej)=>{
+        const reader = new FileReader();
+        reader.onload = ()=>res(reader.result);
+        reader.onerror = rej;
+        reader.readAsDataURL(files[i]);
+      });
+      const img = await loadImgFromDataUrl(dataUrl);
+      const orientation = img.width > img.height ? 'l' : 'p';
+      if(!doc){
+        doc = new jsPDF({ orientation, unit: 'px', format: [img.width, img.height] });
+      } else {
+        doc.addPage([img.width, img.height], orientation);
+      }
+      doc.addImage(dataUrl, 'JPEG', 0, 0, img.width, img.height);
+    }
+    triggerDownload(doc.output('blob'), 'images.pdf');
+    document.getElementById('jpgToPdfStatus').innerText = `Done! ${files.length} image(s) combined into one PDF.`;
+  }catch(err){
+    document.getElementById('jpgToPdfStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* Edit Metadata */
+let pdfMetaDoc = null;
+document.getElementById('pdfMetaInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const bytes = await file.arrayBuffer();
+    pdfMetaDoc = await PDFLib.PDFDocument.load(bytes);
+    document.getElementById('pdfMetaTitle').value = pdfMetaDoc.getTitle() || '';
+    document.getElementById('pdfMetaAuthor').value = pdfMetaDoc.getAuthor() || '';
+    document.getElementById('pdfMetaSubject').value = pdfMetaDoc.getSubject() || '';
+    document.getElementById('pdfMetaFields').style.display = 'block';
+    document.getElementById('pdfMetaStatus').innerText = '';
+  }catch(err){
+    pdfMetaDoc = null;
+    document.getElementById('pdfMetaFields').style.display = 'none';
+    document.getElementById('pdfMetaStatus').innerText = `⚠ Could not read this PDF (${err.message||err})`;
+  }
+});
+async function pdfMetaGo(){
+  if(!pdfMetaDoc){ alert('Upload a valid PDF first'); return; }
+  try{
+    pdfMetaDoc.setTitle(document.getElementById('pdfMetaTitle').value);
+    pdfMetaDoc.setAuthor(document.getElementById('pdfMetaAuthor').value);
+    pdfMetaDoc.setSubject(document.getElementById('pdfMetaSubject').value);
+    const bytes = await pdfMetaDoc.save();
+    triggerDownload(new Blob([bytes],{type:'application/pdf'}), 'updated_metadata.pdf');
+    document.getElementById('pdfMetaStatus').innerText = 'Done! Metadata updated.';
+  }catch(err){
+    document.getElementById('pdfMetaStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* ===================== TOOL 17: CALENDAR ===================== */
+const CALENDAR_EVENTS_2026 = [
+  { date:'2026-01-14', name:'Makar Sankranti', type:'hindu' },
+  { date:'2026-01-26', name:'Republic Day', type:'govt' },
+  { date:'2026-03-04', name:'Holi', type:'both' },
+  { date:'2026-03-19', name:'Hindu New Year (Chaitra Shukladi)', type:'hindu' },
+  { date:'2026-03-21', name:'Id-ul-Fitr', type:'govt' },
+  { date:'2026-03-26', name:'Ram Navami', type:'both' },
+  { date:'2026-03-31', name:'Mahavir Jayanti', type:'govt' },
+  { date:'2026-04-03', name:'Good Friday', type:'govt' },
+  { date:'2026-04-14', name:'Dr. Ambedkar Jayanti / Baisakhi', type:'both' },
+  { date:'2026-05-01', name:'Buddha Purnima', type:'both' },
+  { date:'2026-05-27', name:'Id-ul-Zuha (Bakrid)', type:'govt' },
+  { date:'2026-06-26', name:'Muharram', type:'govt' },
+  { date:'2026-08-15', name:'Independence Day', type:'govt' },
+  { date:'2026-08-28', name:'Raksha Bandhan', type:'hindu' },
+  { date:'2026-09-04', name:'Janmashtami', type:'both' },
+  { date:'2026-09-14', name:'Ganesh Chaturthi / Hartalika Teej', type:'both' },
+  { date:'2026-09-25', name:'Anant Chaturdashi', type:'hindu' },
+  { date:'2026-10-02', name:'Gandhi Jayanti', type:'govt' },
+  { date:'2026-10-11', name:'Sharad Navratri begins (Ghatasthapana)', type:'hindu' },
+  { date:'2026-10-20', name:'Dussehra (Vijayadashami)', type:'both' },
+  { date:'2026-10-29', name:'Karva Chauth', type:'hindu' },
+  { date:'2026-11-06', name:'Dhanteras', type:'hindu' },
+  { date:'2026-11-08', name:'Diwali', type:'both' },
+  { date:'2026-11-11', name:'Bhai Dooj', type:'hindu' },
+  { date:'2026-12-25', name:'Christmas', type:'govt' }
+];
+
+// Fixed-date national holidays that fall on the same Gregorian date every year
+// (month is 0-indexed to match JS Date). Used for years other than 2026, where we
+// don't have verified lunar-festival data.
+const FIXED_DATE_HOLIDAYS = [
+  { month: 0, day: 26, name: 'Republic Day' },
+  { month: 7, day: 15, name: 'Independence Day' },
+  { month: 9, day: 2,  name: 'Gandhi Jayanti' },
+  { month: 11, day: 25, name: 'Christmas' }
+];
+
+function calGetEventsForYear(year){
+  if(year === 2026) return CALENDAR_EVENTS_2026;
+  return FIXED_DATE_HOLIDAYS.map(h=>({
+    date: `${year}-${String(h.month+1).padStart(2,'0')}-${String(h.day).padStart(2,'0')}`,
+    name: h.name,
+    type: 'govt'
+  }));
+}
+
+/* ---- Personal tasks on the calendar (localStorage) ---- */
+function calGetTasks(){ return lsGet('skuTools_calendarTasks', []); }
+function calSaveTasks(list){ lsSet('skuTools_calendarTasks', list); }
+
+function calAddTask(){
+  const date = document.getElementById('calTaskDate').value;
+  const text = document.getElementById('calTaskText').value.trim();
+  if(!date || !text){ alert('Pick a date and enter a task'); return; }
+  const tasks = calGetTasks();
+  tasks.push({ id: Date.now(), date, text });
+  calSaveTasks(tasks);
+  document.getElementById('calTaskText').value = '';
+  const d = new Date(date+'T00:00:00');
+  document.getElementById('calYear').value = String(d.getFullYear());
+  document.getElementById('calMonth').value = String(d.getMonth());
+  calRender();
+}
+
+function calDeleteTask(id){
+  calSaveTasks(calGetTasks().filter(t=>t.id!==id));
+  calRender();
+}
+
+function calParseFlexibleDate(raw){
+  raw = String(raw).trim();
+  // Try YYYY-MM-DD first
+  let m = raw.match(/^(\d{4})-(\d{1,2})-(\d{1,2})$/);
+  if(m) return `${m[1]}-${m[2].padStart(2,'0')}-${m[3].padStart(2,'0')}`;
+  // Try DD/MM/YYYY or DD-MM-YYYY
+  m = raw.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
+  if(m) return `${m[3]}-${m[2].padStart(2,'0')}-${m[1].padStart(2,'0')}`;
+  return null;
+}
+
+function calImportCSV(event){
+  const file = event.target.files[0];
+  if(!file) return;
+  const reader = new FileReader();
+  reader.onload = function(e){
+    try{
+      const rows = simpleCSVParse(e.target.result);
+      if(!rows.length){ throw new Error('Empty file'); }
+      let startIdx = 0;
+      // Skip a header row if the first cell isn't a parseable date
+      if(!calParseFlexibleDate(rows[0][0])) startIdx = 1;
+
+      const tasks = calGetTasks();
+      let added = 0, skipped = 0;
+      for(let i=startIdx;i<rows.length;i++){
+        const row = rows[i];
+        if(!row[0]) continue;
+        const date = calParseFlexibleDate(row[0]);
+        const text = (row[1] || '').trim();
+        if(!date || !text){ skipped++; continue; }
+        tasks.push({ id: Date.now()+i, date, text });
+        added++;
+      }
+      calSaveTasks(tasks);
+      document.getElementById('calImportStatus').innerText = `Imported ${added} task(s)${skipped ? `, skipped ${skipped} row(s) with bad/missing data` : ''}.`;
+      calRender();
+    }catch(err){
+      document.getElementById('calImportStatus').innerText = `⚠ Could not read that file (${err.message||err}). Expected columns: Date, Task.`;
+    }
+    event.target.value = '';
+  };
+  reader.readAsText(file);
+}
+
+function calRender(){
+  const year = parseInt(document.getElementById('calYear').value);
+  const monthIndex = parseInt(document.getElementById('calMonth').value);
+  const firstDay = new Date(year, monthIndex, 1).getDay();
+  const daysInMonth = new Date(year, monthIndex+1, 0).getDate();
+
+  const yearEvents = calGetEventsForYear(year);
+  const monthEvents = yearEvents.filter(ev=>{
+    const d = new Date(ev.date+'T00:00:00');
+    return d.getFullYear()===year && d.getMonth()===monthIndex;
+  });
+  const eventsByDay = {};
+  monthEvents.forEach(ev=>{
+    const day = new Date(ev.date+'T00:00:00').getDate();
+    (eventsByDay[day] = eventsByDay[day] || []).push(ev);
+  });
+
+  const allTasks = calGetTasks();
+  const monthTasks = allTasks.filter(t=>{
+    const d = new Date(t.date+'T00:00:00');
+    return d.getFullYear()===year && d.getMonth()===monthIndex;
+  });
+  const tasksByDay = {};
+  monthTasks.forEach(t=>{
+    const day = new Date(t.date+'T00:00:00').getDate();
+    (tasksByDay[day] = tasksByDay[day] || []).push(t);
+  });
+
+  const grid = document.getElementById('calGrid');
+  grid.className = 'cal-grid';
+  let html = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].map(d=>`<div class="cal-day-head">${d}</div>`).join('');
+  for(let i=0;i<firstDay;i++) html += `<div class="cal-cell empty"></div>`;
+  for(let day=1;day<=daysInMonth;day++){
+    const evs = eventsByDay[day] || [];
+    const tks = tasksByDay[day] || [];
+    let cls = 'cal-cell';
+    const hasHindu = evs.some(e=>e.type==='hindu'||e.type==='both');
+    const hasGovt = evs.some(e=>e.type==='govt'||e.type==='both');
+    if(hasHindu && hasGovt) cls += ' has-both';
+    else if(hasHindu) cls += ' has-hindu';
+    else if(hasGovt) cls += ' has-govt';
+    const eventLabel = evs.length ? `<div style="font-size:10px">${evs.map(e=>e.name.split(' ')[0]).join(', ')}</div>` : '';
+    const taskDot = tks.length ? `<div class="cal-dot" style="background:#2563eb" title="${tks.length} task(s)"></div>` : '';
+    html += `<div class="${cls}"><div class="cal-daynum">${day}</div>${eventLabel}${taskDot}</div>`;
+  }
+  grid.innerHTML = html;
+
+  const listDiv = document.getElementById('calEventList');
+  let listHtml = '';
+  if(monthEvents.length){
+    listHtml += '<b>Holidays &amp; festivals this month:</b><ul style="margin:6px 0 12px 18px;padding:0">' +
+      monthEvents.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(ev=>{
+        const d = new Date(ev.date+'T00:00:00');
+        const label = ev.type==='govt' ? '(Govt holiday)' : ev.type==='both' ? '(Govt holiday + Hindu festival)' : '(Hindu festival)';
+        return `<li>${d.getDate()} — ${ev.name} <span class="hint" style="display:inline">${label}</span></li>`;
+      }).join('') + '</ul>';
+  } else {
+    listHtml += `<div class="hint">${year === 2026 ? 'No listed festivals/holidays this month.' : 'Only fixed-date national holidays are shown for years other than 2026 — none fall in this month.'}</div>`;
+  }
+  if(monthTasks.length){
+    listHtml += '<b>Your tasks this month:</b><ul style="margin:6px 0 0 18px;padding:0">' +
+      monthTasks.slice().sort((a,b)=>a.date.localeCompare(b.date)).map(t=>{
+        const d = new Date(t.date+'T00:00:00');
+        return `<li>${d.getDate()} — ${t.text} <button class="secondary" style="padding:1px 8px;margin-left:6px" onclick="calDeleteTask(${t.id})">✕</button></li>`;
+      }).join('') + '</ul>';
+  }
+  listDiv.innerHTML = listHtml;
+}
+
+/* ===================== TOOL 18: CALCULATOR ===================== */
+let calcExpr = '';
+function calcInput(val){
+  const display = document.getElementById('calcDisplay');
+  if(val === 'C'){ calcExpr = ''; display.innerText = '0'; document.getElementById('calcHistory').innerText=''; return; }
+  if(val === 'back'){ calcExpr = calcExpr.slice(0,-1); display.innerText = calcExpr || '0'; return; }
+  if(val === '='){
+    try{
+      if(!/^[0-9+\-*/.%()\s]+$/.test(calcExpr) || !calcExpr.trim()) throw new Error('Invalid input');
+      const result = Function('"use strict";return (' + calcExpr.replace(/%/g,'/100') + ')')();
+      document.getElementById('calcHistory').innerText = calcExpr + ' =';
+      calcExpr = String(result);
+      display.innerText = calcExpr;
+    }catch(err){
+      display.innerText = 'Error';
+      calcExpr = '';
+    }
+    return;
+  }
+  calcExpr += val;
+  display.innerText = calcExpr;
+}
+
+/* ===================== TOOL 19: FILE & IMAGE CONVERTERS ===================== */
+function fileShowSub(id){
+  document.getElementById('fileMenu').style.display = id==='fileMenu' ? 'block' : 'none';
+  document.querySelectorAll('#tool19 .pdf-sub').forEach(el=>el.style.display='none');
+  if(id!=='fileMenu'){
+    const el = document.getElementById(id);
+    if(el) el.style.display = 'block';
+  }
+}
+
+/* Zip Files */
+document.getElementById('zipInput').addEventListener('change', (e)=>{
+  const files = Array.from(e.target.files);
+  document.getElementById('zipList').innerHTML = files.map(f=>`${f.name} (${Math.round(f.size/1024)} KB)`).join('<br>');
+});
+async function zipGo(){
+  const files = Array.from(document.getElementById('zipInput').files);
+  if(!files.length){ alert('Select at least one file'); return; }
+  document.getElementById('zipStatus').innerText = 'Zipping...';
+  try{
+    const zip = new JSZip();
+    for(const file of files){
+      const buffer = await file.arrayBuffer();
+      zip.file(file.name, buffer);
+    }
+    const content = await zip.generateAsync({ type: 'blob' });
+    triggerDownload(content, 'files.zip');
+    document.getElementById('zipStatus').innerText = `Done! Zipped ${files.length} file(s).`;
+  }catch(err){
+    document.getElementById('zipStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* Unzip */
+document.getElementById('unzipInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  document.getElementById('unzipStatus').innerText = 'Reading zip...';
+  document.getElementById('unzipList').innerHTML = '';
+  try{
+    const zip = await JSZip.loadAsync(file);
+    const entries = Object.values(zip.files).filter(f=>!f.dir);
+    if(!entries.length){ document.getElementById('unzipStatus').innerText = 'This zip has no files.'; return; }
+    document.getElementById('unzipStatus').innerText = `${entries.length} file(s) found — click to download each:`;
+    const listDiv = document.getElementById('unzipList');
+    for(const entry of entries){
+      const btn = document.createElement('button');
+      btn.className = 'secondary';
+      btn.innerText = `⬇ ${entry.name}`;
+      btn.onclick = async ()=>{
+        const blob = await entry.async('blob');
+        triggerDownload(blob, entry.name.split('/').pop());
+      };
+      listDiv.appendChild(btn);
+      listDiv.appendChild(document.createElement('br'));
+    }
+  }catch(err){
+    document.getElementById('unzipStatus').innerText = `⚠ Could not read this zip file (${err.message||err})`;
+  }
+});
+
+/* Image Resize */
+let imgResizeSrc = null;
+document.getElementById('imgResizeInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  const dataUrl = await new Promise((res,rej)=>{
+    const reader = new FileReader();
+    reader.onload = ()=>res(reader.result);
+    reader.onerror = rej;
+    reader.readAsDataURL(file);
+  });
+  const img = await loadImgFromDataUrl(dataUrl);
+  imgResizeSrc = img;
+  document.getElementById('imgResizeW').value = img.width;
+  document.getElementById('imgResizeH').value = img.height;
+  document.getElementById('imgResizeInfo').innerText = `Original: ${img.width} × ${img.height}px`;
+});
+document.getElementById('imgResizeW').addEventListener('input', ()=>{
+  if(!imgResizeSrc || !document.getElementById('imgResizeLock').checked) return;
+  const w = parseInt(document.getElementById('imgResizeW').value) || 0;
+  document.getElementById('imgResizeH').value = Math.round(w * imgResizeSrc.height / imgResizeSrc.width);
+});
+document.getElementById('imgResizeH').addEventListener('input', ()=>{
+  if(!imgResizeSrc || !document.getElementById('imgResizeLock').checked) return;
+  const h = parseInt(document.getElementById('imgResizeH').value) || 0;
+  document.getElementById('imgResizeW').value = Math.round(h * imgResizeSrc.width / imgResizeSrc.height);
+});
+function imgResizeGo(){
+  if(!imgResizeSrc){ alert('Upload an image first'); return; }
+  const w = parseInt(document.getElementById('imgResizeW').value);
+  const h = parseInt(document.getElementById('imgResizeH').value);
+  if(!w || !h){ alert('Enter valid width and height'); return; }
+  const canvas = document.createElement('canvas');
+  canvas.width = w; canvas.height = h;
+  canvas.getContext('2d').drawImage(imgResizeSrc, 0, 0, w, h);
+  canvas.toBlob(blob=>{
+    triggerDownload(blob, `resized_${w}x${h}.png`);
+    document.getElementById('imgResizeStatus').innerText = `Done! Resized to ${w} × ${h}px.`;
+  }, 'image/png');
+}
+
+/* Image Compress */
+let imgCompressSrc = null;
+let imgCompressOrigSize = 0;
+document.getElementById('imgCompressInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  imgCompressOrigSize = file.size;
+  const dataUrl = await new Promise((res,rej)=>{
+    const reader = new FileReader();
+    reader.onload = ()=>res(reader.result);
+    reader.onerror = rej;
+    reader.readAsDataURL(file);
+  });
+  imgCompressSrc = await loadImgFromDataUrl(dataUrl);
+  document.getElementById('imgCompressInfo').innerText = `Original size: ${Math.round(file.size/1024)} KB (${imgCompressSrc.width}×${imgCompressSrc.height}px)`;
+});
+function imgCompressGo(){
+  if(!imgCompressSrc){ alert('Upload an image first'); return; }
+  const quality = parseFloat(document.getElementById('imgCompressQuality').value);
+  const canvas = document.createElement('canvas');
+  canvas.width = imgCompressSrc.width; canvas.height = imgCompressSrc.height;
+  canvas.getContext('2d').drawImage(imgCompressSrc, 0, 0);
+  canvas.toBlob(blob=>{
+    triggerDownload(blob, 'compressed.jpg');
+    const pct = imgCompressOrigSize ? Math.round((1 - blob.size/imgCompressOrigSize)*100) : null;
+    document.getElementById('imgCompressStatus').innerText = `Done! New size: ${Math.round(blob.size/1024)} KB${pct!==null ? ` (${pct>=0?'-':'+'}${Math.abs(pct)}% vs original)` : ''}.`;
+  }, 'image/jpeg', quality);
+}
+
+/* Image Convert */
+async function imgConvertGo(){
+  const file = document.getElementById('imgConvertInput').files[0];
+  if(!file){ alert('Upload an image first'); return; }
+  const format = document.getElementById('imgConvertFormat').value;
+  const ext = format.split('/')[1];
+  try{
+    const dataUrl = await new Promise((res,rej)=>{
+      const reader = new FileReader();
+      reader.onload = ()=>res(reader.result);
+      reader.onerror = rej;
+      reader.readAsDataURL(file);
+    });
+    const img = await loadImgFromDataUrl(dataUrl);
+    const canvas = document.createElement('canvas');
+    canvas.width = img.width; canvas.height = img.height;
+    if(format === 'image/jpeg'){
+      const ctx = canvas.getContext('2d');
+      ctx.fillStyle = '#fff';
+      ctx.fillRect(0,0,canvas.width,canvas.height);
+    }
+    canvas.getContext('2d').drawImage(img, 0, 0);
+    canvas.toBlob(blob=>{
+      if(!blob){ document.getElementById('imgConvertStatus').innerText = `⚠ Your browser can't export ${ext.toUpperCase()}.`; return; }
+      triggerDownload(blob, `converted.${ext}`);
+      document.getElementById('imgConvertStatus').innerText = `Done! Converted to ${ext.toUpperCase()}.`;
+    }, format, 0.92);
+  }catch(err){
+    document.getElementById('imgConvertStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+/* ===================== PDF TOOLS ADD-ONS: COMPRESS & SIGN ===================== */
+async function pdfCompressGo(){
+  const file = document.getElementById('pdfCompressInput').files[0];
+  if(!file){ alert('Upload a PDF first'); return; }
+  const quality = parseFloat(document.getElementById('pdfCompressQuality').value);
+  document.getElementById('pdfCompressStatus').innerText = 'Reading PDF...';
+  try{
+    const bytes = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: bytes }).promise;
+    const { jsPDF } = window.jspdf;
+    let doc = null;
+    for(let i=1;i<=pdf.numPages;i++){
+      setProgress('progressBarPdfCompress','progressWrapPdfCompress', Math.round(i/pdf.numPages*100));
+      if(i % 3 === 0) await yieldToUI();
+      const page = await pdf.getPage(i);
+      const viewport = page.getViewport({ scale: 1.5 });
+      const canvas = document.createElement('canvas');
+      canvas.width = viewport.width; canvas.height = viewport.height;
+      await page.render({ canvasContext: canvas.getContext('2d'), viewport }).promise;
+      const dataUrl = canvas.toDataURL('image/jpeg', quality);
+      const orientation = viewport.width > viewport.height ? 'l' : 'p';
+      if(!doc){
+        doc = new jsPDF({ orientation, unit: 'px', format: [viewport.width, viewport.height] });
+      } else {
+        doc.addPage([viewport.width, viewport.height], orientation);
+      }
+      doc.addImage(dataUrl, 'JPEG', 0, 0, viewport.width, viewport.height);
+      document.getElementById('pdfCompressStatus').innerText = `Rendered ${i} of ${pdf.numPages} page(s)...`;
+    }
+    setProgress('progressBarPdfCompress','progressWrapPdfCompress', 100);
+    const blob = doc.output('blob');
+    triggerDownload(blob, `${file.name.replace(/\.pdf$/i,'')}_compressed.pdf`);
+    const pct = Math.round((1 - blob.size/file.size)*100);
+    document.getElementById('pdfCompressStatus').innerText = `Done! ${Math.round(file.size/1024)} KB → ${Math.round(blob.size/1024)} KB (${pct>=0?'-':'+'}${Math.abs(pct)}%). Pages are now images — text is no longer selectable.`;
+  }catch(err){
+    document.getElementById('pdfCompressStatus').innerText = `⚠ Could not compress — make sure it's a valid, unprotected PDF. (${err.message||err})`;
+  }
+}
+
+/* Sign PDF — signature pad */
+let sigCanvas, sigCtx, sigDrawing = false, sigHasContent = false;
+(function initSigPad(){
+  sigCanvas = document.getElementById('sigPad');
+  if(!sigCanvas) return;
+  sigCtx = sigCanvas.getContext('2d');
+  sigCtx.lineWidth = 2;
+  sigCtx.lineCap = 'round';
+  sigCtx.strokeStyle = '#111';
+
+  function getPos(e){
+    const rect = sigCanvas.getBoundingClientRect();
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+  function start(e){ sigDrawing = true; sigHasContent = true; const p = getPos(e); sigCtx.beginPath(); sigCtx.moveTo(p.x,p.y); e.preventDefault(); }
+  function move(e){ if(!sigDrawing) return; const p = getPos(e); sigCtx.lineTo(p.x,p.y); sigCtx.stroke(); e.preventDefault(); }
+  function end(){ sigDrawing = false; }
+
+  sigCanvas.addEventListener('mousedown', start);
+  sigCanvas.addEventListener('mousemove', move);
+  window.addEventListener('mouseup', end);
+  sigCanvas.addEventListener('touchstart', start, { passive:false });
+  sigCanvas.addEventListener('touchmove', move, { passive:false });
+  sigCanvas.addEventListener('touchend', end);
+})();
+function sigClear(){
+  if(!sigCtx) return;
+  sigCtx.clearRect(0,0,sigCanvas.width,sigCanvas.height);
+  sigHasContent = false;
+}
+
+let pdfSignDoc = null;
+document.getElementById('pdfSignInput').addEventListener('change', async (e)=>{
+  const file = e.target.files[0];
+  if(!file) return;
+  try{
+    const bytes = await file.arrayBuffer();
+    pdfSignDoc = await PDFLib.PDFDocument.load(bytes);
+    document.getElementById('pdfSignInfo').innerText = `${pdfSignDoc.getPageCount()} page(s) in this PDF.`;
+  }catch(err){
+    pdfSignDoc = null;
+    document.getElementById('pdfSignInfo').innerText = `⚠ Could not read this PDF (${err.message||err})`;
+  }
+});
+async function pdfSignGo(){
+  if(!pdfSignDoc){ alert('Upload a valid PDF first'); return; }
+  if(!sigHasContent){ alert('Draw a signature first'); return; }
+  const pageNum = parseInt(document.getElementById('pdfSignPage').value);
+  const total = pdfSignDoc.getPageCount();
+  if(!pageNum || pageNum < 1 || pageNum > total){ alert(`Enter a page number between 1 and ${total}`); return; }
+  const xPct = parseFloat(document.getElementById('pdfSignX').value) / 100;
+  const yPct = parseFloat(document.getElementById('pdfSignY').value) / 100;
+  const wPct = parseFloat(document.getElementById('pdfSignW').value) / 100;
+
+  try{
+    const sigDataUrl = sigCanvas.toDataURL('image/png');
+    const sigBytes = await (await fetch(sigDataUrl)).arrayBuffer();
+    const sigImage = await pdfSignDoc.embedPng(sigBytes);
+    const page = pdfSignDoc.getPage(pageNum - 1);
+    const { width, height } = page.getSize();
+    const sigW = width * wPct;
+    const sigH = sigW * (sigCanvas.height / sigCanvas.width);
+    const x = width * xPct;
+    const y = height * (1 - yPct) - sigH;
+    page.drawImage(sigImage, { x, y, width: sigW, height: sigH });
+    const bytes = await pdfSignDoc.save();
+    triggerDownload(new Blob([bytes],{type:'application/pdf'}), 'signed.pdf');
+    document.getElementById('pdfSignStatus').innerText = `Done! Signature stamped on page ${pageNum}.`;
+  }catch(err){
+    document.getElementById('pdfSignStatus').innerText = `⚠ ${err.message||err}`;
+  }
+}
+
+</script>
+
+</body>
+</html>
